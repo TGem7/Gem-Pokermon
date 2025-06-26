@@ -11,3 +11,9 @@ Mega Swampert: Scored nature cards permanently gain +25 chips for each water or 
 Capsakid: When mult cards are scored, earn $1
 
 Scovillain: When mult cards are scored, earn $2. Gold cards held in hand give +4 mult
+
+Meditite: +0.5 mult for each Ace or Face card left in your deck
+
+Medicham: Aces played give 2x their total chips. +1 mult for each Ace or Face card left in your deck
+
+Mega Medicham: Holding 2 Negative Strength. Aces played give 3x their total chips. 0.25x mult for each Ace remaining in deck
