@@ -19,3 +19,7 @@ Medicham: Aces played give 2x their total chips. +1 mult for each Ace or Face ca
 Mega Medicham: Holding 2 Negative Strength. Aces played give 3x their total chips. 0.25x mult for each Ace remaining in deck
 
 Pincurchin: When sold, create a negative Lightning Energy card for each Lightning Joker you have
+
+Indeedee-F: When sold, create a negative Psychic Energy card for each Psychic Joker you have
+
+Indeedee-M: 1x mult for each psychic joker or energy you have
