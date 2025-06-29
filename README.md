@@ -23,3 +23,5 @@ Pincurchin: When sold, create a negative Lightning Energy card for each Lightnin
 Indeedee-F: When sold, create a negative Psychic Energy card for each Psychic Joker you have
 
 Indeedee-M: 1x mult for each psychic joker or energy you have
+
+Alolan Marowak: 0.5x mult whenever a card is sold. Held Thick Clubs count as sold
