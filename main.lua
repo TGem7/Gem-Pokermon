@@ -15,8 +15,8 @@ SMODS.Atlas({
 }):register()
 
 SMODS.Atlas({
-    key = "Shinygem1",
-    path = "Shinygem1.png",
+    key = "shiny_Gemdex1",
+    path = "shiny_Gemdex1.png",
     px = 71,
     py = 95
 }):register()
@@ -29,8 +29,8 @@ SMODS.Atlas({
 }):register()
 
 SMODS.Atlas({
-    key = "Shinygem3",
-    path = "Shinygem3.png",
+    key = "shiny_Gemdex3",
+    path = "shiny_Gemdex3.png",
     px = 71,
     py = 95
 }):register()
@@ -43,8 +43,8 @@ SMODS.Atlas({
 }):register()
 
 SMODS.Atlas({
-    key = "Shinygem5",
-    path = "Shinygem5.png",
+    key = "shiny_Gemdex5",
+    path = "shiny_Gemdex5.png",
     px = 71,
     py = 95
 }):register()
@@ -57,8 +57,8 @@ SMODS.Atlas({
 }):register()
 
 SMODS.Atlas({
-    key = "Shinygem7",
-    path = "Shinygem7.png",
+    key = "shiny_Gemdex7",
+    path = "shiny_Gemdex7.png",
     px = 71,
     py = 95
 }):register()
@@ -71,8 +71,8 @@ SMODS.Atlas({
 }):register()
 
 SMODS.Atlas({
-    key = "Shinygem8",
-    path = "Shinygem8.png",
+    key = "shiny_Gemdex8",
+    path = "shiny_Gemdex8.png",
     px = 71,
     py = 95
 }):register()
@@ -85,8 +85,8 @@ SMODS.Atlas({
 }):register()
 
 SMODS.Atlas({
-    key = "Shinygem9",
-    path = "Shinygem9.png",
+    key = "shiny_Gemdex9",
+    path = "shiny_Gemdex9.png",
     px = 71,
     py = 95
 }):register()
@@ -99,8 +99,8 @@ SMODS.Atlas({
 }):register()
 
 SMODS.Atlas({
-    key = "ShinygemMegas",
-    path = "ShinygemMegas.png",
+    key = "shiny_GemMegas",
+    path = "shiny_GemMegas.png",
     px = 71,
     py = 95
 }):register()
@@ -113,8 +113,8 @@ SMODS.Atlas({
 }):register()
 
 SMODS.Atlas({
-    key = "ShinygemRegionals",
-    path = "ShinygemRegionals.png",
+    key = "shiny_GemRegionals",
+    path = "shiny_GemRegionals.png",
     px = 71,
     py = 95
 }):register()
@@ -125,6 +125,7 @@ table.insert(pokermon.family, {"torchic", "combusken", "blaziken", "mega_blazike
 table.insert(pokermon.family, {"mudkip", "marshtomp", "swampert", "mega_swampert"})
 table.insert(pokermon.family, {"mawile", "mega_mawile"})
 table.insert(pokermon.family, {"meditite", "medicham", "mega_medicham"})
+table.insert(pokermon.family, {"joltik", "galvantula"})
 table.insert(pokermon.family, {"cubone", "marowak", "alolan_marowak"})
 table.insert(pokermon.family, {"pincurchin"})
 table.insert(pokermon.family, {"indeedee_f"})
