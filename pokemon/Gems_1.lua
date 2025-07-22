@@ -326,7 +326,7 @@ local mega_sceptile={
     type_tooltip(self, info_queue, center)
     info_queue[#info_queue+1] = {set = 'Other', key = 'nature', vars = {"rank"}}
     local card_vars = {center.ability.extra.money_mod, center.ability.extra.money_earned,
-                       math.min(14, find_other_poke_or_energy_type(center, "Grass") * center.ability.extra.money_mod)}
+                       math.min(14, find_other_poke_or_energy_type(center, "Grass") * center.ability.extra.money_mod + center.ability.extra.money_mod)}
     add_target_cards_to_vars(card_vars, center.ability.extra.targets)
     return {vars = card_vars}
   end,
