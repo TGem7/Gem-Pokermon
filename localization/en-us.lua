@@ -41,14 +41,13 @@ return {
             j_Gem_sceptile = {
                 name = "Sceptile",
                 text = {
-                    "{C:attention}+#3#{} hand size, {C:attention}Nature: {C:inactive}({C:attention}#5#, #6#, #7#{C:inactive}){}",
-                    "Played {C:attention}Nature{} cards earn {C:money}$#1#{} when scored",
-                    "{br:5}ERROR - CONTACT STEAK",
-                    "Earn {C:money}$#1#{} at end of round for",
-                    "each other {X:grass,C:white}Grass{} card you have",
+                    "{C:attention}+#3#{} hand size, {C:attention}Nature: {C:inactive}({C:attention}#6#, #7#, #8#{C:inactive}){}",
+                    "Played {C:attention}Nature{} cards earn {C:money}$#1#{}",
+                    "plus {C:money}$#5#{} for each other {X:grass,C:white}Grass{}",
+                    "card you have when scored",
                     "{C:inactive,s:0.8}(includes Jokers and Energy cards){}",
-                    "{C:inactive}(Currently {C:money}$#4#{C:inactive}, Max of {C:money}$14{C:inactive}){}"
-                } 
+                    "{C:inactive}(Currently {C:money}$#4#{C:inactive} total){}"
+                }
             },
             j_Gem_mega_sceptile = {
                 name = "Mega Sceptile",
