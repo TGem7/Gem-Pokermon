@@ -1,6 +1,6 @@
-Mawile: Gain 0.5x mult for scoring steel cards, then remove scoring cards' enhancements
+Mawile: Gain 0.25x mult for scoring steel cards, then remove scoring cards' enhancements
 
-Mega Mawile: Gain 0.75x mult for scoring steel cards
+Mega Mawile: Gain 0.5x mult for scoring steel cards
 
 Mega Sceptile: Played nature cards give $3 for each grass joker you have
 
@@ -24,7 +24,7 @@ Indeedee-F: When sold, create a negative Psychic Energy card for each Psychic Jo
 
 Indeedee-M: 1x mult for each psychic joker or energy you have
 
-Alolan Marowak: 0.5x mult whenever a card is sold. Held Thick Clubs count as sold
+Alolan Marowak: 0.5x mult whenever a card is sold. Held Thick Clubs count as sold. Resets after each boss blind
 
 Joltik: +5 hazards(1 per 10), At end of round, turns one of your hazard cards held in hand to gold
 
