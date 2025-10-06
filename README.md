@@ -26,6 +26,6 @@ Indeedee-M: 1x mult for each psychic joker or energy you have
 
 Alolan Marowak: 0.4x mult whenever a card is sold. Held Thick Clubs count as sold. Resets after each boss blind
 
-Hisuian Growlithe: +12 mult whenever a flush is played
+Hisuian Growlithe: +8 mult if played hand contains a Flush or a Stone Card
 
-Hisuian Arcanine: Stone cards count as all suits. 2x mult when played hand contains a flush and a stone card
+Hisuian Arcanine: Stone cards count as all suits. +12 mult if played hand contains a flush. 2x mult when played flush contains a stone card
