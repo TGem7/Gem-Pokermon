@@ -24,8 +24,4 @@ Indeedee-F: When sold, create a negative Psychic Energy card for each Psychic Jo
 
 Indeedee-M: 1x mult for each psychic joker or energy you have
 
-Alolan Marowak: 0.5x mult whenever a card is sold. Held Thick Clubs count as sold. Resets after each boss blind
-
-Joltik: +5 hazards(1 per 10), At end of round, turns one of your hazard cards held in hand to gold
-
-Galvantula: +5 hazards(1 per 10), At end of round, turns every third hazard card held in hand to gold
+Alolan Marowak: 0.4x mult whenever a card is sold. Held Thick Clubs count as sold. Resets after each boss blind
