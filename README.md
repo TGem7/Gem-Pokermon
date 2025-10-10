@@ -29,3 +29,7 @@ Alolan Marowak: 0.4x mult whenever a card is sold. Held Thick Clubs count as sol
 Hisuian Growlithe: +8 mult if played hand contains a Flush or a Stone Card
 
 Hisuian Arcanine: Stone cards count as all suits. +12 mult if played hand contains a flush. 2x mult when played flush contains a stone card
+
+Milcery: Evolves after...shaking it?!
+
+Alcremie: $4 at end of round. When rerolling, 1 in 10 chance to create a Sweet
