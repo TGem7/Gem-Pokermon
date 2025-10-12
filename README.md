@@ -33,3 +33,9 @@ Hisuian Arcanine: Stone cards count as all suits. +12 mult if played hand contai
 Milcery: Evolves after...shaking it?!
 
 Alcremie: $4 at end of round. When rerolling, 1 in 10 chance to create a Sweet
+
+Budew: Baby, 0.5x mult, adds a random Flower Card at end of round
+
+Roselia: If first hand of round has a scoring flower card, convert the rightmost scored card to a Flower Card
+
+Roserade: If first hand of round has a scoring flower card, convert the rightmost scored card to a Flower Card. If scoring hand is exactly one Flower Card, give it either a red or blue seal
