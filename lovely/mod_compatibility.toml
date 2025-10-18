@@ -1,0 +1,68 @@
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = 0
+
+# Mudkip
+[[patches]]
+[patches.pattern]
+target = '=[SMODS Pokermon "pokemon/pokejokers_09.lua"]'
+pattern = '''
+  ptype = "Water",
+  atlas = "Pokedex3",
+  gen = 3,
+  starter = true,
+  perishable_compat = false,
+'''
+position = "at"
+payload = '''
+  ptype = "Water",
+  atlas = "Pokedex3",
+  gen = 3,
+  perishable_compat = false,
+'''
+match_indent = true
+
+# Torchic
+[[patches]]
+[patches.pattern]
+target = '=[SMODS Pokermon "pokemon/pokejokers_09.lua"]'
+pattern = '''
+  ptype = "Fire",
+  atlas = "Pokedex3",
+  gen = 3,
+  starter = true,
+  perishable_compat = false,
+'''
+position = "at"
+payload = '''
+  ptype = "Fire",
+  atlas = "Pokedex3",
+  gen = 3,
+  perishable_compat = false,
+'''
+match_indent = true
+
+# Treecko
+[[patches]]
+[patches.pattern]
+target = '=[SMODS Pokermon "pokemon/pokejokers_09.lua"]'
+pattern = '''
+  ptype = "Grass",
+  atlas = "Pokedex3",
+  gen = 3,
+  starter = true,
+  perishable_compat = false,
+'''
+position = "at"
+payload = '''
+  ptype = "Grass",
+  atlas = "Pokedex3",
+  gen = 3,
+  perishable_compat = false,
+'''
+match_indent = true
+
+
+
+
