@@ -26,6 +26,7 @@ local treecko={
   ptype = "Grass",
   atlas = "AtlasJokersBasicNatdex",
   gen = 3,
+  starter = true,
   perishable_compat = false,
   blueprint_compat = true,
   eternal_compat = true,
@@ -223,3 +224,4 @@ end
 return {name = "Treecko",
 list = list
 }
+
