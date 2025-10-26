@@ -6,6 +6,7 @@ return {
 	Mudkip = true,
 	Mawile = true,
 	Meditite = true,
+	Electrike = true,
 	Roselia = true,
 	Yamask = true,
 	Alcremie = true,
@@ -13,4 +14,5 @@ return {
 	Indeedee_F = true,
 	Indeedee_M = true,
 	Capsakid = true,
+
 }
