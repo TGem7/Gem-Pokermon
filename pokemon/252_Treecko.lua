@@ -220,14 +220,10 @@ local mega_sceptile={
   end
 }
 
-if Gem_config.Treecko then
-  list = {treecko, grovyle, sceptile, mega_sceptile}
-else list = {}
-end
-
-
-return {name = "Treecko",
-list = list
+return {
+  name = "Gem's Treecko",
+  enabled = Gem_config.Treecko or false,
+  list = { treecko, grovyle, sceptile, mega_sceptile }
 }
 
 
