@@ -39,3 +39,9 @@ Budew: Baby, 0.5x mult, adds a random Flower Card at end of round
 Roselia: If first hand of round has a scoring flower card, convert the rightmost scored card to a Flower Card
 
 Roserade: If first hand of round has a scoring flower card, convert the rightmost scored card to a Flower Card. If scoring hand is exactly one Flower Card, give it either a red or blue seal
+
+Electrike: Scored nature cards become gold
+
+Manectric: Scored nature cards become gold. If scored nature cards are already gold, give $4 plus $1 per lightning card you have
+
+Mega Manectric: Scored nature cards give 2x mult
