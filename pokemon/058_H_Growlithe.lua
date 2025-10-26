@@ -112,12 +112,9 @@ local hisuian_arcanine={
     end
   end,
 }
-if Gem_config.H_Growlithe then
-  list = {hisuian_growlithe, hisuian_arcanine}
-else list = {}
-end
 
-
-return {name = "H_Growlithe",
-list = list
+return {
+  name = "Gem's Hisuian Growlithe",
+  enabled = Gem_config.H_Growlithe or false,
+  list = { h_growlithe, h_arcanine }
 }
