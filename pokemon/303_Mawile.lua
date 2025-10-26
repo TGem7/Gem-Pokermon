@@ -107,12 +107,9 @@ local mega_mawile = {
   end
 }
 
-if Gem_config.Mawile then
-  list = {mawile, mega_mawile}
-else list = {}
-end
-
-
-return {name = "Mawile",
-list = list
+return {
+  name = "Gem's Mawile",
+  enabled = Gem_config.Mawile or false,
+  list = { mawile, mega_mawile }
 }
+
