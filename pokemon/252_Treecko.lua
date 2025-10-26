@@ -11,12 +11,15 @@ local treecko={
   name = "treecko",
   
   pos = PokemonSprites["treecko"].base.pos,
-  config = {extra = {money_mod = 1, money_earned = 0, targets = {{value = "Ace", id = "14"}, {value = "King", id = "13"}, {value = "Queen", id = "12"}}, h_size = 1, odds = 2}, evo_rqmt = 16},
+  config = {extra = {money_mod = 1, money_earned = 0, targets = {{value = "Ace", id = "14"}, {value = "King", id = "13"}, {value = "Queen", id = "12"}}, h_size = 1, num = 1, dem = 2}, evo_rqmt = 16},
   loc_vars = function(self, info_queue, card)
     type_tooltip(self, info_queue, card)
-    info_queue[#info_queue+1] = {set = 'Other', key = 'nature', vars = {"rank"}}
+    if pokermon_config.detailed_tooltips then
+      info_queue[#info_queue+1] = {set = 'Other', key = 'nature', vars = {"rank"}}
+    end
     local money_left = math.max(0, self.config.evo_rqmt - card.ability.extra.money_earned)
-    local card_vars = {card.ability.extra.money_mod, money_left, card.ability.extra.h_size, ''..(G.GAME and G.GAME.probabilities.normal or 1), card.ability.extra.odds}
+    local num, dem = SMODS.get_probability_vars(card, card.ability.extra.num, card.ability.extra.dem, 'treecko')
+    local card_vars = {card.ability.extra.money_mod, money_left, card.ability.extra.h_size, num, dem}
     add_target_cards_to_vars(card_vars, card.ability.extra.targets)
     return {vars = card_vars}
   end,
@@ -36,11 +39,13 @@ local treecko={
       if find_other_poke_or_energy_type(card, "Grass") > 0 then
         earn = true
       end
-      if (pseudorandom('treecko') < G.GAME.probabilities.normal/card.ability.extra.odds) or earn then
+      if (SMODS.pseudorandom_probability(card, 'treecko', card.ability.extra.num, card.ability.extra.dem, 'treecko')) or earn then
         for i=1, #card.ability.extra.targets do
           if context.other_card:get_id() == card.ability.extra.targets[i].id then
               local earned = ease_poke_dollars(card, "grovyle", card.ability.extra.money_mod, true)
-              card.ability.extra.money_earned = card.ability.extra.money_earned + earned
+              if not context.blueprint then
+                card.ability.extra.money_earned = card.ability.extra.money_earned + earned
+              end
               return {
                 dollars = earned,
                 card = card
@@ -49,7 +54,7 @@ local treecko={
         end
       end
     end
-    return scaling_evo(self, card, context, "j_Gem_grovyle", card.ability.extra.money_earned, self.config.evo_rqmt)
+    return scaling_evo(self, card, context, "j_poke_grovyle", card.ability.extra.money_earned, self.config.evo_rqmt)
   end,
   add_to_deck = function(self, card, from_debuff)
     G.hand:change_size(card.ability.extra.h_size)
@@ -224,4 +229,5 @@ end
 return {name = "Treecko",
 list = list
 }
+
 
