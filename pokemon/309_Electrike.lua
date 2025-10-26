@@ -50,6 +50,7 @@ local electrike = {
         end
       end
     end
+    return level_evo(self, card, context, "j_Gem_manectric")
   end,
   set_ability = function(self, card, initial, delay_sprites)
     if initial then
@@ -170,3 +171,4 @@ end
 return {name = "Electrike",
 list = list
 }
+
