@@ -134,12 +134,9 @@ local cofagrigus ={
   end
 }
 
-if Gem_config.Yamask then
+return {
+  name = "Gem's Yamask",
+  enabled = Gem_config.Yamask or false,
   list = {yamask, cofagrigus}
-else list = {}
-end
-
-
-return {name = "Yamask",
-list = list
 }
+
