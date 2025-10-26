@@ -157,12 +157,8 @@ local alolan_marowak={
   end,
 }
 
-if Gem_config.Cubone then
-  list = {cubone, marowak, alolan_marowak}
-else list = {}
-end
-
-
-return {name = "Cubone",
-list = list
+return {
+  name = "Gem's Cubone",
+  enabled = Gem_config.Cubone or false,
+  list = { cubone, marowak, alolan_marowak }
 }
