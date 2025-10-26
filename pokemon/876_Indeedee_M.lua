@@ -43,12 +43,9 @@ local indeedee_m={
   end
 }
 
-if Gem_config.Indeedee_M then
-  list = {indeedee_m}
-else list = {}
-end
-
-
-return {name = "Indeedee_M",
-list = list
+return {
+  name = "Gem's Indeedee_M",
+  enabled = Gem_config.Indeedee_M or false,
+  list = { indeedee_m }
 }
+
