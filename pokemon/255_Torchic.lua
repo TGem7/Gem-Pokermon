@@ -289,13 +289,10 @@ local mega_blaziken={
   end
 }
 
-if Gem_config.Torchic then
-  list = {torchic, combusken, blaziken, mega_blaziken}
-else list = {}
-end
-
-
-return {name = "Torchic",
-list = list
+return {
+  name = "Gem's Torchic",
+  enabled = Gem_config.Torchic or false,
+  list = { torchic, combusken, blaziken, mega_blaziken }
 }
+
 
