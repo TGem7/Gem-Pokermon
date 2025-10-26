@@ -116,5 +116,6 @@ local hisuian_arcanine={
 return {
   name = "Gem's Hisuian Growlithe",
   enabled = Gem_config.H_Growlithe or false,
-  list = { h_growlithe, h_arcanine }
+  list = { hisuian_growlithe, hisuian_arcanine }
 }
+
