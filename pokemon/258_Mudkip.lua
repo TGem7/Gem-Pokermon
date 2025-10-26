@@ -234,13 +234,11 @@ local mega_swampert={
   end
 }
 
-if Gem_config.Mudkip then
-  list = {mudkip, marshtomp, swampert, mega_swampert}
-else list = {}
-end
-
-
-return {name = "Mudkip",
-list = list
+return {
+  name = "Gem's Mudkip",
+  enabled = Gem_config.Mudkip or false,
+  list = { mudkip, marshtomp, swampert, mega_swampert }
 }
+
+
 
