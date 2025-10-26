@@ -77,12 +77,9 @@ local scovillain = {
   end
 }
 
-if Gem_config.Capsakid then
-  list = {capsakid, scovillain}
-else list = {}
-end
-
-
-return {name = "Capsakid",
-list = list
+return {
+  name = "Gem's Capsakid",
+  enabled = Gem_config.Capsakid or false,
+  list = { capsakid, scovillain }
 }
+
