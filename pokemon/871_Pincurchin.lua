@@ -47,12 +47,9 @@ local pincurchin={
   end,
 }
 
-if Gem_config.Pincurchin then
-  list = {pincurchin}
-else list = {}
-end
-
-
-return {name = "Pincurchin",
-list = list
+return {
+  name = "Gem's Pincurchin",
+  enabled = Gem_config.Pincurchin or false,
+  list = { pincurchin }
 }
+
