@@ -162,13 +162,10 @@ local mega_manectric = {
   end
 }
 
-if Gem_config.Electrike then
-  list = {electrike, manectric, mega_manectric}
-else list = {}
-end
-
-
-return {name = "Electrike",
-list = list
+return {
+  name = "Gem's Electrike",
+  enabled = Gem_config.Electrike or false,
+  list = { electrike, manectric, mega_manectric }
 }
+
 
