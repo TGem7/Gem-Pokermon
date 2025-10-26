@@ -155,14 +155,9 @@ local roserade={
   end
 }
 
-
-
-if Gem_config.Roselia then
+return {
+  name = "Gem's Roselia",
+  enabled = Gem_config.Roselia or false,
   list = {budew, roselia, roserade}
-else list = {}
-end
-
-
-return {name = "Roselia",
-list = list
 }
+
