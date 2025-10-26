@@ -6,55 +6,6 @@ function table.contains(table, element)
   end
   return false
 end
--- Hisuian Growlithe 058
-local hisuian_growlithe={
-  name = "hisuian_growlithe", 
-  pos = {x = 14, y = 5},
-  config = {extra = {mult = 8}},
-  loc_vars = function(self, info_queue, center)
-    type_tooltip(self, info_queue, center)
-    if pokermon_config.detailed_tooltips then
-      info_queue[#info_queue+1] = G.P_CENTERS.c_poke_firestone
-    end
-    return {vars = {center.ability.extra.mult}}
-  end,
-  rarity = 2, 
-  cost = 5, 
-  item_req = "firestone",
-  stage = "Basic", 
-  ptype = "Earth",
-  atlas = "AtlasJokersBasicGen01",
-  gen = 1,
-  blueprint_compat = true,
-  calculate = function(self, card, context)
-    if context.cardarea == G.jokers and context.scoring_hand then
-      if context.joker_main and next(context.poker_hands['Flush']) then
-        return {
-          message = localize{type = 'variable', key = 'a_mult', vars = {card.ability.extra.mult}}, 
-          colour = G.C.MULT,
-          mult_mod = card.ability.extra.mult
-        }
-      end
-    end
-    if context.cardarea == G.jokers and context.scoring_hand then
-      if context.joker_main then
-        for k, v in pairs(context.scoring_hand) do
-            if SMODS.has_enhancement(v, 'm_stone') then
-              bonus = true
-            end
-        end
-        if bonus then
-          return {
-            message = localize{type = 'variable', key = 'a_mult', vars = {card.ability.extra.mult}}, 
-            colour = G.C.MULT,
-            mult_mod = card.ability.extra.mult
-          }
-        end
-      end
-    end
-    return item_evo(self, card, context, "j_Gem_hisuian_arcanine")
-  end,
-}
 
 -- Meditite
 local meditite={
@@ -246,12 +197,9 @@ local mega_medicham={
   end,
 }
 
-if Gem_config.Meditite then
-  list = {meditite, medicham, mega_medicham}
-else list = {}
-end
-
-
-return {name = "Meditite",
-list = list
+return {
+  name = "Gem's Meditite",
+  enabled = Gem_config.Meditite or false,
+  list = { meditite, medicham, mega_medicham }
 }
+
