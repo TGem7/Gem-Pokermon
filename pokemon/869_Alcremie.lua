@@ -356,12 +356,9 @@ local alcremie_ribbon = {
  end
 }
 
-if Gem_config.Alcremie then
+return {
+  name = "Gem's Alcremie",
+  enabled = Gem_config.Alcremie or false,
   list = {milcery, alcremie, alcremie_berry, alcremie_love, alcremie_star, alcremie_clover, alcremie_flower, alcremie_ribbon}
-else list = {}
-end
-
-
-return {name = "Alcremie",
-list = list
 }
+
