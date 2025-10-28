@@ -45,3 +45,9 @@ Electrike: Scored nature cards become gold
 Manectric: Scored nature cards become gold. If scored nature cards are already gold, give $4 plus $1 per lightning card you have
 
 Mega Manectric: Scored nature cards give 2x mult
+
+Carvanha: 2x mult if played hand has already been played this round
+
+Sharpedo: 2x mult if played hand has already been played this round, increases by 1x when hand is played
+
+Mega Sharpedo: Cards give 2x mult when scored if played hand has already been played this round
