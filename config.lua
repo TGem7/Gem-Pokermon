@@ -8,6 +8,7 @@ return {
 	Meditite = true,
 	Electrike = true,
 	Roselia = true,
+	Carvanha = true,
 	Yamask = true,
 	Alcremie = true,
 	Pincurchin = true,
@@ -16,3 +17,4 @@ return {
 	Capsakid = true,
 
 }
+
