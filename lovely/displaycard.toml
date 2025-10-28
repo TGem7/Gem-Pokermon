@@ -1,0 +1,38 @@
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = 0
+
+# Disable family view on display cards
+# This is probably going to break the next time they update their UI.
+[[patches]]
+[patches.pattern]
+target = '=[SMODS Pokermon "pokeui.lua"]'
+position = "after"
+match_indent = true
+pattern = '''local selected = G.jokers.highlighted[1]'''
+payload = '''if selected.is_display_card then return end'''
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS Pokermon "pokeui.lua"]'
+position = "after"
+match_indent = true
+pattern = '''local clicked = self.hovering.target or self.focused.target'''
+payload = '''if clicked.is_display_card then return end'''
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS Pokermon "pokeui.lua"]'
+position = "after"
+match_indent = true
+pattern = '''local target_card = G.double_clicked_card'''
+payload = '''if target_card.is_display_card then return end'''
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS Pokermon "pokeui.lua"]'
+position = "after"
+match_indent = true
+pattern = '''local clicked = self.focused.target'''
+payload = '''if clicked.is_display_card then return end'''
