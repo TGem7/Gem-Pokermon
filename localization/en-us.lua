@@ -337,8 +337,7 @@ return {
                     "Earn {C:money}$#1#{} at end of round",
                     "{br:4}ERROR - CONTACT STEAK",
                     "Rerolls have a {C:green}#2# in #3#{} chance",
-                    "to create a {C:attention}Sweet{}",
-                    "{C:inactive,s:0.8}(Must have room)",
+                    "to add a {C:attention}Sweet{} to the shop",
                 }
             },
             j_Gem_alcremie_berry = {
