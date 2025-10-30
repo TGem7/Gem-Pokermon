@@ -75,6 +75,38 @@ local milcery = {
   end
 }
 
+local berry_item_list = { "c_Gem_berrysweet", "c_Gem_lovesweet", "c_Gem_starsweet", "c_Gem_cloversweet", "c_Gem_flowersweet", "c_Gem_ribbonsweet" }
+
+local get_availaberries = function()
+  local availaberries = {}
+  for _, berry in ipairs(berry_item_list) do
+    if #SMODS.find_card(berry) == 0 then availaberries[#availaberries+1] = berry end
+  end
+  if #availaberries > 0 then
+    return availaberries
+  else
+    return { "c_Gem_berrysweet" }
+  end
+end
+
+local get_random_availaberry = function()
+  return pseudorandom_element(get_availaberries(), pseudoseed('alcremie'))
+end
+
+local add_shop_card = function(key)
+  local card = SMODS.create_card { area = G.shop_jokers, key = key }
+  -- Steak's code to fix 1 slot shop bugs
+  if G.GAME.shop.joker_max == 1 then
+    G.shop_jokers.config.card_limit = G.GAME.shop.joker_max + 1
+    G.shop_jokers.T.w = math.min((G.GAME.shop.joker_max + 1)*1.02*G.CARD_W,4.08*G.CARD_W)
+    G.shop:recalculate()
+  end
+
+  G.shop_jokers:emplace(card)
+  card.cost = 0
+  create_shop_card_ui(card)
+  card:juice_up()
+end
 
 --  Alcremie 869
 local alcremie = {
@@ -98,43 +130,8 @@ local alcremie = {
   calculate = function(self, card, context)
     if context.reroll_shop and not context.blueprint then
       if SMODS.pseudorandom_probability(card, 'alcremie', card.ability.extra.num, card.ability.extra.dem, 'alcremie') then
-        if #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
-            if pseudorandom('alcremie') < .17 then
-              set = "Item"
-              message = "poke_plus_pokeitem"
-              colour = G.ARGS.LOC_COLOURS.item
-              conname = "c_Gem_berrysweet"
-            elseif pseudorandom('alcremie') > .17 and pseudorandom('alcremie') < .34 then
-              set = "Item"
-              message = "poke_plus_pokeitem"
-              colour = G.ARGS.LOC_COLOURS.item
-              conname = "c_Gem_lovesweet"
-            elseif pseudorandom('alcremie') > .34 and pseudorandom('alcremie') < .51 then
-              set = "Item"
-              message = "poke_plus_pokeitem"
-              colour = G.ARGS.LOC_COLOURS.item
-              conname = "c_Gem_starsweet"
-            elseif pseudorandom('alcremie') > .51 and pseudorandom('alcremie') < .68 then
-              set = "Item"
-              message = "poke_plus_pokeitem"
-              colour = G.ARGS.LOC_COLOURS.item
-              conname = "c_Gem_cloversweet"
-            elseif pseudorandom('alcremie') > .68 and pseudorandom('alcremie') < .85 then
-              set = "Item"
-              message = "poke_plus_pokeitem"
-              colour = G.ARGS.LOC_COLOURS.item
-              conname = "c_Gem_flowersweet"
-            else
-              set = "Item"
-              message = "poke_plus_pokeitem"
-              colour = G.ARGS.LOC_COLOURS.item
-              conname = "c_Gem_ribbonsweet"
-            end
-            local _card = create_card(set, G.consumeables, nil, nil, nil, nil, conname)
-            _card:add_to_deck()
-            G.consumeables:emplace(_card)
-            card_eval_status_text(_card, 'extra', nil, nil, nil, {message = localize(message), colour = colour})
-        end
+        add_shop_card(get_random_availaberry())
+        SMODS.calculate_effect({ message = localize('poke_plus_shop'), colour = G.C.GREEN }, card)
       end
     end
   end,
