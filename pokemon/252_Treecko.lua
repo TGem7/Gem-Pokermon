@@ -54,7 +54,7 @@ local treecko={
         end
       end
     end
-    return scaling_evo(self, card, context, "j_poke_grovyle", card.ability.extra.money_earned, self.config.evo_rqmt)
+    return scaling_evo(self, card, context, "j_Gem_grovyle", card.ability.extra.money_earned, self.config.evo_rqmt)
   end,
   add_to_deck = function(self, card, from_debuff)
     G.hand:change_size(card.ability.extra.h_size)
