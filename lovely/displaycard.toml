@@ -19,7 +19,7 @@ target = '=[SMODS Pokermon "pokeui.lua"]'
 position = "after"
 match_indent = true
 pattern = '''local clicked = self.hovering.target or self.focused.target'''
-payload = '''if clicked.is_display_card then return end'''
+payload = '''if clicked and clicked.is_display_card then return end'''
 
 [[patches]]
 [patches.pattern]
@@ -35,4 +35,4 @@ target = '=[SMODS Pokermon "pokeui.lua"]'
 position = "after"
 match_indent = true
 pattern = '''local clicked = self.focused.target'''
-payload = '''if clicked.is_display_card then return end'''
+payload = '''if clicked and clicked.is_display_card then return end'''
