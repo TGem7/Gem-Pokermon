@@ -267,7 +267,7 @@ return {
                 text = {
                     "{X:mult,C:white}X#1#{} Mult per {X:psychic,C:white}Psychic{} card",
                     "{C:inactive,s:0.8}(includes Jokers and Energy cards){}",
-                    "{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive} Mult){}",
+                    "{C:inactive}(Currently {X:mult,C:white}X#3#{C:inactive} Mult){}",
                 } 
             },
             j_Gem_capsakid = {
