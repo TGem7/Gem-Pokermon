@@ -244,7 +244,7 @@ local alcremie_star = {
 local alcremie_clover = {
   name = "alcremie_clover", 
   pos = {x = 2, y = 5},
-  config = {extra = {num = 1, dem = 5, money_mod = 3, money_earned = 0, rounds = 1}},
+  config = {extra = {num = 1, dem = 5, money_mod = 2, money_earned = 0, rounds = 1}},
   loc_vars = function(self, info_queue, center)
     type_tooltip(self, info_queue, center)
     return {vars = {center.ability.extra.num, center.ability.extra.dem, center.ability.extra.money_mod, center.ability.extra.money_earned, center.ability.extra.rounds}}
@@ -358,4 +358,5 @@ return {
   enabled = Gem_config.Alcremie or false,
   list = {milcery, alcremie, alcremie_berry, alcremie_love, alcremie_star, alcremie_clover, alcremie_flower, alcremie_ribbon}
 }
+
 
