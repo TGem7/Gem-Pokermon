@@ -203,7 +203,7 @@ local mega_sceptile={
     if context.individual and not context.end_of_round and context.cardarea == G.play and not context.other_card.debuff then
       for i=1, #card.ability.extra.targets do
         if context.other_card:get_id() == card.ability.extra.targets[i].id then
-            local earned = ease_poke_dollars(card, "mega_sceptile", math.min(14, find_other_poke_or_energy_type(card, "Grass") * card.ability.extra.money_mod + card.ability.extra.money_mod), true) 
+            local earned = ease_poke_dollars(card, "mega_sceptile", math.min(14, (find_other_poke_or_energy_type(card, "Grass") + find_other_poke_or_energy_type(card, "Dragon")) * card.ability.extra.money_mod + card.ability.extra.money_mod), true) 
             card.ability.extra.money_earned = card.ability.extra.money_earned + earned
             return {
               dollars = earned,
@@ -225,5 +225,6 @@ return {
   enabled = Gem_config.Treecko or false,
   list = { treecko, grovyle, sceptile, mega_sceptile }
 }
+
 
 
