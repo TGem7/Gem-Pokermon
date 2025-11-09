@@ -233,7 +233,7 @@ local mega_blaziken={
   
   pos = {x = 2, y = 4},
   soul_pos = {x = 3, y = 4},
-  config = {extra = {Xmult = .25, cards_discarded = 0, targets = {{value = "Ace", id = "14"}, {value = "King", id = "13"}, {value = "Queen", id = "12"}}}},
+  config = {extra = {Xmult = .2, cards_discarded = 0, targets = {{value = "Ace", id = "14"}, {value = "King", id = "13"}, {value = "Queen", id = "12"}}}},
   loc_vars = function(self, info_queue, center)
     type_tooltip(self, info_queue, center)
     info_queue[#info_queue+1] = {set = 'Other', key = 'nature', vars = {"rank"}}
@@ -294,5 +294,6 @@ return {
   enabled = Gem_config.Torchic or false,
   list = { torchic, combusken, blaziken, mega_blaziken }
 }
+
 
 
