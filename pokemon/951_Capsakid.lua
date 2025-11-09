@@ -44,7 +44,7 @@ local scovillain = {
   name = "scovillain",
   
   pos = PokemonSprites["scovillain"].base.pos,
-  config = {extra = {money = 2, mult = 4}},
+  config = {extra = {money = 3, mult = 4}},
   loc_vars = function(self, info_queue, center)
     type_tooltip(self, info_queue, center)
     return {vars = {center.ability.extra.money, center.ability.extra.mult}}
@@ -82,4 +82,5 @@ return {
   enabled = Gem_config.Capsakid or false,
   list = { capsakid, scovillain }
 }
+
 
