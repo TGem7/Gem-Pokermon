@@ -4,7 +4,7 @@ GEM = {}
 --Load all Atlas
 SMODS.Atlas({
     key = "modicon",
-    path = "icon.png",
+    path = "nephrite_icon.png",
     px = 32,
     py = 32
 })
