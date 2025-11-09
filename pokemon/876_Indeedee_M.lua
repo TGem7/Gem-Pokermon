@@ -12,13 +12,12 @@ local indeedee_m={
   name = "indeedee_m", 
   
   pos = {x = 12, y = 8}, 
-  config = {extra = {Xmult = 1}},
+  config = {extra = {Xmult = 1, Xmult_mod = 1}},
   loc_vars = function(self, info_queue, center)
     type_tooltip(self, info_queue, center)
     local card = center
-    local Xmult = card.ability.extra.Xmult * (find_other_poke_or_energy_type(card, "Psychic", true))
-    local card_vars = {center.ability.extra.Xmult, Xmult}
-    return {vars = card_vars}
+    local Xmult = card.ability.extra.Xmult + (card.ability.extra.Xmult_mod * (find_other_poke_or_energy_type(card, "Psychic", true)))
+    return {vars = {center.ability.extra.Xmult, center.ability.extra.Xmult_mod, Xmult}}
   end,
   rarity = 3,
   cost = 8,
@@ -32,7 +31,7 @@ local indeedee_m={
   calculate = function(self, card, context)
     if context.cardarea == G.jokers and context.scoring_hand then
       if context.joker_main then
-        local Xmult = 1 + card.ability.extra.Xmult * (find_other_poke_or_energy_type(card, "Psychic", true))
+        local Xmult = card.ability.extra.Xmult + (card.ability.extra.Xmult_mod * (find_other_poke_or_energy_type(card, "Psychic", true)))
         return {
           message = localize('poke_expanding_force_ex'), 
           colour = G.C.MULT,
@@ -48,5 +47,6 @@ return {
   enabled = Gem_config.Indeedee_M or false,
   list = { indeedee_m }
 }
+
 
 
