@@ -265,7 +265,7 @@ return {
             j_Gem_indeedee_m = {
                 name = "Indeedee M",
                 text = {
-                    "{X:mult,C:white}X#1#{} Mult per other {X:psychic,C:white}Psychic{} card",
+                    "{X:mult,C:white}X#1#{} Mult per {X:psychic,C:white}Psychic{} card",
                     "{C:inactive,s:0.8}(includes Jokers and Energy cards){}",
                     "{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive} Mult){}",
                 } 
