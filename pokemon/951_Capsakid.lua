@@ -50,6 +50,7 @@ local scovillain = {
     if pokermon_config.detailed_tooltips then
       info_queue[#info_queue+1] = G.P_CENTERS.m_mult
       info_queue[#info_queue+1] = G.P_CENTERS.m_gold
+    end
     return {vars = {center.ability.extra.money, center.ability.extra.mult}}
   end,
   rarity = "poke_safari", 
@@ -85,6 +86,7 @@ return {
   enabled = Gem_config.Capsakid or false,
   list = { capsakid, scovillain }
 }
+
 
 
 
