@@ -15,8 +15,8 @@ SMODS.Atlas({
   py = 95
 }):register()
 SMODS.Atlas({
-  key = "gem_sweets",
-  path = "gem_sweets.png",
+  key = "Gem_sweets",
+  path = "Gem_sweets.png",
   px = 71,
   py = 95
 }):register()
