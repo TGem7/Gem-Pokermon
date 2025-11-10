@@ -42,16 +42,14 @@ return {
             j_Gem_mawile = {
                 name = "Mawile",
                 text = {
-                    "Gain {X:mult,C:white}X#2#{} for scoring {C:attention}Steel{} cards",
-                    "Then remove scoring card {C:dark_edition}Enhancements",
-                    "{C:inactive}(Currently {X:mult,C:white}X#1#{C:inactive})",
+                    "If played hand is exactly {C:attention}1{} card,",
+                    "destroy it and make a {C:attention}Steel{} copy"
                 } 
             },
             j_Gem_mega_mawile = {
                 name = "Mega Mawile",
                 text = {
-                    "Gain {X:mult,C:white}X#2#{} for scoring {C:attention}Steel{} cards",
-                    "{C:inactive}(Currently {X:mult,C:white}X#1#{C:inactive})",
+                    "{C:attention}Steel{} cards give {C:attention}squared{} {X:mult,C:white}XMult{}"
                 }
             },
             j_Gem_treecko = {
