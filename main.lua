@@ -21,24 +21,6 @@ SMODS.Atlas({
   py = 95
 }):register()
 
---Required by the pokemon family function (right click on a pokemon joker)
-pokermon.add_family({"treecko", "grovyle", "sceptile", "mega_sceptile"})
-pokermon.add_family({"torchic", "combusken", "blaziken", "mega_blaziken"})
-pokermon.add_family({"mudkip", "marshtomp", "swampert", "mega_swampert"})
-pokermon.add_family({"mawile", "mega_mawile"})
-pokermon.add_family({"meditite", "medicham", "mega_medicham"})
-pokermon.add_family({"electrike", "manectric", "mega_manectric"})
-pokermon.add_family({"budew", "roselia", "roserade"})
-pokermon.add_family({"carvanha", "sharpedo", "mega_sharpedo"})
-pokermon.add_family({"hisuian_growlithe", "hisuian_arcanine"})
-pokermon.add_family({"cubone", "marowak", "alolan_marowak"})
-pokermon.add_family({"yamask", "cofagrigus"})
-pokermon.add_family({"milcery", "alcremie", "alcremie_berry", "alcremie_love", "alcremie_star", "alcremie_clover", "alcremie_flower", "alcremie_ribbon"})
-pokermon.add_family({"pincurchin"})
-pokermon.add_family({"indeedee_f"})
-pokermon.add_family({"indeedee_m"})
-pokermon.add_family({"capsakid", "scovillain"})
-
 Gem_config = SMODS.current_mod.config
 mod_dir = ''..SMODS.current_mod.path
 if (SMODS.Mods["Pokermon"] or {}).can_load then
@@ -73,6 +55,40 @@ for _, file in ipairs(pfiles) do
     end
   end
 end
+
+--Required by the pokemon family function (right click on a pokemon joker)
+local hoenn_starters = {}
+local name_lists = {
+  {"treecko", "grovyle", "sceptile", "mega_sceptile"},
+  {"torchic", "combusken", "blaziken", "mega_blaziken"},
+  {"mudkip", "marshtomp", "swampert", "mega_swampert"},
+  {"mawile", "mega_mawile"},
+  {"meditite", "medicham", "mega_medicham"},
+  {"electrike", "manectric", "mega_manectric"},
+  {"budew", "roselia", "roserade"},
+  {"carvanha", "sharpedo", "mega_sharpedo"},
+  {"hisuian_growlithe", "hisuian_arcanine"},
+  {"cubone", "marowak", "alolan_marowak"},
+  {"yamask", "cofagrigus"},
+  {"milcery", "alcremie", "alcremie_berry", "alcremie_love", "alcremie_star", "alcremie_clover", "alcremie_flower", "alcremie_ribbon"},
+  {"pincurchin"},
+  {"indeedee_f"},
+  {"indeedee_m"},
+  {"capsakid", "scovillain"},
+}
+
+for i, list in ipairs(name_lists) do
+  pokermon.add_family(list)
+  -- Dex Ordering for Pokermon Dip
+  if (SMODS.Mods["NachosPokermonDip"] or {}).can_load and PkmnDip and PkmnDip.dex_order_groups then
+    if i > 3 then PkmnDip.dex_order_groups[#PkmnDip.dex_order_groups+1] = list
+    else for k, name in ipairs(list) do table.insert(hoenn_starters, name) end end
+  end
+end
+
+-- The Hoenn Starters are annoying because the vanilla copies technically still exist
+if (SMODS.Mods["NachosPokermonDip"] or {}).can_load and PkmnDip and PkmnDip.dex_order_groups then
+  PkmnDip.dex_order_groups[#PkmnDip.dex_order_groups+1] = hoenn_starters end
 
 -- Load consumables
 local pconsumables = NFS.getDirectoryItems(mod_dir.."consumables")
