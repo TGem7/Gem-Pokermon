@@ -12,60 +12,52 @@ local mawile={
   name = "mawile", 
   
   pos = PokemonSprites["mawile"].base.pos,
-  config = {extra = {Xmult = 1, Xmult_mod = .25, eaten = 0}},
+  config = { extra = { copy = 1 } },
   loc_vars = function(self, info_queue, card)
     type_tooltip(self, info_queue, card)
-    info_queue[#info_queue + 1] = {set = 'Other', key = 'mega_poke'}
-    return { vars = { card.ability.extra.Xmult, card.ability.extra.Xmult_mod, card.ability.extra.eaten } }
+    if pokermon_config.detailed_tooltips then
+      info_queue[#info_queue+1] = G.P_CENTERS.m_steel
+      info_queue[#info_queue + 1] = {set = 'Other', key = 'mega_poke'}
+    end
+      return { vars = { card.ability.extra.copy } }
   end,
   rarity = 3, 
   cost = 8, 
-  enhancement_gate = 'm_steel',
   stage = "Basic", 
   ptype = "Metal",
   atlas = "AtlasJokersBasicNatdex",
   gen = 3,
   blueprint_compat = true,
   calculate = function(self, card, context)
-    if context.cardarea == G.jokers and context.before and not context.blueprint then
-      local x_count = 0 
-      local enhanced = {}
-      for k, v in ipairs(context.scoring_hand) do
-          if v.config.center ~= G.P_CENTERS.c_base and not v.debuff and not v.vampired then 
-              enhanced[#enhanced+1] = v
-              v.vampired = true
-              if v.config.center == G.P_CENTERS.m_steel then
-                x_count = x_count + 1
-              end
-
-              v:set_ability(G.P_CENTERS.c_base, nil, true)
-              G.E_MANAGER:add_event(Event({
-                  func = function()
-                      v:juice_up()
-                      v.vampired = nil
-                      return true
-                  end
-              })) 
-              card.ability.extra.eaten = card.ability.extra.eaten + 1
-          end
-      end
-
-      if #enhanced > 0 then 
-          if x_count > 0 then
-            card.ability.extra.Xmult = card.ability.extra.Xmult + card.ability.extra.Xmult_mod * x_count
-          end
-      end
-    end
-    if context.cardarea == G.jokers and context.scoring_hand then
-      if context.joker_main then
+        if context.before and #context.full_hand == 1 then
+            G.playing_card = (G.playing_card and G.playing_card + 1) or 1
+              local copy = copy_card(context.full_hand[1], nil, nil, G.playing_card)
+              copy:set_ability(G.P_CENTERS.m_steel, nil, true)
+              poke_add_card(copy, card)
+            return {
+                message = localize('k_copied_ex'),
+                colour = G.C.CHIPS,
+                func = function() -- This is for timing purposes, it runs after the message
+                    G.E_MANAGER:add_event(Event({
+                        func = function()
+                            SMODS.calculate_context({ playing_card_added = true, cards = { card_copied } })
+                            return true
+                        end
+                    }))
+                end
+            }
+        end
+        if context.final_scoring_step and #context.full_hand == 1 and not context.blueprint then
+             context.full_hand[1].mawile_remove = card
+             card:juice_up()
+        end
+        if context.destroy_card and context.destroy_card.mawile_remove == card and not context.blueprint then
+        context.destroy_card.to_be_removed_by = nil
         return {
-         message = localize { type = 'variable', key = 'a_xmult', vars = { card.ability.extra.Xmult } },
-        colour = G.C.XMULT,
-        Xmult_mod = card.ability.extra.Xmult
+          remove = true
         }
       end
-    end
-  end,
+   end,
   megas = { "mega_mawile" },
 }
 -- Mega Mawile 303
@@ -74,11 +66,13 @@ local mega_mawile = {
   
   pos = { x = 10, y = 4 },
   soul_pos =  {x = 11, y = 4 },
-  config = {extra = {Xmult = 1, Xmult_mod = .5}},
-  loc_vars = function(self, info_queue, card)
-    type_tooltip(self, info_queue, card)
-    info_queue[#info_queue + 1] = {set = 'Other', key = 'mega_poke'}
-    return { vars = { card.ability.extra.Xmult, card.ability.extra.Xmult_mod } }
+  config = {extra = {}},
+  loc_vars = function(self, info_queue, center)
+    type_tooltip(self, info_queue, center)
+    if pokermon_config.detailed_tooltips then
+      info_queue[#info_queue+1] = G.P_CENTERS.m_steel
+    end
+    return { vars = {  } }
   end,
   rarity = "poke_mega",
   cost = 12,
@@ -86,25 +80,9 @@ local mega_mawile = {
   ptype = "Metal",
   atlas = "AtlasJokersBasicGen03",
   gen = 3,
-  blueprint_compat = true,
+  blueprint_compat = false,
   calculate = function(self, card, context)
-    if context.cardarea == G.jokers and context.before and not context.blueprint then
-      for k, v in ipairs(context.scoring_hand) do
-        if v.config.center == G.P_CENTERS.m_steel and not v.debuff then
-          card.ability.extra.Xmult = card.ability.extra.Xmult + card.ability.extra.Xmult_mod
-        end
-      end
-    end
-    if context.cardarea == G.jokers and context.scoring_hand then
-      if context.joker_main then
-        return {
-         message = localize { type = 'variable', key = 'a_xmult', vars = { card.ability.extra.Xmult } },
-        colour = G.C.XMULT,
-        Xmult_mod = card.ability.extra.Xmult
-        }
-      end
-    end
-  end
+  end,
 }
 
 return {
@@ -112,4 +90,6 @@ return {
   enabled = Gem_config.Mawile or false,
   list = { mawile, mega_mawile }
 }
+
+
 
