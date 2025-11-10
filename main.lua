@@ -14,7 +14,12 @@ SMODS.Atlas({
   px = 71,
   py = 95
 }):register()
-
+SMODS.Atlas({
+  key = "maelmc_mart",
+  path = "maelmc_mart.png",
+  px = 71,
+  py = 95
+}):register()
 
 --Required by the pokemon family function (right click on a pokemon joker)
 pokermon.add_family({"treecko", "grovyle", "sceptile", "mega_sceptile"})
