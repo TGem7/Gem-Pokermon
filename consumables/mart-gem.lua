@@ -16,7 +16,7 @@ local berrysweet = {
   name = "berrysweet",
   key = "berrysweet",
   set = "Item",
-  pos = {x = 0, y = 0},
+  pos = {x = 1, y = 0},
   atlas = "Gem_sweets",
   cost = 4,
   evo_item = true,
