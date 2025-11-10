@@ -155,6 +155,7 @@ local alcremie_berry = {
   atlas = "AtlasJokersBasicGen08",
   gen = 8,
   aux_poke = true,
+  no_collection = true,
   perishable_compat = true,
   blueprint_compat = false,
   eternal_compat = true,
@@ -187,6 +188,7 @@ local alcremie_love = {
   atlas = "AtlasJokersBasicGen08",
   gen = 8,
   aux_poke = true,
+  no_collection = true,
   perishable_compat = true,
   blueprint_compat = true,
   eternal_compat = true,
@@ -225,6 +227,7 @@ local alcremie_star = {
   atlas = "AtlasJokersBasicGen08",
   gen = 8,
   aux_poke = true,
+  no_collection = true,
   perishable_compat = true,
   blueprint_compat = true,
   eternal_compat = true,
@@ -257,6 +260,7 @@ local alcremie_clover = {
   atlas = "AtlasJokersBasicGen08",
   gen = 8,
   aux_poke = true,
+  no_collection = true,
   perishable_compat = true,
   blueprint_compat = true,
   eternal_compat = true,
@@ -297,6 +301,7 @@ local alcremie_flower = {
   atlas = "AtlasJokersBasicGen08",
   gen = 8,
   aux_poke = true,
+  no_collection = true,
   perishable_compat = true,
   blueprint_compat = true,
   eternal_compat = true,
@@ -333,6 +338,7 @@ local alcremie_ribbon = {
   atlas = "AtlasJokersBasicGen08",
   gen = 8,
   aux_poke = true,
+  no_collection = true,
   perishable_compat = true,
   blueprint_compat = true,
   eternal_compat = true,
@@ -359,6 +365,7 @@ return {
   enabled = Gem_config.Alcremie or false,
   list = {milcery, alcremie, alcremie_berry, alcremie_love, alcremie_star, alcremie_clover, alcremie_flower, alcremie_ribbon}
 }
+
 
 
 
