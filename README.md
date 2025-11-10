@@ -1,6 +1,6 @@
-Mawile: Gain 0.25x mult for scoring steel cards, then remove scoring cards' enhancements
+Mawile: If played hand is exactly 1 card, destroy it and make a Steel copy
 
-Mega Mawile: Gain 0.5x mult for scoring steel cards
+Mega Mawile: Steel cards give squared xmult
 
 Mega Sceptile: Played nature cards give $3 for each grass joker you have
 
