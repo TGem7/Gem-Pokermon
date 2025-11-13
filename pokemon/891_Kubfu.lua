@@ -113,10 +113,10 @@ local urshifu={
   name = "urshifu", 
   pos = {x = 2, y = 10}, 
   soul_pos = {x = 3, y = 10}, 
-  config = {extra = {xmult = 1, xmult_mod = .2, xmult_original = 1}},
+  config = {extra = {Xmult = 1, Xmult_mod = .2, Xmult_original = 1}},
   loc_vars = function(self, info_queue, center)
     type_tooltip(self, info_queue, center)
-    return {vars = {center.ability.extra.xmult, center.ability.extra.xmult_mod, center.ability.extra.xmult_original}}
+    return {vars = {center.ability.extra.Xmult, center.ability.extra.Xmult_mod, center.ability.extra.Xmult_original}}
   end,
   rarity = 4, 
   cost = 20, 
@@ -128,9 +128,9 @@ local urshifu={
   perishable_compat = true,
   blueprint_compat = true,
   calculate = function(self, card, context)
-  -- .15 xmult whenever a card is discarded
+  -- .15 Xmult whenever a card is discarded
     if context.discard and not context.blueprint then
-      card.ability.extra.xmult = card.ability.extra.xmult + card.ability.extra.xmult_mod
+      card.ability.extra.Xmult = card.ability.extra.Xmult + card.ability.extra.Xmult_mod
         return {
           message = localize('k_upgrade_ex'),
           colour = G.C.RED,
@@ -143,24 +143,24 @@ local urshifu={
       local eval = function() return G.GAME.current_round.hands_played == 0 and not G.RESET_JIGGLES end
       juice_card_until(card, eval, true)
     end
--- Give xmult, doubled on first hand of round
+-- Give Xmult, doubled on first hand of round
     if context.cardarea == G.jokers then
       if context.before and not context.blueprint and G.GAME.current_round.hands_played == 0 then
-            xmult = card.ability.extra.xmult * 2
+            Xmult = card.ability.extra.Xmult * 2
       elseif context.joker_main then
           return {
-              xmult = xmult
+              Xmult = Xmult
           }
       end
     end
--- Undouble the xmult
+-- Undouble the Xmult
     if context.after and not context.blueprint and G.GAME.current_round.hands_played == 0 then
-          xmult = xmult/2
+          Xmult = Xmult/2
     end
 
 -- Reset xmult 
     if not context.repetition and not context.individual and context.end_of_round and not context.blueprint then
-      card.ability.extra.xmult = card.ability.extra.xmult_original
+      card.ability.extra.Xmult = card.ability.extra.Xmult_original
       card_eval_status_text(card, 'extra', nil, nil, nil, {message = localize('k_reset'), colour = G.C.RED})
     end
   end,
@@ -223,6 +223,7 @@ return {
   enabled = Gem_config.Kubfu or false,
   list = { kubfu, urshifu, urshifu_rapid }
 }
+
 
 
 
