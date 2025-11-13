@@ -110,7 +110,7 @@ local kubfu={
 
 --Urshifu Single Strike 892
 local urshifu_single_strike={
-  name = "urshifu_single_strike", 
+  name = "urshifu_single_strike",
   pos = {x = 2, y = 10}, 
   soul_pos = {x = 3, y = 10}, 
   config = {extra = {Xmult = 1, Xmult_mod = .2, Xmult_original = 1}},
@@ -223,6 +223,7 @@ return {
   enabled = Gem_config.Kubfu or false,
   list = { kubfu, urshifu_single_strike, urshifu_rapid_strike }
 }
+
 
 
 
