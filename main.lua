@@ -75,7 +75,7 @@ local name_lists = {
   {"indeedee_f"},
   {"indeedee_m"},
   {"capsakid", "scovillain"},
-  {"kubfu", "urshifu", "urshifu_rapid"},
+  {"kubfu", "urshifu_single_strike", "urshifu_rapid_strike"},
 }
 
 for i, list in ipairs(name_lists) do
