@@ -492,7 +492,7 @@ return {
                     "Gives a Scroll of Darkness after {C:mult}#6#{} discards used",
                 }
             },
-            j_Gem_urshifu = {
+            j_Gem_urshifu_single_strike = {
                 name = "Urshifu Single Strike",
                 text = {
                     "Gains {X:mult,C:white} X#2# {} Mult per card discarded this round",
@@ -500,7 +500,7 @@ return {
                     "{C:inactive}(Currently {X:mult,C:white}X#1#{C:inactive} Mult){}",
                 }
             },
-            j_Gem_urshifu_rapid = {
+            j_Gem_urshifu_rapid_strike = {
                 name = "Urshifu Rapid Strike",
                 text = {
                     "Scored cards give {C:chips}+#2# chips{} per hand played this round",
