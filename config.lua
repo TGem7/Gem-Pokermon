@@ -14,7 +14,9 @@ return {
 	Pincurchin = true,
 	Indeedee_F = true,
 	Indeedee_M = true,
+	Kubfu = true,
 	Capsakid = true,
 
 }
+
 
