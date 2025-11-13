@@ -165,7 +165,7 @@ local scrollofdarkness = {
   end,
   use = function(self, card)
     set_spoon_item(card)
-    poke_evolve(find_leftmost_or_highlighted("j_Gem_kubfu"), "j_Gem_urshifu")
+    poke_evolve(find_leftmost_or_highlighted("j_Gem_kubfu"), "j_Gem_urshifu_single_strike")
   end,
   in_pool = function(self)
     return false
@@ -187,7 +187,7 @@ local scrollofwaters = {
   end,
   use = function(self, card)
     set_spoon_item(card)
-    poke_evolve(find_leftmost_or_highlighted("j_Gem_kubfu"), "j_Gem_urshifu_rapid")
+    poke_evolve(find_leftmost_or_highlighted("j_Gem_kubfu"), "j_Gem_urshifu_rapid_strike")
   end,
   in_pool = function(self)
     return false
