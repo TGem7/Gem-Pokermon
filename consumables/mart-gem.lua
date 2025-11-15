@@ -108,7 +108,7 @@ local flowersweet = {
   name = "flowersweet",
   key = "flowersweet",
   set = "Item",
-  pos = {x = 2, y = 0},
+  pos = {x = 3, y = 0},
   atlas = "Gem_sweets",
   artist = "Emma",
   cost = 4,
