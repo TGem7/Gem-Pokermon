@@ -1,5 +1,6 @@
 return {
 	H_Growlithe = true,
+	A_Grimer = true,
 	Cubone = true,
 	Treecko = true,
 	Torchic = true,
@@ -19,6 +20,7 @@ return {
 	Capsakid = true,
 
 }
+
 
 
 
