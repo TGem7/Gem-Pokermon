@@ -24,7 +24,7 @@ local sizzlipede = {
   atlas = "AtlasJokersBasicNatdex",
   gen = 8,
   perishable_compat = true,
-  blueprint_compat = false,
+  blueprint_compat = true,
   eternal_compat = true,
   calculate = function(self, card, context)
     if context.cardarea == G.jokers and context.scoring_hand then
@@ -65,7 +65,7 @@ local centiskorch = {
   atlas = "AtlasJokersBasicNatdex",
   gen = 8,
   perishable_compat = true,
-  blueprint_compat = false,
+  blueprint_compat = true,
   eternal_compat = true,
   calculate = function(self, card, context)
     if context.cardarea == G.jokers and context.scoring_hand then
@@ -94,6 +94,7 @@ return {
   enabled = Gem_config.Sizzlipede or false,
   list = {sizzlipede, centiskorch}
 }
+
 
 
 
