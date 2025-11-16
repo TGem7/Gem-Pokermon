@@ -10,7 +10,7 @@ end
 local alolan_grimer = {
   name = "alolan_grimer",
   pos = {x = 14, y = 3},
-  config = {extra = {rounds = 4}},
+  config = {extra = {rounds = 5}},
   loc_vars = function(self, info_queue, center)
     type_tooltip(self, info_queue, center)
     return {vars = {center.ability.extra.rounds}}
@@ -107,5 +107,6 @@ return {
   enabled = Gem_config.A_Grimer or false,
   list = {alolan_grimer, alolan_muk}
 }
+
 
 
