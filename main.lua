@@ -56,6 +56,21 @@ for _, file in ipairs(pfiles) do
   end
 end
 
+--Load Joker Display if the mod is enabled
+if (SMODS.Mods["JokerDisplay"] or {}).can_load then
+  local jokerdisplays = NFS.getDirectoryItems(mod_dir.."jokerdisplay")
+
+  for _, file in ipairs(jokerdisplays) do
+    sendDebugMessage ("The file is: "..file)
+    local helper, load_error = SMODS.load_file("jokerdisplay/"..file)
+    if load_error then
+      sendDebugMessage ("The error is: "..load_error)
+    else
+      helper()
+    end
+  end
+end
+
 --Required by the pokemon family function (right click on a pokemon joker)
 local hoenn_starters = {}
 local name_lists = {
@@ -70,6 +85,7 @@ local name_lists = {
   {"hisuian_growlithe", "hisuian_arcanine"},
   {"cubone", "marowak", "alolan_marowak"},
   {"yamask", "cofagrigus"},
+  {"sizzlipede", "centiskorch"},
   {"milcery", "alcremie", "alcremie_berry", "alcremie_love", "alcremie_star", "alcremie_clover", "alcremie_flower", "alcremie_ribbon"},
   {"pincurchin"},
   {"indeedee_f"},
