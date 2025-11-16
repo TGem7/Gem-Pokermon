@@ -542,6 +542,32 @@ return {
                     "{C:green}#1# in #2#{} chance for all three"
                 }
             },
+            j_Gem_sandile = {
+                name = "Sandile",
+                text = {
+                    "{C:money}$#1#{} at end of round",
+                    "Increase by {C:money}$#2#{} when a",
+                    "small or big blind is beaten",
+                    "{C:inactive}(Evolves at {C:money}$#1#{C:inactive} / $5)",
+                }
+            },
+            j_Gem_krokorok = {
+                name = "Krokorok",
+                text = {
+                    "{C:money}$#1#{} at end of round",
+                    "Increase by {X:mult,C:white} X#3# {} when a",
+                    "small or big blind is beaten",
+                    "{C:inactive}(Evolves at {X:mult,C:white}X#2#{C:inactive} / X2 Mult)",
+                }
+            },
+            j_Gem_krookodile = {
+                name = "Krookodile",
+                text = {
+                    "{X:mult,C:white} X#3# {} Mult, {C:money}$#1#{} at end of round",
+                    "Increase by {X:mult,C:white} X#4# {} and {C:money}$#2#{}",
+                    "when a boss is beaten",
+                }
+            },
         },
     },
   misc = {
