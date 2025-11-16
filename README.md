@@ -61,3 +61,7 @@ Kubfu: +10 mult per hand played or discard used this round
 Urshifu-Single: Gains 0.2x Mult per card discarded this round. Gives double on first hand of round
 
 Urshifu-Rapid: Scored cards give +20 chips per hand played this round. On last hand of round, scored cards gain half of those chips permanently instead
+
+Sizzlipede: +1 mult if scored hand contains 5 cards
+
+Centiskorch: +2 mult if scored hand contains 5 cards
