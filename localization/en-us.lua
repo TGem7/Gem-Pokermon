@@ -517,6 +517,21 @@ return {
                     "{C:inactive}(Currently {C:chips}+#1#{C:inactive} total)",
                 }
             },
+            j_Gem_alolan_grimer = {
+                name = "Alolan Grimer",
+                text = {
+                    "When round begins, add a random {C:attention}playing card{}",
+                    "with an {C:attention}enhancement{} or {C:attention}seal{} to your hand",
+                }
+            },
+            j_Gem_alolan_muk = {
+                name = "Alolan Muk",
+                text = {
+                    "When round begins, add a random {C:attention}playing card{}",
+                    "with an {C:attention}enhancement{}, {C:attention}seal{}, or {C:attention}edition{} to your hand.",
+                    "{C:green}#1# in #2#{} chance for all three"
+                }
+            },
         },
     },
   misc = {
