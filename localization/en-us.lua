@@ -335,6 +335,13 @@ return {
                     "or more {C:attention}Gold{} cards"
                 },
             },
+            j_Gem_centiskorch = {
+                name = "Centiskorch",
+                text = {
+                    "{C:mult}+#2#{} Mult if scoring hand contains {C:attention}5 cards{}",
+                    "{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)",
+                }
+            },
             j_Gem_milcery = {
                 name = "Milcery",
                 text = {
