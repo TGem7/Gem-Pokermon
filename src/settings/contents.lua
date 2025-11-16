@@ -19,12 +19,13 @@ return {
         { list = { 'j_Gem_budew', 'j_Gem_roselia', 'j_Gem_roserade' }, label = function() return localize { type = "name_text", set = "Joker", key = "j_Gem_roselia" } end, config_key = "Roselia" },
         { list = { 'j_Gem_carvanha', 'j_Gem_sharpedo', 'j_Gem_mega_sharpedo' }, label = function() return localize { type = "name_text", set = "Joker", key = "j_Gem_carvanha" } end, config_key = "Carvanha" },
         { list = { 'j_Gem_yamask', 'j_Gem_cofagrigus' }, label = function() return localize { type = "name_text", set = "Joker", key = "j_Gem_yamask" } end, config_key = "Yamask" },
-        { list = { 'j_Gem_milcery', 'j_Gem_alcremie' }, label = function() return localize { type = "name_text", set = "Joker", key = "j_Gem_alcremie" } end, config_key = "Alcremie" },
+        { list = { 'j_Gem_sizzlipede', 'j_Gem_centiskorch' }, label = function() return localize { type = "name_text", set = "Joker", key = "j_Gem_sizzlipede" } end, config_key = "Sizzlipede" },
       }
     },
     {
       title = function() return localize("Gem_pokemon3") end,
       tiles = {
+        { list = { 'j_Gem_milcery', 'j_Gem_alcremie' }, label = function() return localize { type = "name_text", set = "Joker", key = "j_Gem_alcremie" } end, config_key = "Alcremie" },
         { list = { 'j_Gem_pincurchin' }, label = function() return localize { type = "name_text", set = "Joker", key = "j_Gem_pincurchin" } end, config_key = "Pincurchin" },
         { list = { 'j_Gem_indeedee_f' }, label = function() return localize { type = "name_text", set = "Joker", key = "j_Gem_indeedee_f" } end, config_key = "Indeedee_F" },
         { list = { 'j_Gem_indeedee_m' }, label = function() return localize { type = "name_text", set = "Joker", key = "j_Gem_indeedee_m" } end, config_key = "Indeedee_M" },
