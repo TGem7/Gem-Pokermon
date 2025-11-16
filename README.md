@@ -65,3 +65,9 @@ Urshifu-Rapid: Scored cards give +20 chips per hand played this round. On last h
 Sizzlipede: +1 mult if scored hand contains 5 cards
 
 Centiskorch: +2 mult if scored hand contains 5 cards
+
+Sandile: $1 at end of round. Increases by $1 whenever small blind or big blind is beaten
+
+Krokorok: $5 at end of round. Increase mult by 0.25x whenever small blind or big blind is beaten
+
+Krookodile: 2x mult, $5 at end of round. Increase by 0.5x and $2 whenever boss blind is beaten
