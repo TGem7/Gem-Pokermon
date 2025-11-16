@@ -61,7 +61,7 @@ return {
             j_Gem_mega_mawile = {
                 name = "Mega Mawile",
                 text = {
-                    "{C:attention}Steel{} cards give {C:attention}squared{} {X:mult,C:white}XMult{}"
+                    "{C:attention}Steel{} cards give their {X:mult,C:white}XMult{} {C:attention}squared{}"
                 }
             },
             j_Gem_treecko = {
