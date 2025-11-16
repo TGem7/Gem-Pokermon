@@ -51,3 +51,13 @@ Carvanha: 2x mult if played hand has already been played this round
 Sharpedo: 2x mult if played hand has already been played this round, increases by 1x when hand is played
 
 Mega Sharpedo: Cards give 2x mult when scored if played hand has already been played this round
+
+Yamask: All played face cards become gold cards when scored
+
+Cofagrigus: All played face cards become gold cards when scored. Applies a purple seal to leftmost card in scoring hand after discarding 3 or more Gold cards
+
+Kubfu: +10 mult per hand played or discard used this round
+
+Urshifu-Single: Gains 0.2x Mult per card discarded this round. Gives double on first hand of round
+
+Urshifu-Rapid: Scored cards give +20 chips per hand played this round. On last hand of round, scored cards gain half of those chips permanently instead
