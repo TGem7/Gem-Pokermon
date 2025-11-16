@@ -83,6 +83,7 @@ local name_lists = {
   {"budew", "roselia", "roserade"},
   {"carvanha", "sharpedo", "mega_sharpedo"},
   {"hisuian_growlithe", "hisuian_arcanine"},
+  {"alolan_grimer", "alolan_muk"},
   {"cubone", "marowak", "alolan_marowak"},
   {"yamask", "cofagrigus"},
   {"sizzlipede", "centiskorch"},
