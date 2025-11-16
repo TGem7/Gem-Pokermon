@@ -522,6 +522,7 @@ return {
                 text = {
                     "When round begins, add a random {C:attention}playing card{}",
                     "with an {C:attention}enhancement{} or {C:attention}seal{} to your hand",
+                    "{C:inactive}(Evolves after {C:attention}#1#{C:inactive} rounds)",
                 }
             },
             j_Gem_alolan_muk = {
