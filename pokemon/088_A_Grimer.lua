@@ -10,13 +10,13 @@ end
 local alolan_grimer = {
   name = "alolan_grimer",
   pos = {x = 14, y = 3},
-  config = {extra = {}},
+  config = {extra = {rounds = 4}},
   loc_vars = function(self, info_queue, center)
     type_tooltip(self, info_queue, center)
-    return {vars = {}}
+    return {vars = {center.ability.extra.rounds}}
   end,
-  rarity = 1,
-  cost = 4,
+  rarity = 2,
+  cost = 6,
   stage = "Basic",
   ptype = "Dark",
   atlas = "AtlasJokersBasicGen01",
@@ -44,6 +44,7 @@ local alolan_grimer = {
                 SMODS.calculate_context({ playing_card_added = true, cards = { _card } })
           end
         end
+        return level_evo(self, card, context, "j_Gem_alolan_muk")
     end,
 }
 
@@ -106,4 +107,5 @@ return {
   enabled = Gem_config.A_Grimer or false,
   list = {alolan_grimer, alolan_muk}
 }
+
 
