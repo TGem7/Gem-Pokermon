@@ -23,7 +23,7 @@ local sizzlipede = {
   ptype = "Fire",
   atlas = "AtlasJokersBasicNatdex",
   gen = 8,
-  perishable_compat = true,
+  perishable_compat = false,
   blueprint_compat = true,
   eternal_compat = true,
   calculate = function(self, card, context)
@@ -64,7 +64,7 @@ local centiskorch = {
   ptype = "Fire",
   atlas = "AtlasJokersBasicNatdex",
   gen = 8,
-  perishable_compat = true,
+  perishable_compat = false,
   blueprint_compat = true,
   eternal_compat = true,
   calculate = function(self, card, context)
@@ -94,6 +94,7 @@ return {
   enabled = Gem_config.Sizzlipede or false,
   list = {sizzlipede, centiskorch}
 }
+
 
 
 
