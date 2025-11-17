@@ -66,8 +66,8 @@ Sizzlipede: +1 mult if scored hand contains 5 cards
 
 Centiskorch: +2 mult if scored hand contains 5 cards
 
-Sandile: $1 at end of round. Increases by $1 whenever small blind or big blind is beaten
+Sandile: $1 at end of round. Increases by $1 whenever small blind is defeated
 
-Krokorok: $5 at end of round. Increase mult by 0.25x whenever small blind or big blind is beaten
+Krokorok: $3 at end of round. Increase mult by 0.25x whenever big blind is defeated
 
-Krookodile: 2x mult, $5 at end of round. Increase by 0.5x and $2 whenever boss blind is beaten
+Krookodile: 2x mult, $3 at end of round. Increase by 0.5x and $1 whenever boss blind is defeated
