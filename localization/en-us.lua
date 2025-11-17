@@ -547,8 +547,8 @@ return {
                 text = {
                     "{C:money}$#1#{} at end of round",
                     "Increase by {C:money}$#2#{} when a",
-                    "small or big blind is beaten",
-                    "{C:inactive}(Evolves at {C:money}$#1#{C:inactive} / $5)",
+                    "{C:attention}Small Blind{} is defeated",
+                    "{C:inactive}(Evolves at {C:money}$#1#{C:inactive} / $3)",
                 }
             },
             j_Gem_krokorok = {
@@ -556,7 +556,7 @@ return {
                 text = {
                     "{C:money}$#1#{} at end of round",
                     "Increase by {X:mult,C:white} X#3# {} when a",
-                    "small or big blind is beaten",
+                    "{C:attention}Big Blind{} is defeated",
                     "{C:inactive}(Evolves at {X:mult,C:white}X#2#{C:inactive} / X2 Mult)",
                 }
             },
@@ -565,7 +565,7 @@ return {
                 text = {
                     "{X:mult,C:white} X#3# {} Mult, {C:money}$#1#{} at end of round",
                     "Increase by {X:mult,C:white} X#4# {} and {C:money}$#2#{}",
-                    "when a boss is beaten",
+                    "when a {C:attention}Boss Blind{} is defeated",
                 }
             },
         },
