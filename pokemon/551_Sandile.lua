@@ -14,7 +14,7 @@ local sandile={
   name = "sandile",
   
   pos = PokemonSprites["sandile"].base.pos,
-  config = { extra = { money = 1, money_mod = 1}, evo_rqmt = 5 },
+  config = { extra = { money = 1, money_mod = 1}, evo_rqmt = 3 },
   loc_vars = function(self, info_queue, center)
     type_tooltip(self, info_queue, center)
     return { vars = { center.ability.extra.money, center.ability.extra.money_mod } }
@@ -30,7 +30,7 @@ local sandile={
   eternal_compat = true,
     calculate = function(self, card, context)
     -- Scale money
-        if context.end_of_round and context.game_over == false and context.main_eval and not G.GAME.blind.boss then
+        if context.end_of_round and context.game_over == false and context.main_eval and G.GAME.blind.name == 'Small Blind' then
             card.ability.extra.money = card.ability.extra.money + card.ability.extra.money_mod
             return {
                 message = localize('k_upgrade_ex'),
@@ -51,7 +51,7 @@ local krokorok={
   name = "krokorok",
   
   pos = PokemonSprites["krokorok"].base.pos,
-  config = { extra = { money = 5, Xmult = 1, Xmult_mod = .25}, evo_rqmt = 2 },
+  config = { extra = { money = 3, Xmult = 1, Xmult_mod = .5}, evo_rqmt = 2 },
   loc_vars = function(self, info_queue, center)
     type_tooltip(self, info_queue, center)
     return { vars = { center.ability.extra.money, center.ability.extra.Xmult, center.ability.extra.Xmult_mod } }
@@ -73,7 +73,7 @@ local krokorok={
             }
         end
     -- Scale Xmult
-        if context.end_of_round and context.game_over == false and context.main_eval and not G.GAME.blind.boss then
+        if context.end_of_round and context.game_over == false and context.main_eval and G.GAME.blind.name == 'Big Blind' then
             card.ability.extra.Xmult = card.ability.extra.Xmult + card.ability.extra.Xmult_mod
             return {
                 message = localize('k_upgrade_ex'),
@@ -94,7 +94,7 @@ local krookodile={
   name = "krookodile",
   
   pos = PokemonSprites["krookodile"].base.pos,
-  config = { extra = { money = 5, money_mod = 2, Xmult = 2, Xmult_mod = .5} },
+  config = { extra = { money = 3, money_mod = 1, Xmult = 2, Xmult_mod = .5} },
   loc_vars = function(self, info_queue, card)
     type_tooltip(self, info_queue, card)
     return { vars = { card.ability.extra.money, card.ability.extra.money_mod, card.ability.extra.Xmult, card.ability.extra.Xmult_mod } }
@@ -136,3 +136,4 @@ return {
   enabled = Gem_config.Sandile or false,
   list = { sandile, krokorok, krookodile}
 }
+
