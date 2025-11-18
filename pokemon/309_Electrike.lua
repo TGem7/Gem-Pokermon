@@ -10,7 +10,8 @@ end
 --  Zeraora 807
 local zeraora = {
   name = "zeraora",
-  pos = PokemonSprites["zeraora"].base.pos,
+  pos = {x = 22, y = 54}, 
+  soul_pos = {x = 23, y = 54}, 
   config = {extra = {Xmult_multi = 1.2, Xmult_multi_mod = 0.1, money_mod = 3, money_increase = 1}},
   loc_vars = function(self, info_queue, center)
     type_tooltip(self, info_queue, center)
