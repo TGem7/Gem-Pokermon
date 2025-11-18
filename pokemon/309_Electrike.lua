@@ -30,7 +30,7 @@ local zeraora = {
             local plasma = (card, "zeraora", card.ability.extra.Xmult_multi + (find_other_poke_or_energy_type(card, "Lightning") * card.ability.extra.Xmult_multi_mod), true)
             local earned = ease_poke_dollars(card, "zeraora", card.ability.extra.money_mod + (find_other_poke_or_energy_type(card, "Lightning") * card.ability.extra.money_increase), true)
             return {
-               Xmult = card.ability.extra.Xmult_multi
+               Xmult = plasma,
               dollars = earned,
               card = card
             }
