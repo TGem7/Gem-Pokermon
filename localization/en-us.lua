@@ -568,6 +568,22 @@ return {
                     "when a {C:attention}Boss Blind{} is defeated",
                 }
             },
+            j_Gem_wailmer = {
+                name = "Wailmer",
+                text = {
+                    "{C:chips}+#1# Chips{} if {C:attention}scoring hand{} contains {C:attention}5 cards{}",
+                    "{C:inactive}(Evolves after {C:attention}#2#{C:inactive} rounds)",
+                }
+            },
+            j_Gem_wailord = {
+                name = "Wailord",
+                text = {
+                    "{C:chips}+#1# Chips{} if {C:attention}scoring hand{} contains {C:attention}5 cards{}",
+                    "{br:4}ERROR - CONTACT STEAK",
+                    "When a card scores over {C:chips}30{} {C:chips}chips{},",
+                    "increase this joker's {C:chips}chips{} by {C:chips}#2#{}"
+                }
+            },
         },
     },
   misc = {
