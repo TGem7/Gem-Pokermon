@@ -88,6 +88,7 @@ local name_lists = {
   {"yamask", "cofagrigus"},
   {"sandile", "krokorok", "krookodile"},
   {"sizzlipede", "centiskorch"},
+  {"wailmer", "wailord"},
   {"milcery", "alcremie", "alcremie_berry", "alcremie_love", "alcremie_star", "alcremie_clover", "alcremie_flower", "alcremie_ribbon"},
   {"pincurchin"},
   {"indeedee_f"},
