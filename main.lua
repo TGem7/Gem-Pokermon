@@ -90,6 +90,7 @@ local name_lists = {
   {"sizzlipede", "centiskorch"},
   {"wailmer", "wailord"},
   {"chingling", "chimecho"},
+  {"zeraora"},
   {"milcery", "alcremie", "alcremie_berry", "alcremie_love", "alcremie_star", "alcremie_clover", "alcremie_flower", "alcremie_ribbon"},
   {"pincurchin"},
   {"indeedee_f"},
