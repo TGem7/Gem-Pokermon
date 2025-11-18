@@ -14,6 +14,7 @@ return {
 	Chimecho = true,
 	Yamask = true,
 	Sandile = true,
+ Zeraora = true,
 	Sizzlipede = true, 
 	Alcremie = true,
 	Pincurchin = true,

@@ -81,7 +81,7 @@ local manectric = {
   atlas = "AtlasJokersBasicNatdex",
   gen = 3,
   perishable_compat = true,
-  blueprint_compat = false,
+  blueprint_compat = true,
   eternal_compat = true,
   calculate = function(self, card, context)
     if context.individual and not context.end_of_round and context.cardarea == G.play and not context.other_card.debuff and SMODS.has_enhancement(context.other_card, 'm_gold') then
@@ -141,7 +141,7 @@ local mega_manectric = {
   atlas = "AtlasJokersBasicGen03",
   gen = 3,
   perishable_compat = true,
-  blueprint_compat = false,
+  blueprint_compat = true,
   eternal_compat = true,
   calculate = function(self, card, context)
     if context.individual and not context.end_of_round and context.cardarea == G.play and not context.other_card.debuff and SMODS.has_enhancement(context.other_card, 'm_gold') then
