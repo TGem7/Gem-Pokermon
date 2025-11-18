@@ -584,6 +584,22 @@ return {
                     "increase this joker's {C:chips}chips{} by {C:chips}#2#{}"
                 }
             },
+            j_Gem_chingling = {
+                name = "Chingling",
+                text = {
+                  "{C:attention}Baby{}, {X:mult,C:white}X#1#{} Mult",
+                  "Creates a {C:dark_edition}Negative{} copy of",
+                  "{C:attention}Justice{} at end of round",
+                  "{C:inactive,s:0.8}(Evolves after {C:attention,s:0.8}#2#{C:inactive,s:0.8} rounds)",
+                }
+            },
+            j_Gem_chimecho = {
+                name = "Chimecho",
+                text = {
+                    "{C:green}#1# in #2#{} chance to create an {C:item}Item{} or",
+                    "{C:purple}Tarot{} card whenever a {C:attention}Glass{} card is scored",
+                }
+            },
         },
     },
   misc = {

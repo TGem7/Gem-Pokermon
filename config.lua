@@ -11,6 +11,7 @@ return {
 	Roselia = true,
 	Carvanha = true,
 	Wailmer = true,
+	Chimecho = true,
 	Yamask = true,
 	Sandile = true,
 	Sizzlipede = true, 
@@ -22,7 +23,6 @@ return {
 	Capsakid = true,
 
 }
-
 
 
 

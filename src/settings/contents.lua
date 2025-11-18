@@ -25,17 +25,18 @@ return {
     {
       title = function() return localize("Gem_pokemon3") end,
       tiles = {
+        { list = { 'j_Gem_chingling', 'j_Gem_chimecho' }, label = function() return localize { type = "name_text", set = "Joker", key = "j_Gem_chimecho" } end, config_key = "Chimecho" },
         { list = { 'j_Gem_sandile', 'j_Gem_krokorok', 'j_Gem_krookodile' }, label = function() return localize { type = "name_text", set = "Joker", key = "j_Gem_sandile" } end, config_key = "Sandile" },
         { list = { 'j_Gem_yamask', 'j_Gem_cofagrigus' }, label = function() return localize { type = "name_text", set = "Joker", key = "j_Gem_yamask" } end, config_key = "Yamask" },
         { list = { 'j_Gem_sizzlipede', 'j_Gem_centiskorch' }, label = function() return localize { type = "name_text", set = "Joker", key = "j_Gem_sizzlipede" } end, config_key = "Sizzlipede" },
         { list = { 'j_Gem_milcery', 'j_Gem_alcremie' }, label = function() return localize { type = "name_text", set = "Joker", key = "j_Gem_alcremie" } end, config_key = "Alcremie" },
         { list = { 'j_Gem_pincurchin' }, label = function() return localize { type = "name_text", set = "Joker", key = "j_Gem_pincurchin" } end, config_key = "Pincurchin" },
-        { list = { 'j_Gem_indeedee_f' }, label = function() return localize { type = "name_text", set = "Joker", key = "j_Gem_indeedee_f" } end, config_key = "Indeedee_F" },
       }
     },
     {
       title = function() return localize("Gem_pokemon4") end,
       tiles = {
+        { list = { 'j_Gem_indeedee_f' }, label = function() return localize { type = "name_text", set = "Joker", key = "j_Gem_indeedee_f" } end, config_key = "Indeedee_F" },
         { list = { 'j_Gem_indeedee_m' }, label = function() return localize { type = "name_text", set = "Joker", key = "j_Gem_indeedee_m" } end, config_key = "Indeedee_M" },
         { list = { 'j_Gem_kubfu', 'j_Gem_urshifu_single_strike', 'j_Gem_urshifu_rapid_strike'  }, label = function() return localize { type = "name_text", set = "Joker", key = "j_Gem_kubfu" } end, config_key = "Kubfu" },
         { list = { 'j_Gem_capsakid', 'j_Gem_scovillain' }, label = function() return localize { type = "name_text", set = "Joker", key = "j_Gem_capsakid" } end, config_key = "Capsakid" },
