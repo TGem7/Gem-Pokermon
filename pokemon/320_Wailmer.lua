@@ -73,7 +73,7 @@ local wailord = {
     if context.individual and context.cardarea == G.play and not context.end_of_round then
       local total_chips = poke_total_chips(context.other_card)
       if total_chips >= 30 then
-        card.ability.extra.chips = card.ability.extra.chips + card.ability.extra.chips_mod
+        card.ability.extra.chips = card.ability.extra.chips + card.ability.extra.chip_mod
       end
     end
   end,
