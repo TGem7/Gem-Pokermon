@@ -37,11 +37,9 @@ local zeraora = {
     end
     if context.end_of_round and context.game_over == false and context.main_eval and G.GAME.blind.boss then
       if G.jokers and G.jokers.cards and #G.jokers.cards > 1 then
-        if has_type(G.jokers.cards[#G.jokers.cards]) then
-          apply_type_sticker(G.jokers.cards[1], get_type(G.jokers.cards[#G.jokers.cards]))
-          card:juice_up()
-          card_eval_status_text(G.jokers.cards[1], 'extra', nil, nil, nil, {message = localize("poke_tera_ex"), colour = G.C.SECONDARY_SET.Spectral})
-        end
+        apply_type_sticker(G.jokers.cards[1], "Lightning")
+        card:juice_up()
+        card_eval_status_text(G.jokers.cards[1], 'extra', nil, nil, nil, {message = localize("poke_tera_ex"), colour = G.C.SECONDARY_SET.Spectral})
       end
     end
   end,
