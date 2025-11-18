@@ -20,8 +20,8 @@ local chingling={
     end
     return {vars = {center.ability.extra.Xmult_minus, center.ability.extra.rounds}}
   end,
-  rarity = 2,
-  cost = 6,
+  rarity = 1,
+  cost = 4,
   stage = "Baby",
   ptype = "Psychic",
   atlas = "AtlasJokersBasicNatdex",
@@ -64,9 +64,9 @@ local chimecho = {
     local num, dem = SMODS.get_probability_vars(center, center.ability.extra.num, center.ability.extra.dem, 'alcremie')
     return {vars = {num, dem}}
   end,
-  rarity = 'poke_safari',
+  rarity = 2,
  enhancement_gate = 'm_glass',
-  cost = 8,
+  cost = 6,
   ptype = "Psychic",
   atlas = "AtlasJokersBasicNatdex",
   gen = 3,
