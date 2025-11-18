@@ -10,6 +10,7 @@ return {
 	Electrike = true,
 	Roselia = true,
 	Carvanha = true,
+	Wailmer = true,
 	Yamask = true,
 	Sandile = true,
 	Sizzlipede = true, 
@@ -21,6 +22,7 @@ return {
 	Capsakid = true,
 
 }
+
 
 
 
