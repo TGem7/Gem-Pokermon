@@ -32,7 +32,7 @@ local wailmer = {
         return {
           message = localize{type = 'variable', key = 'a_chips', vars = {card.ability.extra.chips}}, 
           colour = G.C.CHIPS,
-          chip_mod = card.ability.extra.chips,
+          chips = card.ability.extra.chips,
           level_evo(self, card, context, "j_Gem_wailord")
         }
       end
@@ -66,7 +66,7 @@ local wailord = {
         return {
           message = localize{type = 'variable', key = 'a_chips', vars = {card.ability.extra.chips}}, 
           colour = G.C.CHIPS,
-          chip_mod = card.ability.extra.chips
+          chips = card.ability.extra.chips
         }
       end
     end
