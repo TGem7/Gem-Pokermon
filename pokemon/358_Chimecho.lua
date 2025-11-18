@@ -65,6 +65,7 @@ local chimecho = {
     return {vars = {num, dem}}
   end,
   rarity = 'poke_safari',
+ enhancement_gate = 'm_glass',
   cost = 8,
   ptype = "Psychic",
   atlas = "AtlasJokersBasicNatdex",
