@@ -45,7 +45,7 @@ local wailmer = {
 local wailord = {
   name = "wailord",
   pos = {x = 10, y = 21},
-  config = { extra = { chips = 120, chips_mod = 10 } },
+  config = { extra = { chips = 120, chip_mod = 10 } },
   loc_vars = function(self, info_queue, center)
     type_tooltip(self, info_queue, center)
     return {vars = {center.ability.extra.chips, center.ability.extra.chips_mod}}
