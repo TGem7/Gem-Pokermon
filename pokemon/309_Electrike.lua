@@ -14,13 +14,7 @@ local zeraora = {
   config = {extra = {Xmult_multi = 1.2, Xmult_multi_mod = 0.1, money_mod = 3, money_increase = 1}},
   loc_vars = function(self, info_queue, center)
     type_tooltip(self, info_queue, center)
-    if pokermon_config.detailed_tooltips then
-      info_queue[#info_queue+1] = G.P_CENTERS.m_gold
-    end
-    local card_vars = {center.ability.extra.money_mod, center.ability.extra.money_increase}
-    add_target_cards_to_vars(card_vars, center.ability.extra.targets)
-    info_queue[#info_queue+1] = {set = 'Other', key = 'mega_poke'}
-    return {vars = card_vars}
+    return {center.ability.extra.Xmult_multi, center.ability.extra.Xmult_multi_mod, center.ability.extra.money_mod, center.ability.extra.money_increase}
   end,
   rarity = 4,
   cost = 20,
