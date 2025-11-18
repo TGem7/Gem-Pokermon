@@ -600,6 +600,16 @@ return {
                     "{C:purple}Tarot{} card whenever a {C:attention}Glass{} card is scored",
                 }
             },
+            j_Gem_zeraora = {
+                name = "Zeraora",
+                text = {
+                  "{C:attention}Scored cards{} give {X:mult,C:white}X#1#{} and {C:money}$#3#{}. Increases by",
+                  "{X:mult,C:white}X#2#{} and {C:money}$#4#{} for each each other {X:lightning, C:black}Lightning{} joker you have",
+                  "{br:4}ERROR - CONTACT STEAK",
+                  "After defeating a {C:attention}Boss Blind{}, turn your",
+                  "{C:attention}rightmost{} joker to {X:lightning, C:black}Lightning{} type",
+                }
+            },
         },
     },
   misc = {
