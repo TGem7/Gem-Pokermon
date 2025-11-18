@@ -55,7 +55,7 @@ local chingling={
 local chimecho = {
   name = "chimecho",
   pos = PokemonSprites["chimecho"].base.pos,
-  config = {extra = {num = 1, dem = 4}},
+  config = {extra = {num = 1, dem = 3}},
   loc_vars = function(self, info_queue, center)
     type_tooltip(self, info_queue, center)
     if pokermon_config.detailed_tooltips then
