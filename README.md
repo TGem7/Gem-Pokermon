@@ -75,3 +75,7 @@ Krookodile: 2x mult, $3 at end of round. Increase by 0.5x and $1 whenever boss b
 Wailmer: +80 chips if played hand contains 5 cards
 
 Wailord: +120 chips if played hand contains 5 cards. When a card scores over 30 chips, increase this joker's chips by 10 
+
+Chingling: Baby, 0.75x mult. Gives a negative Justice at end of round
+
+Chimecho: 1 in 4 chance to create an item or tarot card whenever a glass card is scored
