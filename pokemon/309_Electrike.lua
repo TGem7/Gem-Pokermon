@@ -22,7 +22,7 @@ local zeraora = {
     info_queue[#info_queue+1] = {set = 'Other', key = 'mega_poke'}
     return {vars = card_vars}
   end,
-  rarity = 3,
+  rarity = 4,
   cost = 20,
   stage = "Legendary",
   ptype = "Lightning",
