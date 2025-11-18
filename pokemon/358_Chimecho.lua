@@ -67,6 +67,7 @@ local chimecho = {
   rarity = "poke_safari", 
  enhancement_gate = 'm_glass',
   cost = 8,
+stage = "Basic",
   ptype = "Psychic",
   atlas = "AtlasJokersBasicNatdex",
   gen = 3,
