@@ -63,7 +63,7 @@ local electrike = {
 local manectric = {
   name = "manectric",
   pos = PokemonSprites["manectric"].base.pos,
-  config = {extra = {money_mod = 3, money_increase = 1, targets = {{value = "Ace", id = "14"}, {value = "King", id = "13"}, {value = "Queen", id = "12"}}}},
+  config = {extra = {money_mod = 2, money_increase = 1, targets = {{value = "Ace", id = "14"}, {value = "King", id = "13"}, {value = "Queen", id = "12"}}}},
   loc_vars = function(self, info_queue, center)
     type_tooltip(self, info_queue, center)
     if pokermon_config.detailed_tooltips then
