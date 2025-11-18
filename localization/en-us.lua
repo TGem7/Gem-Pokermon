@@ -607,7 +607,7 @@ return {
                   "{X:mult,C:white}X#2#{} and {C:money}$#4#{} for each each other {X:lightning, C:black}Lightning{} joker you have",
                   "{br:4}ERROR - CONTACT STEAK",
                   "After defeating a {C:attention}Boss Blind{}, turn your",
-                  "{C:attention}rightmost{} joker to {X:lightning, C:black}Lightning{} type",
+                  "{C:attention}leftmost{} joker to {X:lightning, C:black}Lightning{} type",
                 }
             },
         },
