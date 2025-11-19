@@ -48,7 +48,7 @@ local wailord = {
   config = { extra = { chips = 120, chip_mod = 10 } },
   loc_vars = function(self, info_queue, center)
     type_tooltip(self, info_queue, center)
-    return {vars = {center.ability.extra.chips, center.ability.extra.chips_mod}}
+    return {vars = {center.ability.extra.chips, center.ability.extra.chip_mod}}
   end,
   rarity = 2,
   cost = 6,
