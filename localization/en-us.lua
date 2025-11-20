@@ -84,6 +84,8 @@ return {
                     "Guaranteed if you have other {X:grass,C:white}Grass{} cards",
                     "{C:inactive,s:0.8}(includes Jokers and Energy cards){}",
                     "{C:inactive,s:0.8}(Evolves after earning {C:money,s:0.8}$#2#{C:inactive,s:0.8})",
+                }
+            },
                 
             j_Gem_sceptile = {
                 name = "Sceptile",
