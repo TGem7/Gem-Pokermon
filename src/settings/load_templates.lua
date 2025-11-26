@@ -3,6 +3,7 @@
 local poke_templates = {}
 
 local function load_template(item)
+  local custom_prefix = item.Gem_inject_prefix or "Gem"
   local custom_atlas = item.atlas and string.find(item.atlas, "Gem")
 
   if not item.atlas then
@@ -12,7 +13,7 @@ local function load_template(item)
 
   item.atlas = (custom_atlas and "Gem_" or "poke_") .. item.atlas
   item.set = 'Joker'
-  item.key = 'j_Gem_' .. item.name
+  item.key = 'j_' .. custom_prefix .. '_' .. item.name
   item.ability = item.config
 
   poke_templates[item.key] = item

@@ -30,6 +30,16 @@ end
 assert(SMODS.load_file("src/functions.lua"))()
 
 --Load pokemon file
+local load_pokemon_ref = pokermon.load_pokemon
+function pokermon.load_pokemon(item)
+  if item.Gem_inject_prefix then
+    item.key = item.Gem_inject_prefix .. '_' .. item.name
+    item.prefix_config = item.prefix_config or {}
+    item.prefix_config.key = { mod = false }
+  end
+  return load_pokemon_ref(item)
+end
+
 local pfiles = NFS.getDirectoryItems(mod_dir.."pokemon")
 
 for _, file in ipairs(pfiles) do
@@ -45,11 +55,9 @@ for _, file in ipairs(pfiles) do
      
       if curr_pokemon.list and #curr_pokemon.list > 0 then
         for i, item in ipairs(curr_pokemon.list) do
-          if string.find(item.atlas, "Gem") then
-            pokermon.Pokemon(item,"Gem",true)
-          else
-            pokermon.Pokemon(item,"Gem",false)
-          end
+          local custom_prefix = item.Gem_inject_prefix or "Gem"
+          local custom_atlas = item.atlas and string.find(item.atlas, "Gem")
+          pokermon.Pokemon(item, custom_prefix, custom_atlas)
         end
       end
     end
@@ -72,11 +80,7 @@ if (SMODS.Mods["JokerDisplay"] or {}).can_load then
 end
 
 --Required by the pokemon family function (right click on a pokemon joker)
-local hoenn_starters = {}
 local name_lists = {
-  {"treecko", "grovyle", "sceptile", "mega_sceptile"},
-  {"torchic", "combusken", "blaziken", "mega_blaziken"},
-  {"mudkip", "marshtomp", "swampert", "mega_swampert"},
   {"mawile", "mega_mawile"},
   {"meditite", "medicham", "mega_medicham"},
   {"electrike", "manectric", "mega_manectric"},
@@ -101,16 +105,7 @@ local name_lists = {
 
 for i, list in ipairs(name_lists) do
   pokermon.add_family(list)
-  -- Dex Ordering for Pokermon Dip
-  if (SMODS.Mods["NachosPokermonDip"] or {}).can_load and PkmnDip and PkmnDip.dex_order_groups then
-    if i > 3 then PkmnDip.dex_order_groups[#PkmnDip.dex_order_groups+1] = list
-    else for k, name in ipairs(list) do table.insert(hoenn_starters, name) end end
-  end
 end
-
--- The Hoenn Starters are annoying because the vanilla copies technically still exist
-if (SMODS.Mods["NachosPokermonDip"] or {}).can_load and PkmnDip and PkmnDip.dex_order_groups then
-  PkmnDip.dex_order_groups[#PkmnDip.dex_order_groups+1] = hoenn_starters end
 
 -- Load consumables
 local pconsumables = NFS.getDirectoryItems(mod_dir.."consumables")
@@ -132,6 +127,33 @@ for _, file in ipairs(pconsumables) do
     end
   end
 end
+
+--Add Hoenn megas to base families
+local family_injections = {
+  ["sceptile"] = "mega_sceptile",
+  ["blaziken"] = "mega_blaziken",
+  ["swampert"] = "mega_swampert",
+}
+
+for _, family in ipairs(pokermon.family) do
+  for i, member in ipairs(family) do
+    local payload = (type(member) == 'table' and family_injections[member.key]) or family_injections[member]
+    if payload then
+      table.insert(family, i + 1, payload)
+    end
+  end
+end
+
+--Add Dex Order support for injections
+G.E_MANAGER:add_event(Event({
+  func = function()
+    for _, payload in pairs(family_injections) do
+      pokermon.dex_order_groups[#pokermon.dex_order_groups+1] = { payload }
+    end
+    pokermon.dex_order_groups[#pokermon.dex_order_groups+1] = { 'cubone', 'marowak', 'alolan_marowak' }
+    return true
+  end
+}))
 
 --Load config tab setup file
 assert(SMODS.load_file("src/settings.lua"))()
@@ -165,139 +187,10 @@ SMODS.Joker:take_ownership('poke_marowak', -- object key (class prefix not requi
    true -- silent | suppresses mod badge
 )
 
-SMODS.Joker:take_ownership('poke_treecko', -- object key (class prefix not required)
-    { -- table of properties to change from the existing object
-	aux_poke = true,
-    no_collection = true,
-    custom_pool_func = true,
-    in_pool = function(self)
-        return false
-    end, 
-		-- more on this later
+SMODS.Joker:take_ownership('poke_sceptile', { megas = { 'mega_sceptile' } }, true)
+SMODS.Joker:take_ownership('poke_blaziken', { megas = { 'mega_blaziken' } }, true)
+SMODS.Joker:take_ownership('poke_swampert', { megas = { 'mega_swampert' } }, true)
 
-    },
-    true -- silent | suppresses mod badge
-)
-
-
-SMODS.Joker:take_ownership('poke_grovyle', -- object key (class prefix not required)
-    { -- table of properties to change from the existing object
-	aux_poke = true,
-    no_collection = true,
-    custom_pool_func = true,
-    in_pool = function(self)
-        return false
-    end,
-		-- more on this later
-
-    },
-   true -- silent | suppresses mod badge
-)
-
-
-SMODS.Joker:take_ownership('poke_sceptile', -- object key (class prefix not required)
-    { -- table of properties to change from the existing object
-	aux_poke = true,
-    no_collection = true,
-    custom_pool_func = true,
-    in_pool = function(self)
-        return false
-    end,
-		-- more on this later
-
-    },
-   true -- silent | suppresses mod badge
-)
-
-
-SMODS.Joker:take_ownership('poke_torchic', -- object key (class prefix not required)
-    { -- table of properties to change from the existing object
-	aux_poke = true,
-    no_collection = true,
-    custom_pool_func = true,
-    in_pool = function(self)
-        return false
-    end, 
-		-- more on this later
-
-    },
-    true -- silent | suppresses mod badge
-)
-
-
-SMODS.Joker:take_ownership('poke_combusken', -- object key (class prefix not required)
-    { -- table of properties to change from the existing object
-	aux_poke = true,
-    no_collection = true,
-    custom_pool_func = true,
-    in_pool = function(self)
-        return false
-    end,
-		-- more on this later
-
-    },
-   true -- silent | suppresses mod badge
-)
-
-
-SMODS.Joker:take_ownership('poke_blaziken', -- object key (class prefix not required)
-    { -- table of properties to change from the existing object
-	aux_poke = true,
-    no_collection = true,
-    custom_pool_func = true,
-    in_pool = function(self)
-        return false
-    end,
-		-- more on this later
-
-    },
-   true -- silent | suppresses mod badge
-)
-
-
-SMODS.Joker:take_ownership('poke_mudkip', -- object key (class prefix not required)
-    { -- table of properties to change from the existing object
-	aux_poke = true,
-    no_collection = true,
-    custom_pool_func = true,
-    in_pool = function(self)
-        return false
-    end, 
-		-- more on this later
-
-    },
-    true -- silent | suppresses mod badge
-)
-
-
-SMODS.Joker:take_ownership('poke_marshtomp', -- object key (class prefix not required)
-    { -- table of properties to change from the existing object
-	aux_poke = true,
-    no_collection = true,
-    custom_pool_func = true,
-    in_pool = function(self)
-        return false
-    end,
-		-- more on this later
-
-    },
-   true -- silent | suppresses mod badge
-)
-
-
-SMODS.Joker:take_ownership('poke_swampert', -- object key (class prefix not required)
-    { -- table of properties to change from the existing object
-	aux_poke = true,
-    no_collection = true,
-    custom_pool_func = true,
-    in_pool = function(self)
-        return false
-    end,
-		-- more on this later
-
-    },
-   true -- silent | suppresses mod badge
-)
 print("DEBUG: main.lua loaded")
 
 --doesnt work right now, ill figure it out later.
