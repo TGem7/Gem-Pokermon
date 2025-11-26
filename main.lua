@@ -107,15 +107,12 @@ local name_lists = {
   {"kubfu", "urshifu_single_strike", "urshifu_rapid_strike"},
 }
 
-G.E_MANAGER:add_event(Event({
-  func = function()
-    for i, list in ipairs(name_lists) do
-      pokermon.add_family(list)
-      pokermon.dex_order_groups[#pokermon.dex_order_groups+1] = list
-    end
-    return true
+for i, list in ipairs(name_lists) do
+  if #list > 1 then
+    pokermon.add_family(list)
   end
-}))
+  -- pokermon.dex_order_groups[#pokermon.dex_order_groups+1] = list
+end
 
 -- Load consumables
 local pconsumables = NFS.getDirectoryItems(mod_dir.."consumables")
@@ -134,6 +131,21 @@ for _, file in ipairs(pconsumables) do
         item.discovered = not pokermon_config.pokemon_discovery
         SMODS.Consumable(item)
       end
+    end
+  end
+end
+
+--Add Hoenn megas to base families
+local family_injections = {
+  ["sceptile"] = "mega_sceptile",
+  ["blaziken"] = "mega_blaziken",
+  ["swampert"] = "mega_swampert",
+}
+for _, family in ipairs(pokermon.family) do
+  for i, member in ipairs(family) do
+    local payload = (type(member) == 'table' and family_injections[member.key]) or family_injections[member]
+    if payload then
+      table.insert(family, i + 1, payload)
     end
   end
 end
