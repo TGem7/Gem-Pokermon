@@ -80,11 +80,7 @@ if (SMODS.Mods["JokerDisplay"] or {}).can_load then
 end
 
 --Required by the pokemon family function (right click on a pokemon joker)
-local hoenn_starters = {}
 local name_lists = {
-  {"mega_sceptile"},
-  {"mega_blaziken"},
-  {"mega_swampert"},
   {"mawile", "mega_mawile"},
   {"meditite", "medicham", "mega_medicham"},
   {"electrike", "manectric", "mega_manectric"},
@@ -108,10 +104,7 @@ local name_lists = {
 }
 
 for i, list in ipairs(name_lists) do
-  if #list > 1 then
-    pokermon.add_family(list)
-  end
-  -- pokermon.dex_order_groups[#pokermon.dex_order_groups+1] = list
+  pokermon.add_family(list)
 end
 
 -- Load consumables
@@ -141,6 +134,7 @@ local family_injections = {
   ["blaziken"] = "mega_blaziken",
   ["swampert"] = "mega_swampert",
 }
+
 for _, family in ipairs(pokermon.family) do
   for i, member in ipairs(family) do
     local payload = (type(member) == 'table' and family_injections[member.key]) or family_injections[member]
@@ -149,6 +143,17 @@ for _, family in ipairs(pokermon.family) do
     end
   end
 end
+
+--Add Dex Order support for injections
+G.E_MANAGER:add_event(Event({
+  func = function()
+    for _, payload in pairs(family_injections) do
+      pokermon.dex_order_groups[#pokermon.dex_order_groups+1] = { payload }
+    end
+    pokermon.dex_order_groups[#pokermon.dex_order_groups+1] = { 'cubone', 'marowak', 'alolan_marowak' }
+    return true
+  end
+}))
 
 --Load config tab setup file
 assert(SMODS.load_file("src/settings.lua"))()
