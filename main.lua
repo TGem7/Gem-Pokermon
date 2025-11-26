@@ -30,6 +30,16 @@ end
 assert(SMODS.load_file("src/functions.lua"))()
 
 --Load pokemon file
+local load_pokemon_ref = pokermon.load_pokemon
+function pokermon.load_pokemon(item)
+  if item.Gem_inject_prefix then
+    item.key = item.Gem_inject_prefix .. '_' .. item.name
+    item.prefix_config = item.prefix_config or {}
+    item.prefix_config.key = { mod = false }
+  end
+  return load_pokemon_ref(item)
+end
+
 local pfiles = NFS.getDirectoryItems(mod_dir.."pokemon")
 
 for _, file in ipairs(pfiles) do
@@ -45,11 +55,9 @@ for _, file in ipairs(pfiles) do
      
       if curr_pokemon.list and #curr_pokemon.list > 0 then
         for i, item in ipairs(curr_pokemon.list) do
-          if string.find(item.atlas, "Gem") then
-            pokermon.Pokemon(item,"Gem",true)
-          else
-            pokermon.Pokemon(item,"Gem",false)
-          end
+          local custom_prefix = item.Gem_inject_prefix or "Gem"
+          local custom_atlas = item.atlas and string.find(item.atlas, "Gem")
+          pokermon.Pokemon(item, custom_prefix, custom_atlas)
         end
       end
     end
