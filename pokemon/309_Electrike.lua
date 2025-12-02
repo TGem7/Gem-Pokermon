@@ -68,7 +68,6 @@ local manectric = {
     end
     local card_vars = {center.ability.extra.money_mod, center.ability.extra.money_increase}
     add_target_cards_to_vars(card_vars, center.ability.extra.targets)
-    info_queue[#info_queue+1] = {set = 'Other', key = 'mega_poke'}
     return {vars = card_vars}
   end,
   rarity = 3,
@@ -164,6 +163,7 @@ return {
   enabled = Gem_config.Electrike or false,
   list = { electrike, manectric, mega_manectric }
 }
+
 
 
 
