@@ -23,6 +23,11 @@ local kubfu={
   ptype = "Fighting",
   atlas = "AtlasJokersBasicNatdex",
   gen = 8,
+  custom_pool_func = true,
+  aux_poke = true,
+  in_pool = function(self)
+    return false
+  end,
   perishable_compat = true,
   blueprint_compat = true,
   calculate = function(self, card, context)
@@ -125,6 +130,11 @@ local urshifu_single_strike={
   ptype = "Dark",
   atlas = "AtlasJokersBasicGen08",
   gen = 8,
+  custom_pool_func = true,
+  aux_poke = true,
+  in_pool = function(self)
+    return false
+  end,
   perishable_compat = true,
   blueprint_compat = true,
   calculate = function(self, card, context)
@@ -223,6 +233,7 @@ return {
   enabled = Gem_config.Kubfu or false,
   list = { kubfu, urshifu_single_strike, urshifu_rapid_strike }
 }
+
 
 
 
