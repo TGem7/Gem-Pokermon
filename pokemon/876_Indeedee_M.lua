@@ -25,7 +25,7 @@ local indeedee_m={
   ptype = "Psychic",
   atlas = "AtlasJokersBasicGen08",
   gen = 8,
-  perishable_compat = false,
+  perishable_compat = true,
   blueprint_compat = true,
   eternal_compat = true,
   calculate = function(self, card, context)
@@ -47,6 +47,7 @@ return {
   enabled = Gem_config.Indeedee_M or false,
   list = { indeedee_m }
 }
+
 
 
 
