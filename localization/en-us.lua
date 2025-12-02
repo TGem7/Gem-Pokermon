@@ -79,8 +79,8 @@ return {
                 name = "Mega Blaziken",
                 text = {
                     "{C:attention}Nature: {C:inactive}({C:attention}#4#, #5#, #6#{C:inactive}){}",
-                    "Played {C:attention}Nature{} cards give {X:mult,C:white}X#2#{} Mult for",
-                    "each {X:fire,C:white}Fire{} or {X:earth,C:white}Fighting{} joker you have",
+                    "Played {C:attention}Nature{} cards give {X:mult,C:white}X#2#{} Mult for each",
+                    "{X:fire,C:white}Fire{} or {X:earth,C:white}Fighting{} joker you have when scored",
                     "{C:inactive}(Currently {X:mult,C:white}X#3#{C:inactive} Mult){}",
                 } 
             },
