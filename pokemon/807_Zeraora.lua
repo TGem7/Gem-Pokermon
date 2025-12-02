@@ -44,7 +44,7 @@ local zeraora = {
     for k, v in pairs(G.jokers.cards) do
         if is_type(v, "Lightning") then lights = lights + 1 end
     end
-    if lights == #G.jokers.cards and (context.other_card.ability and context.other_card.ability.name == "zeraora") then
+    if lights == #G.jokers.cards then
       if context.final_scoring_step then
         return {
           balance = true
@@ -59,6 +59,7 @@ return {
   enabled = Gem_config.Zeraora or false,
   list = { zeraora }
 }
+
 
 
 
