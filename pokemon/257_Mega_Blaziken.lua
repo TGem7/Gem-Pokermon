@@ -34,11 +34,15 @@ local mega_blaziken={
   eternal_compat = true,
   calculate = function(self, card, context)
     if context.individual and not context.end_of_round and context.cardarea == G.play and not context.other_card.debuff then
+      for i=1, #card.ability.extra.targets do
+        if context.other_card:get_id() == card.ability.extra.targets[i].id then
             local xmult_multi = card.ability.extra.Xmult_multi + (card.ability.extra.Xmult_multi_mod * (#find_pokemon_type("Fire")+#find_pokemon_type("Fighting")))
             return {
               Xmult = xmult_multi,
               card = card
             }
+        end
+      end
     end
   end,
   set_ability = function(self, card, initial, delay_sprites)
