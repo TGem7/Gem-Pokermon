@@ -32,19 +32,17 @@ local electrike = {
   blueprint_compat = false,
   eternal_compat = true,
   calculate = function(self, card, context)
-    if context.individual and context.cardarea == G.play and not context.other_card.debuff then
+    if context.before and not context.blueprint and not context.other_card.debuff then
       for _, scored_card in ipairs(context.scoring_hand) do
         for i=1, #card.ability.extra.targets do
           if scored_card:get_id() == card.ability.extra.targets[i].id then
-                scored_card:set_ability('m_gold', nil, true)
-                G.E_MANAGER:add_event(Event({
-                    func = function()
-                        return {
-                          true, 
-                          level_evo(self, card, context, "j_Gem_manectric"),
-                        }
-                    end
-                }))
+              scored_card:set_ability('m_gold', nil, true)
+              G.E_MANAGER:add_event(Event({
+                  func = function()
+                      scored_card:juice_up()
+                      return true
+                  end
+              }))
           end
         end
       end
@@ -94,16 +92,17 @@ local manectric = {
         end
       end
     end
-    if context.individual and context.cardarea == G.play and not context.other_card.debuff then
+    if context.before and not context.blueprint and not context.other_card.debuff then
       for _, scored_card in ipairs(context.scoring_hand) do
         for i=1, #card.ability.extra.targets do
           if scored_card:get_id() == card.ability.extra.targets[i].id then
-                scored_card:set_ability('m_gold', nil, true)
-                G.E_MANAGER:add_event(Event({
-                    func = function()
-                        return true
-                    end
-                }))
+              scored_card:set_ability('m_gold', nil, true)
+              G.E_MANAGER:add_event(Event({
+                  func = function()
+                      scored_card:juice_up()
+                      return true
+                  end
+              }))
           end
         end
       end
@@ -165,6 +164,7 @@ return {
   enabled = Gem_config.Electrike or false,
   list = { electrike, manectric, mega_manectric }
 }
+
 
 
 
