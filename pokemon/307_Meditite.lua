@@ -78,7 +78,6 @@ local medicham={
         if v:get_id() == 14 then mult_total = mult_total + center.ability.extra.mult_mod end
       end
     end
-    info_queue[#info_queue + 1] = {set = 'Other', key = 'mega_poke'}
     return {vars = {center.ability.extra.mult, center.ability.extra.mult_mod, center.ability.extra.Xchips_multi, math.max(0, mult_total)}}
   end,
   rarity = "poke_safari",
@@ -202,4 +201,5 @@ return {
   enabled = Gem_config.Meditite or false,
   list = { meditite, medicham, mega_medicham }
 }
+
 
