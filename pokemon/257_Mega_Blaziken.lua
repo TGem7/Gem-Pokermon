@@ -13,13 +13,13 @@ local mega_blaziken={
   Gem_inject_prefix = "poke",
   pos = {x = 2, y = 4},
   soul_pos = {x = 3, y = 4},
-  config = {extra = {Xmult = .2, cards_discarded = 0, targets = {{value = "Ace", id = "14"}, {value = "King", id = "13"}, {value = "Queen", id = "12"}}}},
+  config = {extra = {Xmult_multi = 1, Xmult_multi_mod = 0.1, targets = {{value = "Ace", id = "14"}, {value = "King", id = "13"}, {value = "Queen", id = "12"}}}},
   loc_vars = function(self, info_queue, center)
     type_tooltip(self, info_queue, center)
     info_queue[#info_queue+1] = {set = 'Other', key = 'nature', vars = {"rank"}}
     local card = center
-    local Xmult = 1 + card.ability.extra.Xmult * card.ability.extra.cards_discarded * (find_other_poke_or_energy_type(card, "Fire", true) + find_other_poke_or_energy_type(card, "Fighting", true))
-    local card_vars = {center.ability.extra.Xmult, Xmult}
+    local xmult_multi = center.ability.extra.Xmult_multi + (center.ability.extra.Xmult_multi_mod * (#find_pokemon_type("Fire")+#find_pokemon_type("Fighting")))
+    local card_vars = {center.ability.extra.Xmult_multi, center.ability.extra.Xmult_multi_mod, xmult_multi}
     add_target_cards_to_vars(card_vars, center.ability.extra.targets)
     return {vars = card_vars}
   end,
@@ -33,33 +33,12 @@ local mega_blaziken={
   blueprint_compat = true,
   eternal_compat = true,
   calculate = function(self, card, context)
-    if context.cardarea == G.jokers and context.scoring_hand then
-      if context.joker_main then
-        local Xmult = 1 + card.ability.extra.Xmult * card.ability.extra.cards_discarded * (find_other_poke_or_energy_type(card, "Fire", true) + find_other_poke_or_energy_type(card, "Fighting", true))
-        return {
-          message = localize('poke_blazekick_ex'), 
-          colour = G.C.MULT,
-          Xmult_mod = Xmult,
-        }
-      end
-    end
-    if context.discard and not context.other_card.debuff and not context.blueprint then
-      for i=1, #card.ability.extra.targets do
-        if context.other_card:get_id() == card.ability.extra.targets[i].id then
-          card.ability.extra.cards_discarded = card.ability.extra.cards_discarded + 1
-          return {
-            message = localize('k_upgrade_ex'),
-            colour = G.C.RED,
-            delay = 0.45, 
-            card = card
-          }
-        end
-      end
-    end
-    if (context.end_of_round and G.GAME.blind.boss) and not context.individual and not context.repetition then
-      card.ability.extra.cards_discarded = 0
-      card:juice_up()
-      card_eval_status_text(card, 'extra', nil, nil, nil, {message = localize('k_reset')})
+    if context.individual and not context.end_of_round and context.cardarea == G.play and not context.other_card.debuff then
+            local xmult_multi = card.ability.extra.Xmult_multi + (card.ability.extra.Xmult_multi_mod * (#find_pokemon_type("Fire")+#find_pokemon_type("Fighting")))
+            return {
+              Xmult = xmult_multi,
+              card = card
+            }
     end
   end,
   set_ability = function(self, card, initial, delay_sprites)
