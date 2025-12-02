@@ -509,7 +509,8 @@ return {
                 text = {
                   "Each {X:lightning,C:black}Lightning{} Joker gives {X:mult,C:white}X#1#{} Mult",
                   "{br:4}ERROR - CONTACT STEAK",
-                  "If {C:attention}all{} of your jokers are {X:lightning,C:black}Lightning{} type, apply {C:attention}Plasma{}",
+                  "If {C:attention}all{} of your jokers are",
+                  "{X:lightning,C:black}Lightning{} type, apply {C:attention}Plasma Deck{}",
                 }
             },
         },
