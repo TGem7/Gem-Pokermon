@@ -17,7 +17,6 @@ local mawile={
     type_tooltip(self, info_queue, card)
     if pokermon_config.detailed_tooltips then
       info_queue[#info_queue+1] = G.P_CENTERS.m_steel
-      info_queue[#info_queue + 1] = {set = 'Other', key = 'mega_poke'}
     end
       return { vars = { card.ability.extra.copy } }
   end,
@@ -90,6 +89,7 @@ return {
   enabled = Gem_config.Mawile or false,
   list = { mawile, mega_mawile }
 }
+
 
 
 
