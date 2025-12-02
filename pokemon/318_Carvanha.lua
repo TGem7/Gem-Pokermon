@@ -45,7 +45,6 @@ local sharpedo={
   config = { extra = { Xmult = 2, Xmult_mod = 1, Xmult2 = 2 } },
   loc_vars = function(self, info_queue, card)
     type_tooltip(self, info_queue, card)
-    info_queue[#info_queue+1] = {set = 'Other', key = 'mega_poke'}
     return { vars = { card.ability.extra.Xmult, card.ability.extra.Xmult_mod, card.ability.extra.Xmult2 } }
   end,
   designer = "James Peach III",
@@ -88,10 +87,10 @@ local mega_sharpedo={
   
   pos = {x = 10, y = 5},
   soul_pos = {x = 11, y = 5},
-  config = { extra = { Xmult = 2 } },
+  config = { extra = { Xmult_multi = 2 } },
   loc_vars = function(self, info_queue, card)
     type_tooltip(self, info_queue, card)
-    return { vars = { card.ability.extra.Xmult } }
+    return { vars = { card.ability.extra.Xmult_multi } }
   end,
   rarity = "poke_mega",
   cost = 12,
@@ -105,7 +104,7 @@ local mega_sharpedo={
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.play and G.GAME.hands[context.scoring_name] and G.GAME.hands[context.scoring_name].played_this_round > 1 then
             return {
-                xmult = card.ability.extra.Xmult
+                xmult = card.ability.extra.Xmult_multi
             }
         end
     end,
@@ -116,3 +115,4 @@ return {
   enabled = Gem_config.Carvanha or false,
   list = { carvanha, sharpedo, mega_sharpedo}
 }
+
