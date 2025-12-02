@@ -507,11 +507,9 @@ return {
             j_Gem_zeraora = {
                 name = "Zeraora",
                 text = {
-                  "{C:attention}Scored cards{} give {X:mult,C:white}X#5#{} and {C:money}$#6#{}. Increases by",
-                  "{X:mult,C:white}X#2#{} and {C:money}$#4#{} for each {X:lightning, C:black}Lightning{} joker you have",
+                  "Each {X:lightning,C:black}Lightning{} Joker gives {X:mult,C:white}X#1#{} Mult",
                   "{br:4}ERROR - CONTACT STEAK",
-                  "After defeating a {C:attention}Boss Blind{}, turn your",
-                  "{C:attention}leftmost{} joker to {X:lightning, C:black}Lightning{} type",
+                  "If {C:attention}all{} of your jokers are {X:lightning,C:black}Lightning{} type, apply {C:attention}Plasma{}",
                 }
             },
         },
