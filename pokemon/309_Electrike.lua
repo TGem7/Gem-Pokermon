@@ -37,9 +37,9 @@ local electrike = {
         for i=1, #card.ability.extra.targets do
           if scored_card:get_id() == card.ability.extra.targets[i].id then
                 scored_card:set_ability('m_gold', nil, true)
+                scored_card:juice_up()
                 G.E_MANAGER:add_event(Event({
                     func = function()
-                        scored_card:juice_up()
                         return {
                           true, 
                           level_evo(self, card, context, "j_Gem_manectric"),
@@ -100,9 +100,9 @@ local manectric = {
         for i=1, #card.ability.extra.targets do
           if scored_card:get_id() == card.ability.extra.targets[i].id then
                 scored_card:set_ability('m_gold', nil, true)
+                scored_card:juice_up()
                 G.E_MANAGER:add_event(Event({
                     func = function()
-                        scored_card:juice_up()
                         return true
                     end
                 }))
@@ -167,6 +167,7 @@ return {
   enabled = Gem_config.Electrike or false,
   list = { electrike, manectric, mega_manectric }
 }
+
 
 
 
