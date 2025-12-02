@@ -78,12 +78,10 @@ return {
             j_poke_mega_blaziken = {
                 name = "Mega Blaziken",
                 text = {
-                    "{C:attention}Nature: {C:inactive}({C:attention}#3#, #4#, #5#{C:inactive}){}",
-                    "For each {C:attention}Nature{} card discarded this ante",
-                    "gain {X:mult,C:white}X#1#{} Mult for",
-                    "each {X:fire,C:white}Fire{} or {X:earth,C:white}Fighting{} card you have",
-                    "{C:inactive,s:0.8}(includes Jokers and Energy cards){}",
-                    "{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive} Mult){}",
+                    "{C:attention}Nature: {C:inactive}({C:attention}#4#, #5#, #6#{C:inactive}){}",
+                    "Played {C:attention}Nature{} cards give {X:mult,C:white}X#2#{} Mult for",
+                    "each {X:fire,C:white}Fire{} or {X:earth,C:white}Fighting{} joker you have",
+                    "{C:inactive}(Currently {X:mult,C:white}X#3#{C:inactive} Mult){}",
                 } 
             },
             j_poke_mega_swampert = {
