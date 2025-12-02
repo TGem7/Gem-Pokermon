@@ -12,12 +12,10 @@ local zeraora = {
   name = "zeraora",
   pos = {x = 22, y = 53}, 
   soul_pos = {x = 23, y = 53}, 
-  config = {extra = {Xmult_multi = 1.1, Xmult_multi_mod = 0.1, money_mod = 2, money_increase = 1}},
+  config = {extra = {Xmult_multi = 1.75}},
   loc_vars = function(self, info_queue, center)
     type_tooltip(self, info_queue, center)
-    local xmult_multi = center.ability.extra.Xmult_multi + (center.ability.extra.Xmult_multi_mod * #find_pokemon_type("Lightning"))
-    local Money = center.ability.extra.money_mod + (center.ability.extra.money_increase * #find_pokemon_type("Lightning"))
-    return {vars = {center.ability.extra.Xmult_multi, center.ability.extra.Xmult_multi_mod, center.ability.extra.money_mod, center.ability.extra.money_increase, xmult_multi, Money}}
+    return {vars = {center.ability.extra.Xmult_multi, }}
   end,
   rarity = 4,
   cost = 20,
@@ -29,24 +27,31 @@ local zeraora = {
   blueprint_compat = true,
   eternal_compat = true,
   calculate = function(self, card, context)
-    if context.individual and not context.end_of_round and context.cardarea == G.play and not context.other_card.debuff then
-            local Money = card.ability.extra.money_mod + (card.ability.extra.money_increase * #find_pokemon_type("Lightning"))
-            local earned = ease_poke_dollars(card, "zeraora", Money, true)
-            local xmult_multi = card.ability.extra.Xmult_multi + (card.ability.extra.Xmult_multi_mod * #find_pokemon_type("Lightning"))
-            return {
-              Xmult = xmult_multi,
-              dollars = earned,
-              card = card
-            }
+    if context.other_joker and is_type(context.other_joker, "Lightning") then
+      G.E_MANAGER:add_event(Event({
+        func = function()
+            context.other_joker:juice_up(0.5, 0.5)
+            return true
+        end
+      })) 
+      return {
+        message = localize{type = 'variable', key = 'a_xmult', vars = {card.ability.extra.Xmult_multi}}, 
+        colour = G.C.XMULT,
+        Xmult_mod = card.ability.extra.Xmult_multi
+      }
     end
-    if context.end_of_round and context.game_over == false and context.main_eval and G.GAME.blind.boss then
-      if G.jokers and G.jokers.cards and #G.jokers.cards > 1 then
-        apply_type_sticker(G.jokers.cards[1], "Lightning")
-        card:juice_up()
-        card_eval_status_text(G.jokers.cards[1], 'extra', nil, nil, nil, {message = localize("poke_tera_ex"), colour = G.C.SECONDARY_SET.Spectral})
+    local lights = 0
+    for k, v in pairs(G.jokers.cards) do
+        if is_type(v, "Lightning") then lights = lights + 1 end
+    end
+    if lights == #G.jokers.cards and (context.other_card.ability and context.other_card.ability.name == "zeraora") then
+      if context.final_scoring_step then
+        return {
+          balance = true
+        }
       end
     end
-  end,
+  end
 }
 
 return {
@@ -54,6 +59,7 @@ return {
   enabled = Gem_config.Zeraora or false,
   list = { zeraora }
 }
+
 
 
 
