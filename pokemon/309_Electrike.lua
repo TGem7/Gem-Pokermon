@@ -32,7 +32,7 @@ local electrike = {
   blueprint_compat = false,
   eternal_compat = true,
   calculate = function(self, card, context)
-    if context.before and not context.blueprint and not context.other_card.debuff then
+    if context.before and not context.blueprint then
       for _, scored_card in ipairs(context.scoring_hand) do
         for i=1, #card.ability.extra.targets do
           if scored_card:get_id() == card.ability.extra.targets[i].id then
@@ -92,7 +92,7 @@ local manectric = {
         end
       end
     end
-    if context.before and not context.blueprint and not context.other_card.debuff then
+    if context.before and not context.blueprint then
       for _, scored_card in ipairs(context.scoring_hand) do
         for i=1, #card.ability.extra.targets do
           if scored_card:get_id() == card.ability.extra.targets[i].id then
@@ -164,6 +164,7 @@ return {
   enabled = Gem_config.Electrike or false,
   list = { electrike, manectric, mega_manectric }
 }
+
 
 
 
