@@ -68,9 +68,9 @@ return {
                 name = "Mega Sceptile",
                 text = {
                     "{C:attention}Nature: {C:inactive}({C:attention}#4#, #5#, #6#{C:inactive}){}",
-                    "Played {C:attention}Nature{} cards earn {C:money}$#1#{}, plus",
-                    "{C:money}$#1#{} for each other {X:grass,C:white}Grass{} or {X:dragon,C:white}Dragon{}",
-                    "card you have when scored",
+                    "Played {C:attention}Nature{} cards earn {C:money}$#1#{}",
+                    "when scored plus {C:money}$#1#{} for each other {X:grass,C:white}Grass{}",
+                    "or {X:dragon,C:white}Dragon{} card you have",
                     "{C:inactive,s:0.8}(includes Jokers and Energy cards){}",
                     "{C:inactive}(Currently {C:money}$#3#{C:inactive} total){}"
                 } 
