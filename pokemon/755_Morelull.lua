@@ -36,7 +36,7 @@ local morelull = {
         card_eval_status_text(v, 'extra', nil, nil, nil, {message = localize('k_val_up')})
       end
     end
-    return scaling_evo(self, card, context, "j_Gem_shinotic", card.ability.extra.consumables_used, self.config.evo_rqmt)
+    return scaling_evo(self, card, context, "j_Gem_shiinotic", card.ability.extra.consumables_used, self.config.evo_rqmt)
   end,
 }
 
