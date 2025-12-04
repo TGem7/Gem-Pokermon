@@ -79,18 +79,21 @@ return {
                 name = "Mega Blaziken",
                 text = {
                     "{C:attention}Nature: {C:inactive}({C:attention}#4#, #5#, #6#{C:inactive}){}",
-                    "Played {C:attention}Nature{} cards give {X:mult,C:white}X#2#{} Mult for each",
-                    "{X:fire,C:white}Fire{} or {X:earth,C:white}Fighting{} joker you have when scored",
+                    "Played {C:attention}Nature{} cards give {X:mult,C:white}X#2#{} Mult for",
+                    "each {X:fire,C:white}Fire{} or {X:earth,C:white}Fighting{} joker you have",
                     "{C:inactive}(Currently {X:mult,C:white}X#3#{C:inactive} Mult){}",
                 } 
             },
             j_poke_mega_swampert = {
                 name = "Mega Swampert",
                 text = {
-                    "{C:attention}Nature: {C:inactive}({C:attention}#3#, #4#, #5#{C:inactive}){}",
-                    "Scored {C:attention}Nature{} cards permanently gain {C:chips}+#1#{} Chips",
-                    "per {X:water,C:white}Water{} or {X:earth,C:white}Earth{} card",
-                    "{C:inactive,s:0.8}(includes Jokers and Energy cards){}"
+                    "{C:attention}Nature: {C:inactive}({C:attention}#7#, #8#, #9#{C:inactive}){}",
+                    "Scored {C:attention}Nature{} cards give {C:chips}+#1#{} Chips and",
+                    "a {C:green}#4# in #5#{} chance to create a tarot card.",
+                    "{br:3}ERROR - CONTACT STEAK",
+                    "Increases by {C:chips}+#2#{} and {C:green}1{} for",
+                    "each other {X:water,C:white}Water{} or {X:earth,C:white}Earth{} card",
+                    "{C:inactive}(Currently {C:chips}+#6#{C:inactive} Chips)",
                 } 
             },
             j_Gem_meditite = {

@@ -13,12 +13,14 @@ local mega_swampert={
   Gem_inject_prefix = "poke",
   pos = {x = 4, y = 4},
   soul_pos = {x = 5, y = 4},
-  config = {extra = {chip_mod = 25, 
+  config = {extra = {chips = 80, chip_mod = 20, num = 1, dem = 5,
   targets = {{value = "Ace", id = "14"}, {value = "King", id = "13"}, {value = "Queen", id = "12"}}}},
   loc_vars = function(self, info_queue, center)
     type_tooltip(self, info_queue, center)
     info_queue[#info_queue+1] = {set = 'Other', key = 'nature', vars = {"rank"}}
-    local card_vars = {center.ability.extra.chip_mod, center.ability.extra.chip_mod * (find_other_poke_or_energy_type(center, "Water") + find_other_poke_or_energy_type(center, "Earth"))}
+    local Chips = center.ability.extra.chips + center.ability.extra.chip_mod * (find_other_poke_or_energy_type(center, "Water") + find_other_poke_or_energy_type(center, "Earth"))
+    local num, dem = SMODS.get_probability_vars(center, center.ability.extra.num + (find_other_poke_or_energy_type(center, "Water") + find_other_poke_or_energy_type(center, "Earth")), center.ability.extra.dem, 'alcremie')
+    local card_vars = {center.ability.extra.chips, center.ability.extra.chip_mod, center.ability.extra.chip_mod * (find_other_poke_or_energy_type(center, "Water") + find_other_poke_or_energy_type(center, "Earth")), num, dem, Chips}
     add_target_cards_to_vars(card_vars, center.ability.extra.targets)
     return {vars = card_vars}
   end,
@@ -35,13 +37,45 @@ local mega_swampert={
     if context.individual and context.cardarea == G.play and not context.other_card.debuff then
       for i=1, #card.ability.extra.targets do
         if context.other_card:get_id() == card.ability.extra.targets[i].id then
-          context.other_card.ability.perma_bonus = context.other_card.ability.perma_bonus or 0
-          context.other_card.ability.perma_bonus = context.other_card.ability.perma_bonus + card.ability.extra.chip_mod + card.ability.extra.chip_mod * (find_other_poke_or_energy_type(card, "Water") + find_other_poke_or_energy_type(card, "Earth"))
-          return {
-              extra = {message = localize('k_upgrade_ex'), colour = G.C.CHIPS},
-              colour = G.C.CHIPS,
-              card = card
-            }
+          if (not context.other_card.debuff) and SMODS.pseudorandom_probability(card, 'mega_swampert', card.ability.extra.num + (find_other_poke_or_energy_type(card, "Water") + find_other_poke_or_energy_type(card, "Earth")), card.ability.extra.dem, 'mega_swampert') then
+            if #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
+                      G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
+              local Chips = card.ability.extra.chips + card.ability.extra.chip_mod * (find_other_poke_or_energy_type(card, "Water") + find_other_poke_or_energy_type(card, "Earth"))
+              return {
+            extra = {focus = card, message = localize('k_plus_tarot'), colour = G.C.PURPLE, func = function()
+              G.E_MANAGER:add_event(Event({
+                trigger = 'before',
+                delay = 0.0,
+                func = function()
+                  local card_type = 'Tarot'
+                  local _card = create_card(card_type,G.consumeables, nil, nil, nil, nil, nil, 'sup')
+                  _card:add_to_deck()
+                  G.consumeables:emplace(_card)
+                  G.GAME.consumeable_buffer = 0
+                  return true
+                end
+              }))
+            end},
+                 chips = Chips,
+                 colour = G.C.CHIPS,
+                 card = card
+                }
+             else
+              local Chips = card.ability.extra.chips + card.ability.extra.chip_mod * (find_other_poke_or_energy_type(card, "Water") + find_other_poke_or_energy_type(card, "Earth"))
+              return {
+                 chips = Chips,
+                 colour = G.C.CHIPS,
+                 card = card
+                }
+             end
+          else
+              local Chips = card.ability.extra.chips + card.ability.extra.chip_mod * (find_other_poke_or_energy_type(card, "Water") + find_other_poke_or_energy_type(card, "Earth"))
+              return {
+                 chips = Chips,
+                 colour = G.C.CHIPS,
+                 card = card
+                }
+          end
         end
       end
     end
