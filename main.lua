@@ -91,6 +91,7 @@ local name_lists = {
   {"cubone", "marowak", "alolan_marowak"},
   {"yamask", "cofagrigus"},
   {"sandile", "krokorok", "krookodile"},
+  {"morelull", "shiinotic"},
   {"sizzlipede", "centiskorch"},
   {"wailmer", "wailord"},
   {"chingling", "chimecho"},
