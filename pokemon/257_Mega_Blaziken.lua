@@ -54,8 +54,10 @@ local mega_blaziken={
 
 return {
   name = "Gem's Mega Blaziken",
-  enabled = Gem_config.Starter_Megas or false,
+  enabled = true,
   list = { mega_blaziken }
 }
+
+
 
 
