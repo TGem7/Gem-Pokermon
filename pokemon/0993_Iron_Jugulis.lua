@@ -12,7 +12,7 @@ local iron_jugulis={
   name = "iron_jugulis", 
   pos = {x = 4, y = 66}, 
   soul_pos = {x = 5, y = 66}, 
-  config = {extra = {Xmult = 1, Xmult_mod = 1, destroyed_count = 5}},
+  config = {extra = {Xmult = 1, Xmult_mod = 0.5, destroyed_count = 5}},
   loc_vars = function(self, info_queue, center)
     type_tooltip(self, info_queue, center)
     return {vars = {center.ability.extra.Xmult, center.ability.extra.Xmult_mod, center.ability.extra.destroyed_count}}
