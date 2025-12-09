@@ -20,6 +20,7 @@ local flutter_mane={
     end
     return {vars = {card.ability.extra.chip_mod, card.ability.extra.chips, card.ability.extra.score_goal, math.max(0, card.ability.extra.score_goal - card.ability.extra.cards_scored)}}
   end,
+  designer = "MaelMC",
   rarity = "Gem_paradox", 
   cost = 15, 
   stage = "Paradox", 
