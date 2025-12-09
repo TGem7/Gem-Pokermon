@@ -17,6 +17,7 @@ local iron_jugulis={
     type_tooltip(self, info_queue, center)
     return {vars = {center.ability.extra.Xmult, center.ability.extra.Xmult_mod, center.ability.extra.destroyed_count}}
   end,
+  designer = "Eternalnacho",
   rarity = "Gem_future_paradox", 
   cost = 15, 
   stage = "Paradox", 
