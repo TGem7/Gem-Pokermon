@@ -12,7 +12,7 @@ local scream_tail={
   name = "scream_tail", 
   pos = {x = 18, y = 65}, 
   soul_pos = {x = 19, y = 65}, 
-  config = {extra = {chips = 20, mult = 4, suit = "Spades"}},
+  config = {extra = {chips = 10, mult = 2, suit = "Spades"}},
   loc_vars = function(self, info_queue, center)
     type_tooltip(self, info_queue, center)
     return {vars = {center.ability.extra.chips, center.ability.extra.mult, localize(center.ability.extra.suit, 'suits_singular')}}
