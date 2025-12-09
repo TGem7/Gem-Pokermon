@@ -23,6 +23,16 @@ return {
 	Indeedee_M = true,
 	Kubfu = true,
 	Capsakid = true,
+	Great_Tusk = true,
+	Iron_Treads = true,
+	Iron_Hands = true,
+	Flutter_Mane = true,
+	Iron_Bundle = true,
+	Sandy_Shocks = true,
+	Scream_Tail = true,
+	Iron_Jugulis = true,
+	Koraidon = true,
+	Miraidon = true,
 
 }
 

@@ -533,6 +533,101 @@ return {
                   "{X:lightning,C:black}Lightning{} type, apply {C:attention}Plasma Deck{}",
                 }
             },
+            j_Gem_great_tusk = {
+                name = "Great Tusk",
+                text = {
+                    "When played {C:attention}Poker Hand{} contains {C:attention}5{}",
+                    "scoring cards, gain {X:mult,C:white}X#2#{} Mult and",
+                    "turn {C:attention}all{} cards held in hand to {C:attention}Stone{}",
+                    "{C:inactive}(Currently {X:mult,C:white}X#1#{C:inactive} Mult){}",
+                }
+            },
+            j_Gem_iron_treads = {
+                name = "Iron Treads",
+                text = {
+                    "When played {C:attention}Poker Hand{} contains {C:attention}5{}",
+                    "scoring cards, gain {X:mult,C:white}X#2#{} Mult and",
+                    "turn {C:attention}all{} cards held in hand to {C:attention}Steel{}",
+                    "{C:inactive}(Currently {X:mult,C:white}X#1#{C:inactive} Mult){}",
+                }
+            },
+            j_Gem_iron_hands = {
+                name = "Iron Hands",
+                text = {
+                    "When blind is selected, {C:attention}+2{} Hand Size",
+                    "An additional {C:attention}+2{} if over {C:money}$#4#{}",
+                    "{br:4}ERROR - CONTACT STEAK",
+                    "Cards {C:attention}held{} in hand give {C:money}$#1#{}",
+                    "when hand is played",
+                }
+            },
+            j_Gem_flutter_mane = {
+                name = "Flutter Mane",
+                text = {
+                    "Played {C:attention}face{} cards permanently",
+                    "lose up to {C:chips}#1#{} Chips when scored.",
+                    "Gain lost chips",
+                    "{br:4}ERROR - CONTACT STEAK",
+                    "Whenever this joker gains {C:attention}100{} {C:inactive}[#4#]{}",
+                    "{C:chips}Chips{}, create a {C:dark_edition}Negative{} {C:attention}Tag{}",
+                    "{C:inactive}(Currently {C:chips}+#2#{C:inactive} Chips)",
+                }
+            },
+            j_Gem_iron_bundle = {
+                name = "Iron Bundle",
+                text = {
+                    "When hand is played,",
+                    "receive a {C:green}Present!{}",
+                    "{br:4}ERROR - CONTACT STEAK",
+                    "{X:mult,C:white}X#2#{} Mult times the sell",
+                    "value of all owned jokers",
+                    "{C:inactive}(Currently {X:mult,C:white}X#3#{C:inactive} Mult){}",
+                }
+            },
+            j_Gem_sandy_shocks = {
+                name = "Sandy Shocks",
+                text = {
+                  "Scoring {C:attention}Gold{} cards give {X:mult,C:white}X#1#{} Mult",
+                  "{br:4}ERROR - CONTACT STEAK",
+                  "When {C:attention}10{} {C:inactive}[#2#]{} {C:attention}Gold{} cards are scored,",
+                  "turn {C:attention}all{} cards held in hand to {C:attention}Gold{}",
+                }
+            },
+            j_Gem_scream_tail = {
+                name = "Scream Tail",
+                text = {
+                  "Scoring {C:attention}Spade{} cards permanently",
+                  "gain {C:chips}+#1#{} Chips and {C:mult}+#2#{} Mult",
+                }
+            },
+            j_Gem_iron_jugulis = {
+                name = "Iron Jugulis",
+                text = {
+                  "On {C:attention}first hand{} of round or",
+                  "when playing a {C:attention}Three of a Kind{},",
+                  "each unscoring card is destroyed",
+                  "{br:4}ERROR - CONTACT STEAK",
+                  "Gain {X:mult,C:white}X#2#{} Mult when {C:attention}5{} {C:inactive}[#3#]{}",
+                  'cards are destroyed',
+                  "{C:inactive}(Currently {X:mult,C:white}X#1#{C:inactive} Mult){}",
+                }
+            },
+            j_Gem_koraidon = {
+                name = "Koraidon",
+                text = {
+                  "When defeating a {C:attention}Boss Blind{},",
+                  "create a Fully {C:pink}Energized{}",
+                  "{C:attention}Past Paradox{} Joker",
+                }
+            },
+            j_Gem_miraidon = {
+                name = "Miraidon",
+                text = {
+                  "When defeating a {C:attention}Boss Blind{},",
+                  "create a Fully {C:pink}Energized{}",
+                  "{C:attention}Future Paradox{} Joker",
+                }
+            },
         },
     },
   misc = {
@@ -563,6 +658,9 @@ return {
             indeedee_f_line = "Indeedee F Line?",
             indeedee_m_line = "Indeedee M Line?",
             capsakid_line = "Capsakid Line?",
+            -- Rarity
+            k_gem_paradox = "Paradox",
+            k_gem_future_paradox = "Paradox",
 
             -- Settings
             Gem_pokemon1 = "Pokemon 1/4",
@@ -570,6 +668,10 @@ return {
             Gem_pokemon3 = "Pokemon 3/4",
             Gem_pokemon4 = "Pokemon 4/4",
             Gem_miscellaneous = "Miscellaneous",
+      },
+      labels = {
+            k_gem_paradox = "Paradox",
+            k_gem_future_paradox = "Paradox",
       },
    },
 }

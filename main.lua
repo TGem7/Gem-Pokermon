@@ -102,6 +102,36 @@ local name_lists = {
   {"indeedee_m"},
   {"capsakid", "scovillain"},
   {"kubfu", "urshifu_single_strike", "urshifu_rapid_strike"},
+  {"great_tusk"},
+  {"iron_treads"},
+  {"iron_hands"},
+  {"flutter_mane"},
+  {"iron_bundle"},
+  {"sandy_shocks"},
+  {"scream_tail"},
+  {"iron_jugulis"},
+  {"koraidon"},
+  {"miraidon"},
+}
+
+SMODS.Rarity{
+    key = "paradox",
+    default_weight = 0,
+    badge_colour = HEX("C7001B"),
+    pools = {["Joker"] = true},
+    get_weight = function(self, weight, object_type)
+        return weight
+    end,
+}
+
+SMODS.Rarity{
+    key = "future_paradox",
+    default_weight = 0,
+    badge_colour = HEX("FB00FF"),
+    pools = {["Joker"] = true},
+    get_weight = function(self, weight, object_type)
+        return weight
+    end,
 }
 
 for i, list in ipairs(name_lists) do
