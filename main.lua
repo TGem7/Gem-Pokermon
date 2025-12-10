@@ -164,6 +164,7 @@ local family_injections = {
   ["sceptile"] = "mega_sceptile",
   ["blaziken"] = "mega_blaziken",
   ["swampert"] = "mega_swampert",
+  ["absol"] = "mega_absol",
 }
 
 for _, family in ipairs(pokermon.family) do
@@ -221,6 +222,7 @@ SMODS.Joker:take_ownership('poke_marowak', -- object key (class prefix not requi
 SMODS.Joker:take_ownership('poke_sceptile', { megas = { 'mega_sceptile' } }, true)
 SMODS.Joker:take_ownership('poke_blaziken', { megas = { 'mega_blaziken' } }, true)
 SMODS.Joker:take_ownership('poke_swampert', { megas = { 'mega_swampert' } }, true)
+SMODS.Joker:take_ownership('poke_absol', { megas = { 'mega_absol' } }, true)
 
 print("DEBUG: main.lua loaded")
 
