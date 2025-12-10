@@ -634,9 +634,9 @@ return {
                     "{X:mult,C:white}X#1#{} Mult",
                     "{br:4}ERROR - CONTACT STEAK",
                     "{C:attention}Volatile Left{}",
-                    "{C:attention}Double Listed{} {C:green,E:1,S:1.1}Probabilities{}", 
-                    "{C:attention}Volatile Right{}",
                     "{C:attention}Listed{} {C:green,E:1,S:1.1}Probabilities{} are always {C:attention}0{}", 
+                    "{C:attention}Volatile Right{}",
+                    "{C:attention}Double Listed{} {C:green,E:1,S:1.1}Probabilities{}", 
                 }
             },
         },
