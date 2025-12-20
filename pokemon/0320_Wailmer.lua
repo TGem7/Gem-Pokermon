@@ -28,7 +28,7 @@ local wailmer = {
   eternal_compat = true,
   calculate = function(self, card, context)
     if context.cardarea == G.jokers and context.scoring_hand then
-      if context.joker_main and not context.blueprint and #context.scoring_hand == 5 then
+      if context.joker_main and #context.scoring_hand == 5 then
         return {
           message = localize{type = 'variable', key = 'a_chips', vars = {card.ability.extra.chips}}, 
           colour = G.C.CHIPS,
@@ -62,7 +62,7 @@ local wailord = {
   eternal_compat = true,
   calculate = function(self, card, context)
     if context.cardarea == G.jokers and context.scoring_hand then
-      if context.joker_main and not context.blueprint and #context.scoring_hand == 5 then
+      if context.joker_main and #context.scoring_hand == 5 then
         return {
           message = localize{type = 'variable', key = 'a_chips', vars = {card.ability.extra.chips}}, 
           colour = G.C.CHIPS,
@@ -72,7 +72,7 @@ local wailord = {
     end
     if context.individual and context.cardarea == G.play and not context.end_of_round then
       local total_chips = poke_total_chips(context.other_card)
-      if total_chips >= 30 then
+      if total_chips >= 30 and not context.blueprint then
         card.ability.extra.chips = card.ability.extra.chips + card.ability.extra.chip_mod
       end
     end
