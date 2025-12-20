@@ -676,6 +676,7 @@ return {
             poke_electric_surge_ex = "Electric Surge!",
             poke_psychic_surge_ex = "Psychic Surge!",
             poke_spicy_ex = "Spicy!",
+            poke_boomburst_ex = "Boomburst!",
             poke_pure_power_ex = "Pure Power!",
             poke_expanding_force_ex = "Expanding Force!",
             poke_head_smash_ex = "Head Smash!",

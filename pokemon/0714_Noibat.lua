@@ -98,7 +98,7 @@ local noivern = {
               sliced_card:start_dissolve({HEX("57ecab")}, nil, 1.6)
               play_sound('slice1', 0.96+math.random()*0.08)
           return true end }))
-          card_eval_status_text(card, 'extra', nil, nil, nil, { message = localize { type = 'variable', key = 'a_xmult', vars = { card.ability.extra.Xmult + card.ability.extra.Xmult_mod } } } )
+          card_eval_status_text(card, 'extra', nil, nil, nil, {message = localize('poke_boomburst_ex') } )
       end
       if my_pos and G.jokers.cards[my_pos-1] and not card.getting_sliced and not G.jokers.cards[my_pos-1].ability.eternal and not G.jokers.cards[my_pos-1].getting_sliced then 
           local sliced_cards = G.jokers.cards[my_pos-1]
@@ -112,7 +112,7 @@ local noivern = {
               sliced_cards:start_dissolve({HEX("57ecab")}, nil, 1.6)
               play_sound('slice1', 0.96+math.random()*0.08)
           return true end }))
-          card_eval_status_text(card, 'extra', nil, nil, nil, { message = localize { type = 'variable', key = 'a_xmult', vars = { card.ability.extra.Xmult + card.ability.extra.Xmult_mod } } } )
+          card_eval_status_text(card, 'extra', nil, nil, nil, {message = localize('poke_boomburst_ex') } )
       end
       card.ability.extra.selected = true
     end
@@ -120,8 +120,9 @@ local noivern = {
     if context.cardarea == G.jokers and context.scoring_hand then
       if context.joker_main then
         return {
-            message = localize{type = 'variable', key = 'a_mult', vars = {card.ability.extra.Xmult}}, 
-            xmult = card.ability.extra.Xmult
+          message = localize('poke_boomburst_ex'), 
+          colour = G.C.MULT,
+          Xmult_mod = card.ability.extra.Xmult
         }
       end
     end
