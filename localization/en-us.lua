@@ -639,6 +639,24 @@ return {
                     "{C:attention}Double Listed{} {C:green,E:1,S:1.1}Probabilities{}", 
                 }
             },
+            j_Gem_noibat = {
+                name = "Noibat",
+                text = {
+                    "When a {C:attention}Blind{} is selected,",
+                    "gain {X:mult,C:white}X#1#{} Mult and {C:attention}Destroy{}",
+                    "a random Joker",
+                   "{C:inactive}(Evolves at {X:mult,C:white}X#2#{C:inactive} / X3 Mult)",
+                }
+            },
+            j_Gem_noivern = {
+                name = "Noivern",
+                text = {
+                    "When a {C:attention}Blind{} is selected, {C:attention}Destroy{}",
+                    "adjacent jokers and gain {X:mult,C:white}X#1#{}",
+                    "Mult for each joker destroyed",
+                   "{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive})",
+                }
+            },
         },
     },
   misc = {

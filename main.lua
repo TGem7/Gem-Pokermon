@@ -112,6 +112,7 @@ local name_lists = {
   {"iron_jugulis"},
   {"koraidon"},
   {"miraidon"},
+  {"noibat", "noivern"},
 }
 
 SMODS.Rarity{
