@@ -61,7 +61,8 @@ return {
             j_Gem_mega_mawile = {
                 name = "Mega Mawile",
                 text = {
-                    "{C:attention}Steel{} cards give their {X:mult,C:white}XMult{} {C:attention}squared{}"
+                    "{C:attention}Steel{} cards give their",
+                    "{X:mult,C:white}XMult{} {C:attention}squared{}",
                 }
             },
             j_poke_mega_sceptile = {
@@ -69,8 +70,8 @@ return {
                 text = {
                     "{C:attention}Nature: {C:inactive}({C:attention}#4#, #5#, #6#{C:inactive}){}",
                     "Played {C:attention}Nature{} cards earn {C:money}$#1#{}",
-                    "when scored plus {C:money}$#1#{} for each other {X:grass,C:white}Grass{}",
-                    "or {X:dragon,C:white}Dragon{} card you have",
+                    "when scored plus {C:money}$#1#{} for each other",
+                    "{X:grass,C:white}Grass{} or {X:dragon,C:white}Dragon{} card you have",
                     "{C:inactive,s:0.8}(includes Jokers and Energy cards){}",
                     "{C:inactive}(Currently {C:money}$#3#{C:inactive} total){}"
                 } 
@@ -393,7 +394,8 @@ return {
                 name = "Mega Manectric",
                 text = {
                   "{C:attention}Nature: {C:inactive}({C:attention}#2#, #3#, #4#{C:inactive}){}",
-                  "If scoring {C:attention}Nature{} card is {C:attention}Gold{}, give {X:mult,C:white}X#1#",
+                  "If scoring {C:attention}Nature{} card is",
+                  "{C:attention}Gold{}, give {X:mult,C:white}X#1#",
                 }
             },
             j_Gem_carvanha = {
@@ -435,34 +437,39 @@ return {
             j_Gem_urshifu_single_strike = {
                 name = "Urshifu Single Strike",
                 text = {
-                    "Gains {X:mult,C:white} X#2# {} Mult per card discarded this round",
-                    "Gives double on first hand of round",
+                    "Gains {X:mult,C:white} X#2# {} Mult per card",
+                    "discarded this round. Gives double",
+                    "on first hand of round",
                     "{C:inactive}(Currently {X:mult,C:white}X#1#{C:inactive} Mult){}",
                 }
             },
             j_Gem_urshifu_rapid_strike = {
                 name = "Urshifu Rapid Strike",
                 text = {
-                    "Scored cards give {C:chips}+#2# chips{} per hand played this round",
+                    "Scored cards give {C:chips}+#2# chips{} per",
+                    "hand played this round",
                     "{br:4}ERROR - CONTACT STEAK",
-                    "On last hand of round, scored cards gain",
-                    "half of those chips permanently instead",
+                    "On last hand of round, scored",
+                    "cards instead gain half of",
+                    "those chips permanently",
                     "{C:inactive}(Currently {C:chips}+#1#{C:inactive} total)",
                 }
             },
             j_Gem_alolan_grimer = {
                 name = "Alolan Grimer",
                 text = {
-                    "When round begins, add a random {C:attention}playing card{}",
-                    "with an {C:attention}enhancement{} or {C:attention}seal{} to your hand",
+                    "When round begins, add a random",
+                    "{C:attention}playing card{} with an {C:attention}enhancement{}",
+                    "or {C:attention}seal{} to your hand",
                     "{C:inactive}(Evolves after {C:attention}#1#{C:inactive} rounds)",
                 }
             },
             j_Gem_alolan_muk = {
                 name = "Alolan Muk",
                 text = {
-                    "When round begins, add a random {C:attention}playing card{}",
-                    "with an {C:attention}enhancement{}, {C:attention}seal{}, or {C:attention}edition{} to your hand.",
+                    "When round begins, add a random",
+                    "{C:attention}playing card{} with an {C:attention}enhancement{},",
+                    "{C:attention}seal{}, or {C:attention}edition{} to your hand.",
                     "{C:green}#1# in #2#{} chance for all three"
                 }
             },
@@ -495,16 +502,18 @@ return {
             j_Gem_wailmer = {
                 name = "Wailmer",
                 text = {
-                    "{C:chips}+#1# Chips{} if {C:attention}scoring hand{} contains {C:attention}5 cards{}",
+                    "{C:chips}+#1# Chips{} if {C:attention}scoring{}",
+                    "{C:attention}hand{} contains {C:attention}5 cards{}",
                     "{C:inactive}(Evolves after {C:attention}#2#{C:inactive} rounds)",
                 }
             },
             j_Gem_wailord = {
                 name = "Wailord",
                 text = {
-                    "{C:chips}+#1# Chips{} if {C:attention}scoring hand{} contains {C:attention}5 cards{}",
+                    "{C:chips}+#1# Chips{} if {C:attention}scoring hand{}",
+                    "contains {C:attention}5 cards{}",
                     "{br:4}ERROR - CONTACT STEAK",
-                    "When a card scores over {C:chips}30{} {C:chips}chips{},",
+                    "When a card scores {C:chips}30+{} {C:chips}chips{},",
                     "increase this joker's {C:chips}chips{} by {C:chips}#2#{}"
                 }
             },
@@ -520,8 +529,9 @@ return {
             j_Gem_chimecho = {
                 name = "Chimecho",
                 text = {
-                    "{C:green}#1# in #2#{} chance to create an {C:item}Item{} or",
-                    "{C:purple}Tarot{} card whenever a {C:attention}Glass{} card is scored",
+                    "{C:green}#1# in #2#{} chance to create an",
+                    "{C:item}Item{} or {C:purple}Tarot{} card whenever a",
+                    "{C:attention}Glass{} card is scored",
                 }
             },
             j_Gem_zeraora = {
