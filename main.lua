@@ -27,7 +27,10 @@ if (SMODS.Mods["Pokermon"] or {}).can_load then
     pokermon_config = SMODS.Mods["Pokermon"].config
 end
 
-assert(SMODS.load_file("src/functions.lua"))()
+-- Load functions
+local load_directory, item_loader = assert(SMODS.load_file("src/loader.lua"))()
+
+load_directory("src/functions")
 
 --Load pokemon file
 local load_pokemon_ref = pokermon.load_pokemon
@@ -113,6 +116,7 @@ local name_lists = {
   {"koraidon"},
   {"miraidon"},
   {"noibat", "noivern"},
+  {"greavard", "houndstone"},
 }
 
 SMODS.Rarity{
@@ -229,3 +233,13 @@ print("DEBUG: main.lua loaded")
 
 --doesnt work right now, ill figure it out later.
 --local function replace_specific_jokers_with_random()
+
+GEM.utils.hook_before_function(SMODS.current_mod, 'reset_game_globals', function(run_start)
+  if run_start then
+    for _, center in pairs(G.P_CENTERS) do
+      if center.Gem_config_key and not Gem_config[center.Gem_config_key] then
+        G.GAME.banned_keys[center.key] = true
+      end
+    end
+  end
+end)

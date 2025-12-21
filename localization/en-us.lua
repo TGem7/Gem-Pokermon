@@ -667,6 +667,25 @@ return {
                    "{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive})",
                 }
             },
+            j_Gem_greavard = {
+                name = "Greavard",
+                text = {
+                    "{X:mult,C:white}X#1#{} Mult for each {C:attention}rank{}",
+                    "missing from your {C:attention}deck{}",
+                    "{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive})",
+                    "{C:inactive}(Evolves after {C:attention}#3#{C:inactive} rounds)",
+                }
+            },
+            j_Gem_houndstone = {
+                name = "Houndstone",
+                text = {
+                    "{X:mult,C:white}X#1#{} Mult for each {C:attention}rank{}",
+                    "missing from your {C:attention}deck{}",
+                    "{br:4}ERROR - CONTACT STEAK",
+                    "Doubled with no ranks in deck",
+                    "{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive})",
+                }
+            },
         },
     },
   misc = {
@@ -677,6 +696,7 @@ return {
             poke_psychic_surge_ex = "Psychic Surge!",
             poke_spicy_ex = "Spicy!",
             poke_boomburst_ex = "Boomburst!",
+            poke_last_respects_ex = "Last Respects!",
             poke_pure_power_ex = "Pure Power!",
             poke_expanding_force_ex = "Expanding Force!",
             poke_head_smash_ex = "Head Smash!",
