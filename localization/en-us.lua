@@ -686,6 +686,28 @@ return {
                     "{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive})",
                 }
             },
+            j_Gem_minccino = {
+                name = "Minccino",
+                text = {
+                    "If poker hand contains {C:attention}5 cards,{}",
+                    "remove {C:attention}scoring{} card {C:attention}enhancements{}",
+                    "{br:4}ERROR - CONTACT STEAK",
+                    "Gain {C:mult}+#2#{} Mult for each affected card",
+                    "{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)",
+                    "{C:inactive,s:0.8}(Evolves with a {C:attention,s:0.8}Shiny Stone{C:inactive,s:0.8})"
+                }
+            },
+            j_Gem_cinccino = {
+                name = "Cinccino",
+                text = {
+                    "If poker hand contains {C:attention}5 cards,{}",
+                    "give {C:attention}enhanced{} cards an {C:attention}edition{}",
+                    "and remove their {C:attention}enhancements{}",
+                    "{br:4}ERROR - CONTACT STEAK",
+                    "Gain {C:mult}+#2#{} Mult for each affected card",
+                    "{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)",
+                }
+            },
         },
     },
   misc = {

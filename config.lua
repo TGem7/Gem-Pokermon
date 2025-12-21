@@ -14,6 +14,7 @@ return {
 	Chimecho = true,
 	Yamask = true,
 	Sandile = true,
+	Minccino = true,
 	Noibat = true,
 	Morelull = true,
 	Zeraora = true,
