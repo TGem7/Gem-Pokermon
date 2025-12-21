@@ -49,14 +49,14 @@ local minccino = {
         if enhanced > 0 and not context.blueprint then
           card.ability.extra.mult = card.ability.extra.mult + (card.ability.extra.mult_mod * enhanced)
           return {
-            message = localize{type = 'variable', key = 'a_mult', vars = {card.ability.extra.mult_mod * enhanced}},
+            message = localize('poke_tidy_up_ex'), 
             colour = G.C.MULT
           }
         end
       end
       if context.joker_main and card.ability.extra.mult > 0 then
         return {
-          message = localize{type = 'variable', key = 'a_mult', vars = {card.ability.extra.mult}}, 
+          message = localize('poke_tail_slap_ex'), 
           colour = G.C.MULT,
           mult_mod = card.ability.extra.mult 
         }
@@ -107,14 +107,14 @@ local cinccino = {
         if enhanced > 0 and not context.blueprint then
           card.ability.extra.mult = card.ability.extra.mult + (card.ability.extra.mult_mod * enhanced)
           return {
-            message = localize{type = 'variable', key = 'a_mult', vars = {card.ability.extra.mult_mod * enhanced}},
+            message = localize('poke_tidy_up_ex'), 
             colour = G.C.MULT
           }
         end
       end
       if context.joker_main and card.ability.extra.mult > 0 then
         return {
-          message = localize{type = 'variable', key = 'a_mult', vars = {card.ability.extra.mult}}, 
+          message = localize('poke_tail_slap_ex'), 
           colour = G.C.MULT,
           mult_mod = card.ability.extra.mult 
         }

@@ -718,6 +718,8 @@ return {
             poke_psychic_surge_ex = "Psychic Surge!",
             poke_spicy_ex = "Spicy!",
             poke_boomburst_ex = "Boomburst!",
+            poke_tidy_up_ex = "Tidy Up!",
+            poke_tail_slap_ex = "Tail Slap!",
             poke_last_respects_ex = "Last Respects!",
             poke_pure_power_ex = "Pure Power!",
             poke_expanding_force_ex = "Expanding Force!",
