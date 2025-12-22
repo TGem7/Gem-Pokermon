@@ -708,6 +708,29 @@ return {
                     "{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)",
                 }
             },
+            j_Gem_hisuian_qwilfish = {
+                name = "Hisuian Qwilfish",
+                text = {
+                    "Gain {C:chips}+#2# chips{} whenever a",
+                    "{C:attention}Toxic{} Card is scored.",
+                    "{br:4}ERROR - CONTACT STEAK",
+                    "When {C:attention}first hand{} of round is played, turn",
+                    "a random card {C:attention}held{} in hand to {C:attention}Toxic{}",
+                    "{C:inactive}(Evolves at {C:chips}+#1#{C:inactive} / +120 Chips)",
+                }
+            },
+            j_Gem_overqwil = {
+                name = " Overqwil",
+                text = {
+                    "Gain {C:chips}+#2# chips{} whenever a {C:attention}Toxic{}",
+                    "Card is scored. {C:attention}Doubled{} if {C:attention}poker hand{}",
+                    "contains only {C:attention}Toxic{} Cards",
+                    "{br:4}ERROR - CONTACT STEAK",
+                    "When {C:attention}first hand{} of round is played, turn",
+                    "two random cards {C:attention}held{} in hand to {C:attention}Toxic{}",
+                    "{C:inactive}(Currently {C:chips}+#1#{C:inactive} Chips)",
+                }
+            },
         },
     },
   misc = {

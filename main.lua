@@ -92,6 +92,7 @@ local name_lists = {
   {"hisuian_growlithe", "hisuian_arcanine"},
   {"alolan_grimer", "alolan_muk"},
   {"cubone", "marowak", "alolan_marowak"},
+  {"hisuian_qwilfish", "overqwil"},
   {"yamask", "cofagrigus"},
   {"sandile", "krokorok", "krookodile"},
   {"morelull", "shiinotic"},
