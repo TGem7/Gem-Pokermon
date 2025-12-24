@@ -16,6 +16,7 @@ return {
 	Yamask = true,
 	Sandile = true,
 	Minccino = true,
+	Cryogonal = true,
 	Noibat = true,
 	Morelull = true,
 	Zeraora = true,

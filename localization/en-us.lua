@@ -221,6 +221,14 @@ return {
                     "contains a {C:attention}Stone Card{}"
                 } 
             },
+            j_Gem_cryogonal = {
+                name = "Cryogonal",
+                text = {
+                    "All played {C:attention}face{} cards",
+                    "become {C:attention}Glass{} cards",
+                    "when scored",
+                },
+            },
             j_Gem_yamask = {
                 name = "Yamask",
                 text = {

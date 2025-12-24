@@ -119,6 +119,7 @@ local name_lists = {
   {"noibat", "noivern"},
   {"greavard", "houndstone"},
   {"minccino", "cinccino"},
+  {"cryogonal"},
 }
 
 SMODS.Rarity{
