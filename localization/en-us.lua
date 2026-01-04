@@ -347,35 +347,6 @@ return {
                     "{C:inactive}(Reverts after {C:attention}#1#{C:inactive} round)",
                 }
             },
-            j_Gem_budew = {
-                name = "Budew",
-                text = {
-                  "{C:attention}Baby{}, {X:mult,C:white}X#1#{} Mult",
-                  "At end of round, add a random",
-                  "{C:attention}Flower card{} to your deck",
-                  "{C:inactive,s:0.8}(Evolves after {C:attention,s:0.8}#2#{C:inactive,s:0.8} rounds)",
-                }
-            },
-            j_Gem_roselia = {
-                name = "Roselia",
-                text = {
-                  "If first hand of round contains a",
-                  "scoring {C:attention}Flower Card{}, turn the rightmost",
-                  "scoring card to a {C:attention}Flower Card{}",
-                  "{C:inactive,s:0.8}(Evolves with a {C:attention,s:0.8}Shiny Stone{C:inactive,s:0.8})",
-                }
-            },
-            j_Gem_roserade = {
-                name = "Roserade",
-                text = {
-                  "If first hand of round contains a",
-                  "scoring {C:attention}Flower Card{}, turn the rightmost",
-                  "scoring card to a {C:attention}Flower Card{}",
-                  "{br:4}ERROR - CONTACT STEAK",
-                  "If scoring hand is exactly one {C:attention}Flower Card{},",
-                  "give it either a {C:red}Red{} or {C:blue}Blue{} seal",
-                }
-            },
             j_Gem_electrike = {
                 name = "Electrike",
                 text = {
