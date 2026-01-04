@@ -89,7 +89,7 @@ local overqwil={
       if context.individual and context.cardarea == G.play and SMODS.has_enhancement(context.other_card, 'm_stall_toxic') and not context.blueprint then
         local all_toxic = true
         for k, v in pairs(context.full_hand) do
-          if not SMODS.has_enhancement(v, "m_poke_hazard") then
+          if not SMODS.has_enhancement(v, "m_stall_toxic") then
             all_toxic = false
           end
         end
