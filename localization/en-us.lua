@@ -365,8 +365,7 @@ return {
                   "{br:4}ERROR - CONTACT STEAK",
                   "If scoring {C:attention}Nature{} card is already {C:attention}Gold{},",
                   "give {C:money}$#1#{} plus {C:money}$#2#{} for each other {X:lightning, C:black}Lightning{}",
-                  "card you have when scored",
-                  "{C:inactive,s:0.8}(includes Jokers and Energy cards){}",
+                  "joker you have when scored",
                 }
             },
             j_Gem_mega_manectric = {
