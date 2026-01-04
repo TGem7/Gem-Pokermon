@@ -51,9 +51,12 @@ local electrike = {
   end,
   set_ability = function(self, card, initial, delay_sprites)
     if initial then
-      card.ability.extra.targets = get_poke_target_card_ranks("electrike", 3, card.ability.extra.targets)
+      self:set_nature(card)
     end
-  end
+  end,
+  set_nature = function(self,card)
+    card.ability.extra.targets = get_poke_target_card_ranks("electrike", 3, card.ability.extra.targets)
+  end,
 }
 
 --  Manectric 310
@@ -109,8 +112,11 @@ local manectric = {
   end,
   set_ability = function(self, card, initial, delay_sprites)
     if initial then
-      card.ability.extra.targets = get_poke_target_card_ranks("manectric", 3, card.ability.extra.targets)
+      self:set_nature(card)
     end
+  end,
+  set_nature = function(self,card)
+    card.ability.extra.targets = get_poke_target_card_ranks("manectric", 3, card.ability.extra.targets)
   end,
    megas = { "mega_manectric" },
 }
@@ -153,9 +159,12 @@ local mega_manectric = {
   end,
   set_ability = function(self, card, initial, delay_sprites)
     if initial then
-      card.ability.extra.targets = get_poke_target_card_ranks("manectric", 3, card.ability.extra.targets)
+      self:set_nature(card)
     end
-  end
+  end,
+  set_nature = function(self,card)
+    card.ability.extra.targets = get_poke_target_card_ranks("mega_manectric", 3, card.ability.extra.targets)
+  end,
 }
 
 return {
