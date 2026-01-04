@@ -716,6 +716,7 @@ return {
       dictionary = {
           -- Joker Messages
             Gem_gold = "Gold!",
+            Gem_glass = "Glass!",
             poke_electric_surge_ex = "Electric Surge!",
             poke_psychic_surge_ex = "Psychic Surge!",
             poke_spicy_ex = "Spicy!",
