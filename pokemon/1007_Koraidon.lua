@@ -40,8 +40,10 @@ local koraidon={
 calculate = function(self, card, context)
 -- Create a random Past Paradox joker when boss blind defeated
    if context.end_of_round and context.game_over == false and context.main_eval and G.GAME.blind.boss and (#G.jokers.cards + G.GAME.joker_buffer) < G.jokers.config.card_limit then
-           G.E_MANAGER:add_event(Event({trigger = 'immediate',
-          func = function()
+          G.GAME.joker_buffer = G.GAME.joker_buffer + 1
+          G.E_MANAGER:add_event(Event({trigger = 'after', delay = 0.4, func = function()
+            G.GAME.joker_buffer = 0
+            play_sound('timpani')
             -- if edition is nil, it'll try again for an edition
             local _card = SMODS.create_card({set = "Joker", rarity = "Gem_paradox", area = G.jokers, key = card.ability.extra.key})
             energy_increase(_card, get_type(_card), energy_max + (G.GAME.energy_plus or 0) +
