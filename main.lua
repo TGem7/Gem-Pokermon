@@ -87,7 +87,6 @@ local name_lists = {
   {"mawile", "mega_mawile"},
   {"meditite", "medicham", "mega_medicham"},
   {"electrike", "manectric", "mega_manectric"},
-  {"budew", "roselia", "roserade"},
   {"carvanha", "sharpedo", "mega_sharpedo"},
   {"hisuian_growlithe", "hisuian_arcanine"},
   {"alolan_grimer", "alolan_muk"},
