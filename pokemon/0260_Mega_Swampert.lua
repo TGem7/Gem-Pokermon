@@ -82,9 +82,12 @@ local mega_swampert={
   end,
   set_ability = function(self, card, initial, delay_sprites)
     if initial then
-      card.ability.extra.targets = get_poke_target_card_ranks("mega_swampert", 3, card.ability.extra.targets)
+      self:set_nature(card)
     end
-  end
+  end,
+  set_nature = function(self,card)
+    card.ability.extra.targets = get_poke_target_card_ranks("mega_swampert", 3, card.ability.extra.targets)
+  end,
 }
 
 return {
