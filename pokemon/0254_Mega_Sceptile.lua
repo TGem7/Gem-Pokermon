@@ -51,7 +51,7 @@ local mega_sceptile={
     end
   end,
   set_nature = function(self,card)
-    card.ability.extra.targets = get_poke_target_card_ranks("mudkip", 3, card.ability.extra.targets)
+    card.ability.extra.targets = get_poke_target_card_ranks("mega_sceptile", 3, card.ability.extra.targets)
   end,
 }
 
