@@ -252,8 +252,8 @@ return {
             j_Gem_morelull = {
                 name = 'Morelull',
                 text = {
-                    "Using a consumable gives {C:attention}held{}",
-                    "consumables {C:money}+$#1#{} sell value",
+                    "Using a consumable adds {C:money}+$#1#{} of",
+                    "sell value to {C:attention}held{} consumables",
                     "{C:inactive,s:0.8}(Evolves after using {C:attention,s:0.8}#2#{C:inactive,s:0.8} consumables)",
                 } 
             },
@@ -261,11 +261,12 @@ return {
                 name = 'Shiinotic',
                 text = {
                     "{C:attention}+#3#{} consumable slots",
-                    "Using a consumable gives {C:attention}held{}",
-                    "consumables {C:money}+$#1#{} sell value",
+                    "Using a consumable adds {C:money}+$#1#{} of",
+                    "sell value to {C:attention}held{} consumables",
                     "{br:3}ERROR - CONTACT STEAK",
-                    "Gives {C:mult}Mult{} equal to the {C:attention}total{}",
-                    "sell value of {C:attention}all{} consumables",
+                    "Adds the sell value of all",
+                    "owned {C:attention}consumables{} to Mult",
+                    "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)",
                 } 
             },
             j_Gem_sizzlipede = {
@@ -347,6 +348,35 @@ return {
                     "{C:inactive}(Reverts after {C:attention}#1#{C:inactive} round)",
                 }
             },
+            j_Gem_budew = {
+                name = "Budew",
+                text = {
+                  "{C:attention}Baby{}, {X:mult,C:white}X#1#{} Mult",
+                  "At end of round, add a random",
+                  "{C:attention}Flower card{} to your deck",
+                  "{C:inactive,s:0.8}(Evolves after {C:attention,s:0.8}#2#{C:inactive,s:0.8} rounds)",
+                }
+            },
+            j_Gem_roselia = {
+                name = "Roselia",
+                text = {
+                  "If first hand of round contains a",
+                  "scoring {C:attention}Flower Card{}, turn the rightmost",
+                  "scoring card to a {C:attention}Flower Card{}",
+                  "{C:inactive,s:0.8}(Evolves with a {C:attention,s:0.8}Shiny Stone{C:inactive,s:0.8})",
+                }
+            },
+            j_Gem_roserade = {
+                name = "Roserade",
+                text = {
+                  "If first hand of round contains a",
+                  "scoring {C:attention}Flower Card{}, turn the rightmost",
+                  "scoring card to a {C:attention}Flower Card{}",
+                  "{br:4}ERROR - CONTACT STEAK",
+                  "If scoring hand is exactly one {C:attention}Flower Card{},",
+                  "give it either a {C:red}Red{} or {C:blue}Blue{} seal",
+                }
+            },
             j_Gem_electrike = {
                 name = "Electrike",
                 text = {
@@ -365,7 +395,8 @@ return {
                   "{br:4}ERROR - CONTACT STEAK",
                   "If scoring {C:attention}Nature{} card is already {C:attention}Gold{},",
                   "give {C:money}$#1#{} plus {C:money}$#2#{} for each other {X:lightning, C:black}Lightning{}",
-                  "joker you have when scored",
+                  "card you have when scored",
+                  "{C:inactive,s:0.8}(includes Jokers and Energy cards){}",
                 }
             },
             j_Gem_mega_manectric = {
@@ -715,7 +746,6 @@ return {
       dictionary = {
           -- Joker Messages
             Gem_gold = "Gold!",
-            Gem_glass = "Glass!",
             poke_electric_surge_ex = "Electric Surge!",
             poke_psychic_surge_ex = "Psychic Surge!",
             poke_spicy_ex = "Spicy!",
