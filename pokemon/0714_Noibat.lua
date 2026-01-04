@@ -12,7 +12,7 @@ local noibat = {
   pos = PokemonSprites["noibat"].base.pos,
   config = { extra = { Xmult_mod = 0.5, Xmult = 1 }, evo_rqmt = 3 },
   loc_vars = function(self, info_queue, card)
-      type_tooltip(self, info_queue, center)
+      type_tooltip(self, info_queue, card)
       return { vars = { card.ability.extra.Xmult_mod, card.ability.extra.Xmult } }
   end,
   rarity = 3,
@@ -65,7 +65,7 @@ local noivern = {
   pos = PokemonSprites["noivern"].base.pos,
   config = { extra = { Xmult_mod = 0.5, Xmult = 3 } },
   loc_vars = function(self, info_queue, card)
-      type_tooltip(self, info_queue, center)
+      type_tooltip(self, info_queue, card)
       return { vars = { card.ability.extra.Xmult_mod, card.ability.extra.Xmult } }
   end,
   rarity = 'poke_safari',
