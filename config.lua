@@ -9,7 +9,6 @@ return {
 	Mawile = true,
 	Meditite = true,
 	Electrike = true,
-	Roselia = true,
 	Carvanha = true,
 	Wailmer = true,
 	Chimecho = true,
@@ -40,6 +39,7 @@ return {
 	Miraidon = true,
 
 }
+
 
 
 
