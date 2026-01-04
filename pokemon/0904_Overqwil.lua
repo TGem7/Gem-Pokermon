@@ -41,9 +41,7 @@ local hisuian_qwilfish={
           }
       end
       -- If first hand of round, turn one card held in hand to toxic
-      if context.individual and context.cardarea == G.play and not card.ability.extra.triggered and not context.blueprint then
-        if G.GAME.current_round.hands_played == 0 then
-          card.ability.extra.triggered = true
+      if context.individual and context.cardarea == G.play and G.GAME.current_round.hands_played == 0 and not context.blueprint then
       local cards_held = {}
       for k, v in ipairs(G.hand.cards) do
           table.insert(cards_held, v)
@@ -57,9 +55,7 @@ local hisuian_qwilfish={
             SMODS.calculate_effect({x_mult = G.GAME.current_round.toxic.toxicXMult}, cards_held[i])
             cards_held[i]:juice_up()
           end
-        end
       end
-    if context.joker_main then card.ability.extra.triggered = false end
     return scaling_evo(self, card, context, "j_Gem_overqwil", card.ability.extra.chips, self.config.evo_rqmt)
   end,
 }
@@ -120,9 +116,7 @@ local overqwil={
           }
       end
       -- If first hand of round, turn two cards held in hand to toxic
-      if context.individual and context.cardarea == G.play and not card.ability.extra.triggered and not context.blueprint then
-        if G.GAME.current_round.hands_played == 0 then
-          card.ability.extra.triggered = true
+      if context.individual and context.cardarea == G.play and G.GAME.current_round.hands_played == 0 and not context.blueprint then
       local cards_held = {}
       for k, v in ipairs(G.hand.cards) do
           table.insert(cards_held, v)
@@ -136,9 +130,7 @@ local overqwil={
             SMODS.calculate_effect({x_mult = G.GAME.current_round.toxic.toxicXMult}, cards_held[i])
             cards_held[i]:juice_up()
           end
-        end
       end
-    if context.joker_main then card.ability.extra.triggered = false end
   end
 }
 
@@ -147,3 +139,4 @@ return {
   enabled = (SMODS.Mods["ToxicStall"] or {}).can_load or false,
   list = {hisuian_qwilfish, overqwil}
 }
+
