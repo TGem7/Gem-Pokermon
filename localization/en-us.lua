@@ -189,18 +189,28 @@ return {
             j_Gem_capsakid = {
                 name = "Capsakid",
                 text = {
-                  "When {C:attention}Mult{} cards are scored,",
-                  "earn {C:money}$#1#{}",
+                  "{C:attention}Seed{} cards give {C:mult}+#1#{} Mult when",
+                  "scored or held in hand",
                   "{C:inactive,s:0.8}(Evolves with a {C:attention,s:0.8}Fire Stone{C:inactive,s:0.8})"
                 } 
             },
             j_Gem_scovillain = {
                 name = "Scovillain",
                 text = {
-                  "When {C:attention}Mult{} cards are scored,",
-                  "earn {C:money}$#1#{}",
-                  "{C:attention}Gold{} cards {C:attention}held{} in hand",
-                  "give {C:mult}+#2#{} Mult"
+                  "If first played poker hand",
+                  "contains only {C:attention}Mult{} cards, turn",
+                  "a random held card to {C:attention}Flower{}",
+                  "{br:3}ERROR - CONTACT STEAK",
+                  "Held {C:attention}Seed{} or {C:attention}Flower{} cards give {X:mult,C:white}X#1#{}",
+                  "Mult if poker hand contains {C:attention}4+{} suits"
+                } 
+            },
+            j_Gem_mega_scovillain = {
+                name = "Mega Scovillain",
+                text = {
+                  "Held {C:attention}Seed{} or {C:attention}Flower{} cards",
+                  "give {X:mult,C:white}X#1#{} Mult if poker",
+                  "hand contains {C:attention}4+{} suits",
                 } 
             },
             j_Gem_hisuian_growlithe = {
