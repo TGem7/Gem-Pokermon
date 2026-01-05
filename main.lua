@@ -103,7 +103,7 @@ local name_lists = {
   {"pincurchin"},
   {"indeedee_f"},
   {"indeedee_m"},
-  {"capsakid", "scovillain"},
+  {"capsakid", "scovillain", "mega_scovillain"},
   {"kubfu", "urshifu_single_strike", "urshifu_rapid_strike"},
   {"great_tusk"},
   {"iron_treads"},
