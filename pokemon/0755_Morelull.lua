@@ -48,12 +48,7 @@ local shiinotic = {
   loc_vars = function(self, info_queue, center)
     type_tooltip(self, info_queue, center)
     local total = 0
-    if G.consumeables and G.consumeables.cards then
-      for k, v in ipairs(G.consumeables.cards) do
-        total = total + v.sell_cost 
-      end
-    end
-    return {vars = {center.ability.extra.money_mod, total, center.ability.extra.card_limit}}
+    return {vars = {center.ability.extra.money_mod, center.ability.extra.mult, center.ability.extra.card_limit}}
   end,
   rarity = "poke_safari",
   cost = 8,
