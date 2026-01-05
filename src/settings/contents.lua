@@ -40,7 +40,7 @@ return {
         { list = { 'j_Gem_indeedee_f' }, label = function() return localize { type = "name_text", set = "Joker", key = "j_Gem_indeedee_f" } end, config_key = "Indeedee_F" },
         { list = { 'j_Gem_indeedee_m' }, label = function() return localize { type = "name_text", set = "Joker", key = "j_Gem_indeedee_m" } end, config_key = "Indeedee_M" },
         { list = { 'j_Gem_kubfu', 'j_Gem_urshifu_single_strike', 'j_Gem_urshifu_rapid_strike'  }, label = function() return localize { type = "name_text", set = "Joker", key = "j_Gem_kubfu" } end, config_key = "Kubfu" },
-        { list = { 'j_Gem_capsakid', 'j_Gem_scovillain' }, label = function() return localize { type = "name_text", set = "Joker", key = "j_Gem_capsakid" } end, config_key = "Capsakid" },
+        { list = { 'j_Gem_capsakid', 'j_Gem_scovillain', 'j_Gem_mega_scovillain' }, label = function() return localize { type = "name_text", set = "Joker", key = "j_Gem_capsakid" } end, config_key = "Capsakid" },
         { list = { 'j_Gem_greavard', 'j_Gem_houndstone' }, label = function() return localize { type = "name_text", set = "Joker", key = "j_Gem_greavard" } end, config_key = "Greavard" },
       }
     },
