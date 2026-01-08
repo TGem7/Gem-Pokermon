@@ -84,6 +84,10 @@ end
 
 --Required by the pokemon family function (right click on a pokemon joker)
 local name_lists = {
+  {"treecko", "grovyle", "sceptile", "mega_sceptile"},
+  {"torchic", "combusken", "blaziken", "mega_blaziken"},
+  {"mudkip", "marshtomp", "swampert", "mega_swampert"},
+  {"absol", "mega_absol"},
   {"mawile", "mega_mawile"},
   {"meditite", "medicham", "mega_medicham"},
   {"electrike", "manectric", "mega_manectric"},
@@ -167,30 +171,14 @@ for _, file in ipairs(pconsumables) do
   end
 end
 
---Add Hoenn megas to base families
-local family_injections = {
-  ["sceptile"] = "mega_sceptile",
-  ["blaziken"] = "mega_blaziken",
-  ["swampert"] = "mega_swampert",
-  ["absol"] = "mega_absol",
-}
-
-for _, family in ipairs(pokermon.family) do
-  for i, member in ipairs(family) do
-    local payload = (type(member) == 'table' and family_injections[member.key]) or family_injections[member]
-    if payload then
-      table.insert(family, i + 1, payload)
-    end
-  end
-end
-
 --Add Dex Order support for injections
 G.E_MANAGER:add_event(Event({
   func = function()
-    for _, payload in pairs(family_injections) do
-      pokermon.dex_order_groups[#pokermon.dex_order_groups+1] = { payload }
-    end
     pokermon.dex_order_groups[#pokermon.dex_order_groups+1] = { 'cubone', 'marowak', 'alolan_marowak' }
+    pokermon.dex_order_groups[#pokermon.dex_order_groups+1] = { 'mega_sceptile' }
+    pokermon.dex_order_groups[#pokermon.dex_order_groups+1] = { 'mega_blaziken' }
+    pokermon.dex_order_groups[#pokermon.dex_order_groups+1] = { 'mega_swampert' }
+    pokermon.dex_order_groups[#pokermon.dex_order_groups+1] = { 'mega_absol' }
     return true
   end
 }))
