@@ -44,7 +44,7 @@ local morelull = {
 local shiinotic = {
   name = "shiinotic",
   pos = PokemonSprites["shiinotic"].base.pos,
-  config = {extra = {money_mod = 2, mult = 0, card_limit = 1}},
+  config = {extra = {money_mod = 1, mult = 0, card_limit = 1}},
   loc_vars = function(self, info_queue, center)
     type_tooltip(self, info_queue, center)
     local total = 0

@@ -477,7 +477,7 @@ return {
                     "{C:money}$#1#{} at end of round",
                     "Increase by {X:mult,C:white} X#3# {} when a",
                     "{C:attention}Big Blind{} is defeated",
-                    "{C:inactive}(Evolves at {X:mult,C:white}X#2#{C:inactive} / X2 Mult)",
+                    "{C:inactive}(Evolves at {X:mult,C:white}X#2#{C:inactive} / X1.5 Mult)",
                 }
             },
             j_Gem_krookodile = {
@@ -753,7 +753,7 @@ return {
                 text = {
                     "{C:purple}+#3#{} hazard level",
                     "Create a {C:planet}Planet{} card after",
-                    "discarding {C:attention,s:0.8}3 {C:inactive,s:0.8}[#4#] {C:attention}Hazard{} cards",
+                    "discarding {C:attention}3 {C:inactive}[#4#] {C:attention}Hazard{} cards",
                     "{br:4}ERROR - CONTACT STEAK",
                     "When discarding a {C:attention}Hazard{} card,",
                     "gain {C:mult}+#2#{} Mult",

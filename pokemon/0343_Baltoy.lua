@@ -10,7 +10,7 @@ end
 local baltoy = {
   name = "baltoy",
   pos = PokemonSprites["baltoy"].base.pos,
-  config = {extra = {mult = 0, hazard_level = 1, mult_mod = 2}, evo_rqmt = 20},
+  config = {extra = {mult = 0, hazard_level = 1, mult_mod = 1}, evo_rqmt = 20},
   loc_vars = function(self, info_queue, center)
     type_tooltip(self, info_queue, center)
     info_queue[#info_queue+1] = {set = 'Other', key = 'hazard_level', vars = poke_get_hazard_level_vars()}
@@ -58,7 +58,7 @@ local baltoy = {
 local claydol = {
   name = "claydol",
   pos = PokemonSprites["claydol"].base.pos,
-  config = {extra = {mult = 0, hazard_level = 1, mult_mod = 3, discards_remaining = 3}},
+  config = {extra = {mult = 0, hazard_level = 1, mult_mod = 2, discards_remaining = 3}},
   loc_vars = function(self, info_queue, center)
     type_tooltip(self, info_queue, center)
     info_queue[#info_queue+1] = {set = 'Other', key = 'hazard_level', vars = poke_get_hazard_level_vars()}
@@ -81,18 +81,20 @@ local claydol = {
       if card.ability.extra.discards_remaining == 1 then
         card.ability.extra.discards_remaining = 3
         card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_mod
-        G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
-        G.E_MANAGER:add_event(Event({
-          trigger = 'before',
-          delay = 0.0,
-          func = (function()
-                  local card = create_card('Planet', G.consumeables, nil, nil, nil, nil, nil, 'clay')
-                  card:add_to_deck()
-                  G.consumeables:emplace(card)
-                  G.GAME.consumeable_buffer = 0
-              return true
-          end)}))
-        return { message = localize('k_plus_planet'), colour = G.C.SECONDARY_SET.Planet }
+        if #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
+          G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
+          G.E_MANAGER:add_event(Event({
+            trigger = 'before',
+            delay = 0.0,
+            func = (function()
+                    local card = create_card('Planet', G.consumeables, nil, nil, nil, nil, nil, 'clay')
+                    card:add_to_deck()
+                    G.consumeables:emplace(card)
+                    G.GAME.consumeable_buffer = 0
+                return true
+            end)}))
+          return { message = localize('k_plus_planet'), colour = G.C.SECONDARY_SET.Planet }
+        end
       elseif context.discard and SMODS.has_enhancement(context.other_card, 'm_poke_hazard') and not context.blueprint then
           card.ability.extra.discards_remaining = card.ability.extra.discards_remaining - 1
           card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_mod

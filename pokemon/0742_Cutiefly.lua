@@ -10,7 +10,7 @@ end
 local cutiefly={
   name = "cutiefly", 
   pos = PokemonSprites["cutiefly"].base.pos,
-  config = {extra = {money_mod = 3, money_earned = 0, seeds_scoring = 15, seeds_scored = 0}, evo_rqmt = 15},
+  config = {extra = {money_mod = 2, money_earned = 0, seeds_scoring = 15, seeds_scored = 0}, evo_rqmt = 15},
   loc_vars = function(self, info_queue, center)
     type_tooltip(self, info_queue, center)
     return {vars = {center.ability.extra.money_mod, center.ability.extra.seeds_scoring}}
@@ -44,7 +44,7 @@ local cutiefly={
 local ribombee={
   name = "ribombee", 
   pos = PokemonSprites["ribombee"].base.pos,
-  config = {extra = {money_mod = 5, money_earned = 0, retriggers = 1}},
+  config = {extra = {money_mod = 4, money_earned = 0, retriggers = 1}},
   loc_vars = function(self, info_queue, center)
     type_tooltip(self, info_queue, center)
     return {vars = {center.ability.extra.money_mod}}
