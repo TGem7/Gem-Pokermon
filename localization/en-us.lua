@@ -262,8 +262,8 @@ return {
             j_Gem_morelull = {
                 name = 'Morelull',
                 text = {
-                    "Using a consumable gives {C:attention}held{}",
-                    "consumables {C:money}+$#1#{} sell value",
+                    "Using a consumable adds {C:money}+$#1#{} of",
+                    "sell value to {C:attention}held{} consumables",
                     "{C:inactive,s:0.8}(Evolves after using {C:attention,s:0.8}#2#{C:inactive,s:0.8} consumables)",
                 } 
             },
@@ -271,11 +271,12 @@ return {
                 name = 'Shiinotic',
                 text = {
                     "{C:attention}+#3#{} consumable slots",
-                    "Using a consumable gives {C:attention}held{}",
-                    "consumables {C:money}+$#1#{} sell value",
+                    "Using a consumable adds {C:money}+$#1#{} of",
+                    "sell value to {C:attention}held{} consumables",
                     "{br:3}ERROR - CONTACT STEAK",
-                    "Gives {C:mult}Mult{} equal to the {C:attention}total{}",
-                    "sell value of {C:attention}all{} consumables",
+                    "Adds the sell value of all",
+                    "owned {C:attention}consumables{} to Mult",
+                    "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)",
                 } 
             },
             j_Gem_sizzlipede = {
