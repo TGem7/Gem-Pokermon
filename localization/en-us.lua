@@ -738,6 +738,28 @@ return {
                     "{C:attention}Hand{} revert to {C:attention}Seed{} cards",
                 }
             },
+            j_Gem_baltoy = {
+                name = "Baltoy",
+                text = {
+                    "{C:purple}+#3#{} hazard level",
+                    "When discarding a {C:attention}Hazard{} card,",
+                    "gain {C:mult}+#2#{} Mult",
+                    "{C:inactive}(Evolves at {C:mult}+#1#{C:inactive} / +20 Mult)",
+                }
+            },
+            j_Gem_claydol = {
+                name = "Claydol",
+                text = {
+                    "{C:purple}+#3#{} hazard level",
+                    "Create a {C:planet}Planet{} card after",
+                    "discarding {C:attention,s:0.8}3 {C:inactive,s:0.8}[#4#] {C:attention}Hazard{} cards",
+                    "{C:inactive} (must have room)",
+                    "{br:4}ERROR - CONTACT STEAK",
+                    "When discarding a {C:attention}Hazard{} card,",
+                    "gain {C:mult}+#2#{} Mult",
+                    "{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)",
+                }
+            },
         },
     },
   misc = {

@@ -88,6 +88,7 @@ local name_lists = {
   {"torchic", "combusken", "blaziken", "mega_blaziken"},
   {"mudkip", "marshtomp", "swampert", "mega_swampert"},
   {"absol", "mega_absol"},
+  {"baltoy", "claydol"},
   {"mawile", "mega_mawile"},
   {"meditite", "medicham", "mega_medicham"},
   {"electrike", "manectric", "mega_manectric"},

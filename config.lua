@@ -10,6 +10,7 @@ return {
 	Meditite = true,
 	Electrike = true,
 	Carvanha = true,
+	Baltoy = true,
 	Wailmer = true,
 	Chimecho = true,
 	Yamask = true,
