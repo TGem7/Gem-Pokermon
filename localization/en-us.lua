@@ -753,7 +753,6 @@ return {
                     "{C:purple}+#3#{} hazard level",
                     "Create a {C:planet}Planet{} card after",
                     "discarding {C:attention,s:0.8}3 {C:inactive,s:0.8}[#4#] {C:attention}Hazard{} cards",
-                    "{C:inactive} (must have room)",
                     "{br:4}ERROR - CONTACT STEAK",
                     "When discarding a {C:attention}Hazard{} card,",
                     "gain {C:mult}+#2#{} Mult",
