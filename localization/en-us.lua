@@ -760,6 +760,25 @@ return {
                     "{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)",
                 }
             },
+            j_Gem_phantump = {
+                name = "Phantump",
+                text = {
+                    "If first played card in played",
+                    "{C:attention}poker hand{} is an {C:attention}Unenhanced 4{},",
+                    "turn it into a {C:attention}Seed{} card",
+                    "{C:inactive,s:0.8}(Evolves with a {C:attention,s:0.8}Linking Cord{C:inactive,s:0.8})",
+                }
+            },
+            j_Gem_trevenant = {
+                name = "Trevenant",
+                text = {
+                    "Scoring {C:attention}Unenhanced 4s{} are",
+                    "turned into {C:attention}Seed{} cards",
+                    "{br:4}ERROR - CONTACT STEAK",
+                    "Scoring {C:attention}10{}{C:inactive}[#1#] {C:attention}4s{} applies a {X:grass,C:white}Grass{}",
+                    "sticker to {C:attention}leftmost{} joker",
+                }
+            },
         },
     },
   misc = {
@@ -767,6 +786,8 @@ return {
           -- Joker Messages
             Gem_gold = "Gold!",
             Gem_glass = "Glass!",
+            Gem_leech_seed = "Leech Seed!",
+            Gem_forest_curse = "Forest's Curse!",
             poke_electric_surge_ex = "Electric Surge!",
             poke_psychic_surge_ex = "Psychic Surge!",
             poke_spicy_ex = "Spicy!",

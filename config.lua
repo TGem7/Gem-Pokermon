@@ -19,6 +19,7 @@ return {
 	Cryogonal = true,
 	Noibat = true,
 	Morelull = true,
+	Phantump = true,
 	Cutiefly = true,
 	Zeraora = true,
 	Sizzlipede = true, 
