@@ -763,8 +763,8 @@ return {
             j_Gem_phantump = {
                 name = "Phantump",
                 text = {
-                    "If first played card in played",
-                    "{C:attention}poker hand{} is an {C:attention}Unenhanced 4{},",
+                    "If first played card in {C:attention}poker",
+                    "{C:attention}hand{} is an {C:attention}Unenhanced 4{},",
                     "turn it into a {C:attention}Seed{} card",
                     "{C:inactive,s:0.8}(Evolves with a {C:attention,s:0.8}Linking Cord{C:inactive,s:0.8})",
                 }
@@ -775,7 +775,7 @@ return {
                     "Scoring {C:attention}Unenhanced 4s{} are",
                     "turned into {C:attention}Seed{} cards",
                     "{br:4}ERROR - CONTACT STEAK",
-                    "Scoring {C:attention}10{}{C:inactive}[#1#] {C:attention}4s{} applies a {X:grass,C:white}Grass{}",
+                    "Scoring {C:attention}10{} {C:inactive}[#1#] {C:attention}4s{} applies a {X:grass,C:white}Grass{}",
                     "sticker to {C:attention}leftmost{} joker",
                 }
             },
