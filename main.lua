@@ -173,18 +173,6 @@ for _, file in ipairs(pconsumables) do
   end
 end
 
---Add Dex Order support for injections
-G.E_MANAGER:add_event(Event({
-  func = function()
-    pokermon.dex_order_groups[#pokermon.dex_order_groups+1] = { 'cubone', 'marowak', 'alolan_marowak' }
-    pokermon.dex_order_groups[#pokermon.dex_order_groups+1] = { 'mega_sceptile' }
-    pokermon.dex_order_groups[#pokermon.dex_order_groups+1] = { 'mega_blaziken' }
-    pokermon.dex_order_groups[#pokermon.dex_order_groups+1] = { 'mega_swampert' }
-    pokermon.dex_order_groups[#pokermon.dex_order_groups+1] = { 'mega_absol' }
-    return true
-  end
-}))
-
 --Load config tab setup file
 assert(SMODS.load_file("src/settings.lua"))()
 
