@@ -779,6 +779,24 @@ return {
                     "sticker to {C:attention}leftmost{} joker",
                 }
             },
+            j_Gem_stufful = {
+                name = "Stufful",
+                text = {
+                  "{C:attention}Wild{} cards give {C:mult}+#1#{}",
+                  "Mult when scored",
+                  "{C:inactive}(Evolves after {C:attention}#2#{C:inactive} rounds)",
+                },
+            },
+            j_Gem_bewear = {
+                name = "Bewear",
+                text = {
+                  "If played hand is exactly {C:attention}1{}",
+                  "card, it becomes {C:attention}Wild{}",
+                  "{br:4}ERROR - CONTACT STEAK",
+                  "{C:attention}Wild{} cards give {X:mult,C:white} X#1# {}",
+                  "Mult when scored",
+                },
+            },
         },
     },
   misc = {
@@ -787,6 +805,7 @@ return {
             Gem_gold = "Gold!",
             Gem_glass = "Glass!",
             Gem_leech_seed = "Leech Seed!",
+            Gem_bear_hug = "Bear Hug!",
             Gem_forest_curse = "Forest's Curse!",
             poke_electric_surge_ex = "Electric Surge!",
             poke_psychic_surge_ex = "Psychic Surge!",

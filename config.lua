@@ -21,6 +21,7 @@ return {
 	Morelull = true,
 	Phantump = true,
 	Cutiefly = true,
+	Stufful = true,
 	Zeraora = true,
 	Sizzlipede = true, 
 	Alcremie = true,

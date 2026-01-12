@@ -126,6 +126,7 @@ local name_lists = {
   {"cryogonal"},
   {"cutiefly", "ribombee"},
   {"phantump", "trevenant"},
+  {"stufful", "bewear"},
 }
 
 SMODS.Rarity{
