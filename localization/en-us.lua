@@ -419,8 +419,8 @@ return {
                     "Gains {C:mult}+#2#{} Mult per hand played",
                     "or discard used this round",
                     "{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)",
-                    "Gives a Scroll of Waters after {C:chips}#4#{} hands played",
-                    "Gives a Scroll of Darkness after {C:mult}#6#{} discards used",
+                    "{C:inactive,s:0.8}Gives a Scroll of Waters after {C:chips}#4#{} {C:inactive,s:0.8}hands played",
+                    "{C:inactive,s:0.8}Gives a Scroll of Darkness after {C:mult}#6#{} {C:inactive,s:0.8}discards used",
                 }
             },
             j_Gem_urshifu_single_strike = {
@@ -528,7 +528,7 @@ return {
                 text = {
                   "Each {X:lightning,C:black}Lightning{} Joker gives {X:mult,C:white}X#1#{} Mult",
                   "{br:4}ERROR - CONTACT STEAK",
-                  "If {C:attention}all{} of your jokers are",
+                  "If {C:attention}all{} of your Jokers are",
                   "{X:lightning,C:black}Lightning{} type, apply {C:attention}Plasma Deck{}",
                 }
             },
