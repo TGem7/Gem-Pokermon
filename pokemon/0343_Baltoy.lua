@@ -58,7 +58,7 @@ local baltoy = {
 local claydol = {
   name = "claydol",
   pos = PokemonSprites["claydol"].base.pos,
-  config = {extra = {mult = 0, hazard_level = 1, mult_mod = 2, discards_remaining = 3}},
+  config = {extra = {mult = 0, hazard_level = 1, mult_mod = 1, discards_remaining = 3}},
   loc_vars = function(self, info_queue, center)
     type_tooltip(self, info_queue, center)
     info_queue[#info_queue+1] = {set = 'Other', key = 'hazard_level', vars = poke_get_hazard_level_vars()}
