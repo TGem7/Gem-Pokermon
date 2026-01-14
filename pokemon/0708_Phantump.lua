@@ -55,6 +55,7 @@ local trevenant={
       local fours = 0
       for _, scored_card in ipairs(context.scoring_hand) do
         if scored_card:get_id() == 4 then
+          if scored_card.config.center == G.P_CENTERS.c_base then
               fours = fours + 1
               scored_card:set_ability('m_poke_seed', nil, true)
               G.E_MANAGER:add_event(Event({
@@ -63,6 +64,9 @@ local trevenant={
                       return true
                   end
               }))
+          else
+            fours = fours + 1
+          end
         end
       end
       if fours > 0 then
