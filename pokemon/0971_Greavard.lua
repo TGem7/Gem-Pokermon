@@ -13,6 +13,7 @@ local greavard = {
   pos = PokemonSprites["greavard"].base.pos,
   config = { extra = { Xmult_mod = 0.25, greavard_tally = 0, rank_count = 13, rounds = 4 } },
   loc_vars = function(self, info_queue, center)
+        type_tooltip(self, info_queue, center)
       return { vars = { center.ability.extra.Xmult_mod, 1 + (center.ability.extra.Xmult_mod * (center.ability.extra.rank_count - center.ability.extra.greavard_tally)), center.ability.extra.rounds } }
   end,
   rarity = 2,
@@ -59,6 +60,7 @@ local houndstone = {
   pos = PokemonSprites["houndstone"].base.pos,
   config = { extra = { Xmult_mod = 0.5, greavard_tally = 0, rank_count = 13 } },
   loc_vars = function(self, info_queue, center)
+          type_tooltip(self, info_queue, center)
       return { vars = { center.ability.extra.Xmult_mod, 1 + (center.ability.extra.Xmult_mod * (center.ability.extra.rank_count - center.ability.extra.greavard_tally)) } }
   end,
   rarity = "poke_safari",
