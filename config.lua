@@ -17,6 +17,7 @@ return {
 	Sandile = true,
 	Minccino = true,
 	Cryogonal = true,
+	Espurr = true,
 	Noibat = true,
 	Morelull = true,
 	Phantump = true,

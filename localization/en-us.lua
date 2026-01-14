@@ -743,8 +743,8 @@ return {
                 name = "Baltoy",
                 text = {
                     "{C:purple}+#3#{} hazard level",
-                    "When discarding a {C:attention}Hazard{} card,",
-                    "gain {C:mult}+#2#{} Mult",
+                    "When discarding a {C:attention}Hazard{}",
+                    "card, gain {C:mult}+#2#{} Mult",
                     "{C:inactive}(Evolves at {C:mult}+#1#{C:inactive} / +20 Mult)",
                 }
             },
@@ -755,8 +755,8 @@ return {
                     "Create a {C:planet}Planet{} card after",
                     "discarding {C:attention}3 {C:inactive}[#4#] {C:attention}Hazard{} cards",
                     "{br:4}ERROR - CONTACT STEAK",
-                    "When discarding a {C:attention}Hazard{} card,",
-                    "gain {C:mult}+#2#{} Mult",
+                    "When discarding a {C:attention}Hazard{}",
+                    "card, gain {C:mult}+#2#{} Mult",
                     "{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)",
                 }
             },
@@ -784,7 +784,7 @@ return {
                 text = {
                   "{C:attention}Wild{} cards give {C:mult}+#1#{}",
                   "Mult when scored",
-                  "{C:inactive}(Evolves after {C:attention}#2#{C:inactive} rounds)",
+                  "{C:inactive,s:0.8}(Evolves after {C:attention,s:0.8}#2#{C:inactive,s:0.8} rounds)",
                 },
             },
             j_Gem_bewear = {
@@ -796,6 +796,47 @@ return {
                   "{C:attention}Wild{} cards give {X:mult,C:white} X#1# {}",
                   "Mult when scored",
                 },
+            },
+            j_Gem_espurr = {
+                name = 'Espurr',
+                text = {
+                    "{C:purple}+#1# Foresight",
+                    "Each {C:attention}Foreseen{} card",
+                    "gives {C:mult}+#2#{} Mult",
+                  "{C:inactive,s:0.8}(Evolves after {C:attention,s:0.8}#3#{C:inactive,s:0.8} rounds)",
+                  "{C:inactive,s:0.8}(Evolves after {C:attention,s:0.8}#3#{C:inactive,s:0.8}",
+                  "{C:inactive,s:0.8}rounds if over {C:money,s:0.8}$25{C:inactive,s:0.8})",
+                }
+            },
+            j_Gem_meowstic = {
+                name = 'Meowstic-M',
+                text = {
+                    "{C:purple}+#1# Foresight",
+                    "Each {C:attention}Foreseen{} card",
+                    "gives {C:mult}+#2#{} Mult",
+                    "{br:4}ERROR - CONTACT STEAK",
+                    "Foreseen cards give",
+                    "{C:money}$#3#{} at end of round",
+                }
+            },
+            j_Gem_meowstic_f = {
+                name = 'Meowstic-F',
+                text = {
+                    "{C:purple}+#1# Foresight",
+                    "Each {C:attention}Foreseen{} card",
+                    "gives {X:mult,C:white} X#2# {} Mult",
+                }
+            },
+            j_Gem_mega_meowstic = {
+                name = 'Mega Meowstic',
+                text = {
+                    "{C:purple}+#1# Foresight",
+                    "Each {C:attention}Foreseen{} card",
+                    "gives {X:mult,C:white} X#2# {} Mult",
+                    "{br:4}ERROR - CONTACT STEAK",
+                    "Foreseen cards give",
+                    "{C:money}$#3#{} at end of round",
+                }
             },
         },
     },
