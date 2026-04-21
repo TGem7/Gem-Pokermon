@@ -28,7 +28,6 @@ return {
 	Indeedee_M = true,
 	Kubfu = true,
 	Capsakid = true,
-	Greavard = true,
 	Great_Tusk = true,
 	Iron_Treads = true,
 	Iron_Hands = true,
