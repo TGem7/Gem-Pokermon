@@ -751,7 +751,7 @@ return {
                     "gives {X:mult,C:white} X#2# {} Mult",
                 }
             },
-            j_Gem_mega_meowstic_m = {
+            j_Gem_mega_meowstic = {
                 name = 'Mega Meowstic',
                 text = {
                     "{C:purple}+#1# Foresight",
