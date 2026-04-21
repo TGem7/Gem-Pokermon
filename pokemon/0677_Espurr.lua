@@ -107,7 +107,7 @@ local meowstic={
       end
     end
   end,
-   megas = { "mega_meowstic" },
+   megas = { "mega_meowstic_m" },
   add_to_deck = function(self, card, from_debuff)
     G.GAME.scry_amount = (G.GAME.scry_amount or 0) + card.ability.extra.scry
   end,
@@ -144,7 +144,7 @@ local meowstic_f={
       end
     end
   end,
-   megas = { "mega_meowstic" },
+   megas = { "mega_meowstic_f" },
   add_to_deck = function(self, card, from_debuff)
     G.GAME.scry_amount = (G.GAME.scry_amount or 0) + card.ability.extra.scry
   end,
@@ -153,9 +153,9 @@ local meowstic_f={
   end,
 }
 
--- Mega Meowstic 
-local mega_meowstic={
-  name = "mega_meowstic",
+-- Mega Meowstic M
+local mega_meowstic_m={
+  name = "mega_meowstic_m",
   pos = {x = 2, y = 8},
   config = {extra = { scry = 6, Xmult_multi = 1.3, money_mod = 1, earned = 0}},
   loc_vars = function(self, info_queue, card)
@@ -212,10 +212,70 @@ local mega_meowstic={
   end,
 }
 
+-- Mega Meowstic F
+local mega_meowstic_f={
+  name = "mega_meowstic_f",
+  pos = {x = 2, y = 8},
+  config = {extra = { scry = 6, Xmult_multi = 1.3, money_mod = 1, earned = 0}},
+  loc_vars = function(self, info_queue, card)
+    type_tooltip(self, info_queue, card)
+    info_queue[#info_queue + 1] = {set = 'Other', key = 'scry_cards'}
+		return {vars = {card.ability.extra.scry, card.ability.extra.Xmult_multi, card.ability.extra.money_mod, card.ability.extra.earned}}
+  end,
+  rarity = "poke_mega",
+  cost = 12,
+  stage = "Mega",
+  ptype = "Psychic",
+  atlas = "AtlasJokersBasicGen06",
+  gen = 6,
+  no_collection = true,
+  blueprint_compat = true,
+  calculate = function(self, card, context)
+    if not context.end_of_round and context.scoring_hand then
+      if context.individual and context.cardarea == G.scry_view and not context.other_card.debuff then
+        return {
+          xmult = card.ability.extra.Xmult_multi,
+          card = card,
+        }
+      end
+    end
+    if context.end_of_round then
+      if context.individual and context.cardarea == G.scry_view and not context.other_card.debuff then
+        if context.other_card.debuff then
+          return {
+            message = localize("k_debuffed"),
+            colour = G.C.RED,
+            card = card,
+          }
+        else
+          local earned = 0
+          if not context.blueprint then
+            card.ability.extra.earned = card.ability.extra.earned + card.ability.extra.money_mod
+          end
+          
+          earned = earned + card.ability.extra.money_mod
+          earned = ease_poke_dollars(card, "hands", earned)
+          return {
+              message = localize('$')..earned,
+              colour = G.C.MONEY,
+              card = card
+          }
+        end
+      end
+    end
+  end,
+  add_to_deck = function(self, card, from_debuff)
+    G.GAME.scry_amount = (G.GAME.scry_amount or 0) + card.ability.extra.scry
+  end,
+  remove_from_deck = function(self, card, from_debuff)
+    G.GAME.scry_amount = math.max(0,(G.GAME.scry_amount or 0) - card.ability.extra.scry)
+  end,
+}
+
 
 return {
   name = "Gem's Espurr",
   enabled = Gem_config.Espurr or false,
-  list = {espurr, meowstic, meowstic_f, mega_meowstic}
+  list = {espurr, meowstic, meowstic_f, mega_meowstic_m, mega_meowstic_f}
 }
 
