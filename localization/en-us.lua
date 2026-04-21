@@ -97,39 +97,6 @@ return {
                     "{C:inactive}(Currently {C:chips}+#6#{C:inactive} Chips)",
                 } 
             },
-            j_Gem_meditite = {
-                name = "Meditite",
-                text = {
-                  "{C:mult}+#3#{} Mult for each {C:attention}Ace{} or",
-                  "{C:attention}Face{} card remaining in {C:attention}deck",
-                  "{C:inactive}(Currently {C:mult}+#4#{C:inactive} Mult)",
-                  "{C:inactive}(Evolves after {C:attention}#2#{C:inactive} rounds)",
-                }
-            },
-            j_Gem_medicham = {
-                name = "Medicham",
-                text = {
-                  "{C:attention}Aces{} played give",
-                  "{X:chips,C:white}X#3#{} their total chips.",
-                  "{br:3}ERROR - CONTACT STEAK",
-                  "{C:mult}+#2#{} Mult for each {C:attention}Ace{} or",
-                  "{C:attention}Face{} card remaining in {C:attention}deck",
-                  "{C:inactive}(Currently {C:mult}+#4#{C:inactive} Mult)",
-                }
-            },
-            j_Gem_mega_medicham = {
-                name = "Mega Medicham",
-                text = {
-                  "{C:attention}Holding 2{} {C:tarot}Negative Strength{}",
-                  "{br:3}ERROR - CONTACT STEAK",
-                  "{C:attention}Aces{} played give",
-                  "{X:chips,C:white}X#3#{} their total chips.",
-                  "{br:3}ERROR - CONTACT STEAK",
-                  "{X:mult,C:white}X#2#{} Mult for each {C:attention}Ace{}",
-                  "remaining in {C:attention}deck",
-                  "{C:inactive}(Currently {X:mult,C:white}X#4#{}{C:inactive} Mult)",
-                }
-            },
             j_Gem_cubone = {
                 name = 'Cubone',
                 text = {
@@ -387,32 +354,6 @@ return {
                   "{C:attention}Gold{}, give {X:mult,C:white}X#1#",
                 }
             },
-            j_Gem_carvanha = {
-                name = "Carvanha",
-                text = {
-                  "{X:mult,C:white} X#1# {} Mult if played",
-                  "{C:attention}poker hand{} has already",
-                  "been played this round",
-                  "{C:inactive}(Evolves after {C:attention}#2#{C:inactive} rounds)",
-                },
-            },
-            j_Gem_sharpedo = {
-                name = "Sharpedo",
-                text = {
-                  "{X:mult,C:white} X#1# {} Mult if played {C:attention}poker hand{} has already",
-                  "been played this round, increases by",
-                  "{X:mult,C:white} X#2# {} after hand is played",
-                  "{C:inactive,s:0.8}(Resets at end of round)",
-                },
-            },
-            j_Gem_mega_sharpedo = {
-                name = "Mega Sharpedo",
-                text = {
-                  "Scored cards give {X:mult,C:white} X#1# {} Mult if played",
-                  "{C:attention}poker hand{} has already been",
-                  "played this round",
-                },
-            },
             j_Gem_kubfu = {
                 name = "Kubfu",
                 text = {
@@ -504,23 +445,6 @@ return {
                     "{br:4}ERROR - CONTACT STEAK",
                     "When a card scores {C:chips}30+{} {C:chips}chips{},",
                     "increase this joker's {C:chips}chips{} by {C:chips}#2#{}"
-                }
-            },
-            j_Gem_chingling = {
-                name = "Chingling",
-                text = {
-                  "{C:attention}Baby{}, {X:mult,C:white}X#1#{} Mult",
-                  "Creates a {C:dark_edition}Negative{} copy of",
-                  "{C:attention}Justice{} at end of round",
-                  "{C:inactive,s:0.8}(Evolves after {C:attention,s:0.8}#2#{C:inactive,s:0.8} rounds)",
-                }
-            },
-            j_Gem_chimecho = {
-                name = "Chimecho",
-                text = {
-                    "{C:green}#1# in #2#{} chance to create an",
-                    "{C:item}Item{} or {C:purple}Tarot{} card whenever a",
-                    "{C:attention}Glass{} card is scored",
                 }
             },
             j_Gem_zeraora = {
