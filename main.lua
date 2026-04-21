@@ -124,7 +124,7 @@ local name_lists = {
   {"cutiefly", "ribombee"},
   {"phantump", "trevenant"},
   {"stufful", "bewear"},
-  {"espurr", "meowstic", "meowstic_f", "mega_meowstic_m", "mega_meowstic_f"},
+  {"espurr", "meowstic", "meowstic_f", "mega_meowstic", "mega_meowstic_f"},
 }
 
 SMODS.Rarity{
