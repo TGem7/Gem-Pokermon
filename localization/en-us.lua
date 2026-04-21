@@ -751,7 +751,18 @@ return {
                     "gives {X:mult,C:white} X#2# {} Mult",
                 }
             },
-            j_Gem_mega_meowstic = {
+            j_Gem_mega_meowstic_m = {
+                name = 'Mega Meowstic',
+                text = {
+                    "{C:purple}+#1# Foresight",
+                    "Each {C:attention}Foreseen{} card",
+                    "gives {X:mult,C:white} X#2# {} Mult",
+                    "{br:4}ERROR - CONTACT STEAK",
+                    "Foreseen cards give",
+                    "{C:money}$#3#{} at end of round",
+                }
+            },
+            j_Gem_mega_meowstic_f = {
                 name = 'Mega Meowstic',
                 text = {
                     "{C:purple}+#1# Foresight",
