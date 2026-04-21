@@ -126,13 +126,13 @@ local mega_manectric = {
   name = "mega_manectric",
   pos = {x = 4, y = 5},
   soul_pos = {x = 5, y = 5},
-  config = {extra = {Xmult = 2, targets = {{value = "Ace", id = "14"}, {value = "King", id = "13"}, {value = "Queen", id = "12"}}}},
+  config = {extra = {Xmult_multi = 2, targets = {{value = "Ace", id = "14"}, {value = "King", id = "13"}, {value = "Queen", id = "12"}}}},
   loc_vars = function(self, info_queue, center)
     type_tooltip(self, info_queue, center)
     if pokermon_config.detailed_tooltips then
       info_queue[#info_queue+1] = G.P_CENTERS.m_gold
     end
-    local card_vars = {center.ability.extra.Xmult}
+    local card_vars = {center.ability.extra.Xmult_multi}
     add_target_cards_to_vars(card_vars, center.ability.extra.targets)
     return {vars = card_vars}
   end,
@@ -150,7 +150,7 @@ local mega_manectric = {
       for i=1, #card.ability.extra.targets do
         if context.other_card:get_id() == card.ability.extra.targets[i].id then
             return {
-              Xmult = card.ability.extra.Xmult,
+              Xmult_multi = card.ability.extra.Xmult_multi,
               card = card
             }
         end
