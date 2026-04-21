@@ -107,7 +107,7 @@ local meowstic={
       end
     end
   end,
-   megas = { "mega_meowstic_m" },
+   megas = { "mega_meowstic" },
   add_to_deck = function(self, card, from_debuff)
     G.GAME.scry_amount = (G.GAME.scry_amount or 0) + card.ability.extra.scry
   end,
@@ -154,8 +154,8 @@ local meowstic_f={
 }
 
 -- Mega Meowstic M
-local mega_meowstic_m={
-  name = "mega_meowstic_m",
+local mega_meowstic={
+  name = "mega_meowstic",
   pos = {x = 2, y = 8},
   config = {extra = { scry = 6, Xmult_multi = 1.3, money_mod = 1, earned = 0}},
   loc_vars = function(self, info_queue, card)
@@ -276,6 +276,6 @@ local mega_meowstic_f={
 return {
   name = "Gem's Espurr",
   enabled = Gem_config.Espurr or false,
-  list = {espurr, meowstic, meowstic_f, mega_meowstic_m, mega_meowstic_f}
+  list = {espurr, meowstic, meowstic_f, mega_meowstic, mega_meowstic_f}
 }
 
