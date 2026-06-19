@@ -12,12 +12,6 @@ Capsakid: When mult cards are scored, earn $1
 
 Scovillain: When mult cards are scored, earn $2. Gold cards held in hand give +4 mult
 
-Meditite: +0.5 mult for each Ace or Face card left in your deck
-
-Medicham: Aces played give 2x their total chips. +1 mult for each Ace or Face card left in your deck
-
-Mega Medicham: Holding 2 Negative Strength. Aces played give 3x their total chips. 0.25x mult for each Ace remaining in deck
-
 Pincurchin: When sold, create a negative Lightning Energy card for each Lightning Joker you have
 
 Indeedee-F: When sold, create a negative Psychic Energy card for each Psychic Joker you have
@@ -39,12 +33,6 @@ Electrike: Scored nature cards become gold
 Manectric: Scored nature cards become gold. If scored nature cards are already gold, give $4 plus $1 per lightning card you have
 
 Mega Manectric: Scored nature cards give 2x mult
-
-Carvanha: 2x mult if played hand has already been played this round
-
-Sharpedo: 2x mult if played hand has already been played this round, increases by 1x when hand is played
-
-Mega Sharpedo: Cards give 2x mult when scored if played hand has already been played this round
 
 Yamask: All played face cards become gold cards when scored
 
