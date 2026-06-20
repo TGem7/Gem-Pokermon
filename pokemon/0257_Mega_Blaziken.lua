@@ -6,7 +6,7 @@ local mega_blaziken={
   Gem_inject_prefix = "poke",
   pos = {x = 2, y = 4},
   soul_pos = {x = 3, y = 4},
-  config = {extra = {Xmult_multi = 1, Xmult_multi_mod = 0.1, targets = {{value = "Ace", id = "14"}, {value = "King", id = "13"}, {value = "Queen", id = "12"}}}},
+  config = {extra = {Xmult_multi = 1, Xmult_multi_mod = 0.15, targets = {{value = "Ace", id = "14"}, {value = "King", id = "13"}, {value = "Queen", id = "12"}}}},
   loc_vars = function(self, info_queue, center)
     pokermon.type_tooltip(self, info_queue, center)
     info_queue[#info_queue+1] = {set = 'Other', key = 'nature', vars = {"rank"}}
