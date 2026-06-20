@@ -54,8 +54,9 @@ return {
             j_Gem_mawile = {
                 name = "Mawile",
                 text = {
-                    "If played hand is exactly {C:attention}1{} card,",
-                    "destroy it and make a {C:attention}Steel{} copy"
+                    "If first played hand is exactly",
+                    "{C:attention}1{} card, destroy it and make",
+                    "a {C:attention}Steel{} copy",
                 }
             },
             j_Gem_mega_mawile = {
