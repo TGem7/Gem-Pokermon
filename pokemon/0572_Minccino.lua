@@ -1,4 +1,3 @@
-
 --  Minccino 572
 local minccino = {
   name = "minccino",
@@ -11,8 +10,8 @@ local minccino = {
     end
     return {vars = {center.ability.extra.mult, center.ability.extra.mult_mod}}
   end,
-  rarity = 1,
-  cost = 4,
+  rarity = 2,
+  cost = 6,
   item_req = "shinystone",
   stage = "Basic",
   ptype = "Colorless",
@@ -121,4 +120,5 @@ return {
   config_key = "Minccino",
   list = {minccino, cinccino}
 }
+
 
