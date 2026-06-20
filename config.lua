@@ -11,6 +11,7 @@ return {
 	Baltoy = true,
 	Wailmer = true,
   Absol = true,
+	Starly = true,
 	Yamask = true,
 	Sandile = true,
 	Minccino = true,
