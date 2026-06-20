@@ -765,7 +765,7 @@ return {
                     "Foreseen cards give",
                     "{C:money}$#3#{} at end of round",
                 }
-            },
+            },            
             j_Gem_starly = {
               name = "Starly",
               text = {
@@ -773,8 +773,7 @@ return {
                 "the {C:attention}Blind{}, gain {C:mult}+#2#{} Mult",
                 "Required {C:attention}rank{} rises with each trigger",
                 "{C:inactive,s:0.8}(If rank is highest, it becomes lowest)",
-                "{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)",
-                "{C:inactive,s:0.8}(Evolves after {C:attention,s:0.8}#3#{C:inactive,s:0.8} rounds)",
+                "{C:inactive}(Evolves at {C:mult}+#1#{C:inactive} / +13 Mult)",
               }
             }, 
             j_Gem_staravia = {
@@ -784,8 +783,10 @@ return {
                 "the {C:attention}Blind{}, gain {C:mult}+#2#{} Mult",
                 "Required {C:attention}rank{} rises with each trigger",
                 "{C:inactive,s:0.8}(If rank is highest, it becomes lowest)",
-                "{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)",
-                "{C:inactive,s:0.8}(Evolves after {C:attention,s:0.8}#3#{C:inactive,s:0.8} rounds)",
+                "{br:4}ERROR - CONTACT STEAK",
+                "After triggering {C:attention}#5#{} {C:inactive}[#6#]{} times,",
+                "upgrade level of next played {C:attention}poker hand{}{C:inactive}#7#{}",
+                "{C:inactive}(Evolves at {C:mult}+#1#{C:inactive} / +26 Mult)",
               }
             }, 
             j_Gem_staraptor = {
