@@ -11,11 +11,11 @@
   	"display_name": "GemPokermon",
 	"version": "0.1.8",
 	"dependencies": [
-			"Steamodded (>=1.0.0~ALPHA-1303a)",
-      "Lovely (>=0.6)",
-      "Pokermon (>=3.6.0-0108a)"
+		"Steamodded (>=1.0.0~BETA-1814a)",
+      	"Lovely (>=0.8)",
+      	"Pokermon (>=3.8.1-0614a)"
 	],
-  "conflicts": [],
+  	"conflicts": [],
 	"provides": [],
 	"dump_loc": false 
 }
