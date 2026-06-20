@@ -17,7 +17,7 @@ local espurr={
   blueprint_compat = true,
   calculate = function(self, card, context)
     if not context.end_of_round and context.scoring_hand then
-      if context.individual and context.cardarea == G.scry_view and not context.other_card.debuff then
+      if context.individual and context.cardarea == G.poke_scry_view and not context.other_card.debuff then
         return {
           message = localize{type = 'variable', key = 'a_mult', vars = {card.ability.extra.mult}},
           message_card = context.other_card,
@@ -26,17 +26,21 @@ local espurr={
         }
       end
     end
-    if to_number(G.GAME.dollars) > card.ability.extra.money_threshold then
+      local dollars = G.GAME.dollars
+      if (SMODS.Mods["Talisman"] or {}).can_load then
+        dollars = to_number(dollars)
+      end
+    if dollars >= card.ability.extra.money_threshold then
       return pokermon.level_evo(self, card, context, "j_Gem_meowstic_f")
     else
       return pokermon.level_evo(self, card, context, "j_Gem_meowstic")
     end
   end,
   add_to_deck = function(self, card, from_debuff)
-    G.GAME.scry_amount = (G.GAME.scry_amount or 0) + card.ability.extra.scry
+    G.GAME.poke_scry_amount = (G.GAME.poke_scry_amount or 0) + card.ability.extra.scry
   end,
   remove_from_deck = function(self, card, from_debuff)
-    G.GAME.scry_amount = math.max(0,(G.GAME.scry_amount or 0) - card.ability.extra.scry)
+    G.GAME.poke_scry_amount = math.max(0,(G.GAME.poke_scry_amount or 0) - card.ability.extra.scry)
   end,
 }
 
@@ -59,7 +63,7 @@ local meowstic={
   blueprint_compat = true,
   calculate = function(self, card, context)
     if not context.end_of_round and context.scoring_hand then
-      if context.individual and context.cardarea == G.scry_view and not context.other_card.debuff then
+      if context.individual and context.cardarea == G.poke_scry_view and not context.other_card.debuff then
         return {
           message = localize{type = 'variable', key = 'a_mult', vars = {card.ability.extra.mult}},
           message_card = context.other_card,
@@ -69,7 +73,7 @@ local meowstic={
       end
     end
     if context.end_of_round then
-      if context.individual and context.cardarea == G.scry_view and not context.other_card.debuff then
+      if context.individual and context.cardarea == G.poke_scry_view and not context.other_card.debuff then
         if context.other_card.debuff then
           return {
             message = localize("k_debuffed"),
@@ -95,10 +99,10 @@ local meowstic={
   end,
    megas = { "mega_meowstic" },
   add_to_deck = function(self, card, from_debuff)
-    G.GAME.scry_amount = (G.GAME.scry_amount or 0) + card.ability.extra.scry
+    G.GAME.poke_scry_amount = (G.GAME.poke_scry_amount or 0) + card.ability.extra.scry
   end,
   remove_from_deck = function(self, card, from_debuff)
-    G.GAME.scry_amount = math.max(0,(G.GAME.scry_amount or 0) - card.ability.extra.scry)
+    G.GAME.poke_scry_amount = math.max(0,(G.GAME.poke_scry_amount or 0) - card.ability.extra.scry)
   end,
 }
 
@@ -122,7 +126,7 @@ local meowstic_f={
   blueprint_compat = true,
   calculate = function(self, card, context)
     if not context.end_of_round and context.scoring_hand then
-      if context.individual and context.cardarea == G.scry_view and not context.other_card.debuff then
+      if context.individual and context.cardarea == G.poke_scry_view and not context.other_card.debuff then
         return {
           xmult = card.ability.extra.Xmult_multi,
           card = card,
@@ -132,10 +136,10 @@ local meowstic_f={
   end,
    megas = { "mega_meowstic_f" },
   add_to_deck = function(self, card, from_debuff)
-    G.GAME.scry_amount = (G.GAME.scry_amount or 0) + card.ability.extra.scry
+    G.GAME.poke_scry_amount = (G.GAME.poke_scry_amount or 0) + card.ability.extra.scry
   end,
   remove_from_deck = function(self, card, from_debuff)
-    G.GAME.scry_amount = math.max(0,(G.GAME.scry_amount or 0) - card.ability.extra.scry)
+    G.GAME.poke_scry_amount = math.max(0,(G.GAME.poke_scry_amount or 0) - card.ability.extra.scry)
   end,
 }
 
@@ -158,7 +162,7 @@ local mega_meowstic={
   blueprint_compat = true,
   calculate = function(self, card, context)
     if not context.end_of_round and context.scoring_hand then
-      if context.individual and context.cardarea == G.scry_view and not context.other_card.debuff then
+      if context.individual and context.cardarea == G.poke_scry_view and not context.other_card.debuff then
         return {
           xmult = card.ability.extra.Xmult_multi,
           card = card,
@@ -166,7 +170,7 @@ local mega_meowstic={
       end
     end
     if context.end_of_round then
-      if context.individual and context.cardarea == G.scry_view and not context.other_card.debuff then
+      if context.individual and context.cardarea == G.poke_scry_view and not context.other_card.debuff then
         if context.other_card.debuff then
           return {
             message = localize("k_debuffed"),
@@ -191,10 +195,10 @@ local mega_meowstic={
     end
   end,
   add_to_deck = function(self, card, from_debuff)
-    G.GAME.scry_amount = (G.GAME.scry_amount or 0) + card.ability.extra.scry
+    G.GAME.poke_scry_amount = (G.GAME.poke_scry_amount or 0) + card.ability.extra.scry
   end,
   remove_from_deck = function(self, card, from_debuff)
-    G.GAME.scry_amount = math.max(0,(G.GAME.scry_amount or 0) - card.ability.extra.scry)
+    G.GAME.poke_scry_amount = math.max(0,(G.GAME.poke_scry_amount or 0) - card.ability.extra.scry)
   end,
 }
 
@@ -218,7 +222,7 @@ local mega_meowstic_f={
   blueprint_compat = true,
   calculate = function(self, card, context)
     if not context.end_of_round and context.scoring_hand then
-      if context.individual and context.cardarea == G.scry_view and not context.other_card.debuff then
+      if context.individual and context.cardarea == G.poke_scry_view and not context.other_card.debuff then
         return {
           xmult = card.ability.extra.Xmult_multi,
           card = card,
@@ -226,7 +230,7 @@ local mega_meowstic_f={
       end
     end
     if context.end_of_round then
-      if context.individual and context.cardarea == G.scry_view and not context.other_card.debuff then
+      if context.individual and context.cardarea == G.poke_scry_view and not context.other_card.debuff then
         if context.other_card.debuff then
           return {
             message = localize("k_debuffed"),
@@ -251,10 +255,10 @@ local mega_meowstic_f={
     end
   end,
   add_to_deck = function(self, card, from_debuff)
-    G.GAME.scry_amount = (G.GAME.scry_amount or 0) + card.ability.extra.scry
+    G.GAME.poke_scry_amount = (G.GAME.poke_scry_amount or 0) + card.ability.extra.scry
   end,
   remove_from_deck = function(self, card, from_debuff)
-    G.GAME.scry_amount = math.max(0,(G.GAME.scry_amount or 0) - card.ability.extra.scry)
+    G.GAME.poke_scry_amount = math.max(0,(G.GAME.poke_scry_amount or 0) - card.ability.extra.scry)
   end,
 }
 
@@ -263,4 +267,6 @@ return {
   config_key = "Espurr",
   list = {espurr, meowstic, meowstic_f, mega_meowstic, mega_meowstic_f}
 }
+
+
 
