@@ -33,12 +33,12 @@ local stufful={
 local bewear={
   name = "bewear",
   pos = PokemonSprites["bewear"].base.pos,
-  config = { extra = { Xmult_multi = 1.4, rounds = 4 } },
+  config = { extra = { Xmult_multi = 1.5, rounds = 4 } },
   loc_vars = function(self, info_queue, card)
     pokermon.type_tooltip(self, info_queue, card)
     return { vars = { card.ability.extra.Xmult_multi } }
   end,
-  rarity = 2,
+  rarity = 'poke_safari',
   cost = 6,
   stage = "One",
   ptype = "Fighting",
