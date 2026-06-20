@@ -1,18 +1,11 @@
-function table.contains(table, element)
-  for _, value in pairs(table) do
-    if value == element then
-      return true
-    end
-  end
-  return false
-end
+
 -- Phantump 708
 local phantump={
   name = "phantump", 
   pos = PokemonSprites["phantump"].base.pos,
   config = {extra = {}},
   loc_vars = function(self, info_queue, center)
-    type_tooltip(self, info_queue, center)
+    pokermon.type_tooltip(self, info_queue, center)
     return {vars = {}}
   end,
   rarity = 2, 
@@ -30,7 +23,7 @@ local phantump={
         _card:set_ability("m_poke_seed",nil,true)
       end
     end
-    return item_evo(self, card, context, "j_Gem_trevenant")
+    return pokermon.item_evo(self, card, context, "j_Gem_trevenant")
   end
 }
 
@@ -40,7 +33,7 @@ local trevenant={
   pos = PokemonSprites["trevenant"].base.pos,
   config = {extra = {fours_remaining = 10}},
   loc_vars = function(self, info_queue, center)
-    type_tooltip(self, info_queue, center)
+    pokermon.type_tooltip(self, info_queue, center)
     return {vars = {center.ability.extra.fours_remaining}}
   end,
   rarity = 'poke_safari', 
@@ -92,8 +85,7 @@ local trevenant={
 
 
 return {
-  name = "Gem's Phantump",
-  enabled = Gem_config.Phantump or false,
+  config_key = "Phantump",
   list = { phantump, trevenant }
 }
 

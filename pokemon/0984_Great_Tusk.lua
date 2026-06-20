@@ -1,11 +1,4 @@
-function table.contains(table, element)
-  for _, value in pairs(table) do
-    if value == element then
-      return true
-    end
-  end
-  return false
-end
+
 
 -- Great Tusk 984
 local great_tusk={
@@ -14,7 +7,7 @@ local great_tusk={
   soul_pos = {x = 17, y = 65}, 
   config = {extra = {Xmult = 1, Xmult_mod = 0.25}},
   loc_vars = function(self, info_queue, center)
-    type_tooltip(self, info_queue, center)
+    pokermon.type_tooltip(self, info_queue, center)
     return {vars = {center.ability.extra.Xmult, center.ability.extra.Xmult_mod,}}
   end,
   rarity = "Gem_paradox", 
@@ -57,8 +50,7 @@ local great_tusk={
 }
 
 return {
-  name = "Gem's Great Tusk",
-  enabled = Gem_config.Great_Tusk or false,
+  config_key = "Great_Tusk",
   list = { great_tusk }
 }
 

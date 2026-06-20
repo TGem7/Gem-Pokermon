@@ -1,11 +1,4 @@
-function table.contains(table, element)
-  for _, value in pairs(table) do
-    if value == element then
-      return true
-    end
-  end
-  return false
-end
+
 
 -- Capsakid
 local capsakid = {
@@ -14,7 +7,7 @@ local capsakid = {
   pos = PokemonSprites["capsakid"].base.pos,
   config = {extra = {mult = 6}},
   loc_vars = function(self, info_queue, center)
-    type_tooltip(self, info_queue, center)
+    pokermon.type_tooltip(self, info_queue, center)
     info_queue[#info_queue+1] = G.P_CENTERS.m_poke_seed
     info_queue[#info_queue+1] = G.P_CENTERS.c_poke_firestone
     return {vars = {center.ability.extra.mult}}
@@ -45,7 +38,7 @@ local capsakid = {
           }
       end
     end
-    return item_evo(self, card, context, "j_Gem_scovillain")
+    return pokermon.item_evo(self, card, context, "j_Gem_scovillain")
   end
 }
 
@@ -55,7 +48,7 @@ local scovillain = {
   pos = PokemonSprites["scovillain"].base.pos,
   config = {extra = {Xmult_multi = 2}},
   loc_vars = function(self, info_queue, center)
-    type_tooltip(self, info_queue, center)
+    pokermon.type_tooltip(self, info_queue, center)
     if pokermon_config.detailed_tooltips then
       info_queue[#info_queue+1] = G.P_CENTERS.m_mult
       info_queue[#info_queue+1] = G.P_CENTERS.m_poke_seed
@@ -89,7 +82,7 @@ local scovillain = {
               pseudoshuffle(cards_held, pseudoseed('blacksludge'))
               local limit = math.min(#cards_held, 1)
               for i = 1, limit do
-                poke_convert_cards_to(cards_held[i], {mod_conv = 'm_poke_flower'}, true, true)
+                pokermon.convert_cards(cards_held[i], {mod_conv = 'm_poke_flower'}, true, true)
                 cards_held[i]:juice_up()
               end
         end
@@ -122,7 +115,7 @@ local mega_scovillain = {
   pos = PokemonSprites["scovillain"].base.pos,
   config = {extra = {Xmult_multi = 3}},
   loc_vars = function(self, info_queue, center)
-    type_tooltip(self, info_queue, center)
+    pokermon.type_tooltip(self, info_queue, center)
     if pokermon_config.detailed_tooltips then
       info_queue[#info_queue+1] = G.P_CENTERS.m_poke_seed
     end
@@ -158,8 +151,7 @@ local mega_scovillain = {
 }
 
 return {
-  name = "Gem's Capsakid",
-  enabled = Gem_config.Capsakid or false,
+  config_key = "Capsakid",
   list = { capsakid, scovillain, mega_scovillain }
 }
 

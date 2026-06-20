@@ -1,6 +1,6 @@
 return {
     descriptions = {
-        Item = {
+        poke_item = {
             c_Gem_berrysweet = {
                 name = "Berry Sweet",
                 text = {
@@ -56,7 +56,7 @@ return {
                 text = {
                     "If played hand is exactly {C:attention}1{} card,",
                     "destroy it and make a {C:attention}Steel{} copy"
-                } 
+                }
             },
             j_Gem_mega_mawile = {
                 name = "Mega Mawile",
@@ -74,7 +74,7 @@ return {
                     "{X:grass,C:white}Grass{} or {X:dragon,C:white}Dragon{} card you have",
                     "{C:inactive,s:0.8}(includes Jokers and Energy cards){}",
                     "{C:inactive}(Currently {C:money}$#3#{C:inactive} total){}"
-                } 
+                }
             },
             j_poke_mega_blaziken = {
                 name = "Mega Blaziken",
@@ -83,7 +83,7 @@ return {
                     "Played {C:attention}Nature{} cards give {X:mult,C:white}X#2#{} Mult for",
                     "each {X:fire,C:white}Fire{} or {X:earth,C:white}Fighting{} joker you have",
                     "{C:inactive}(Currently {X:mult,C:white}X#3#{C:inactive} Mult){}",
-                } 
+                }
             },
             j_poke_mega_swampert = {
                 name = "Mega Swampert",
@@ -95,9 +95,9 @@ return {
                     "Increases by {C:chips}+#2#{} and {C:green}1{} for",
                     "each other {X:water,C:white}Water{} or {X:earth,C:white}Earth{} card",
                     "{C:inactive}(Currently {C:chips}+#6#{C:inactive} Chips)",
-                } 
+                }
             },
-            j_Gem_cubone = {
+            j_poke_cubone_Gem = {
                 name = 'Cubone',
                 text = {
                     "{C:attention}Holding {C:item}Thick Club{}",
@@ -107,19 +107,9 @@ return {
                     "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)",
                     "{C:inactive,s:0.8}(Evolves after using {C:attention,s:0.8}#3#{C:inactive,s:0.8} consumables)",
                     "{C:inactive,s:0.8}(Evolves with a {C:attention,s:0.8}Fire Stone{C:inactive,s:0.8})"
-                } 
+                }
             },
-            j_Gem_marowak = {
-                name = 'Marowak',      
-                text = {
-                    "{C:attention}+#2#{} consumable slots",
-                    "Gives {X:mult,C:white} X#1# {} Mult for",
-                    "each {C:attention}held{} consumable",
-                    "{C:inactive,s:0.8}({C:attention,s:0.8}Thick Clubs{C:inactive,s:0.8} count as double){}",
-                    "{C:inactive}(Currently {X:mult,C:white} X#3# {C:inactive} Mult)",
-                } 
-            },
-            j_Gem_alolan_marowak = {
+            j_poke_alolan_marowak = {
                 name = "Alolan Marowak",
                 text = {
                     "This Joker gains {X:mult,C:white}X#2#{} Mult",
@@ -151,7 +141,7 @@ return {
                     "{X:mult,C:white}X#1#{} Mult per {X:psychic,C:white}Psychic{} card",
                     "{C:inactive,s:0.8}(includes Jokers and Energy cards){}",
                     "{C:inactive}(Currently {X:mult,C:white}X#3#{C:inactive} Mult){}",
-                } 
+                }
             },
             j_Gem_capsakid = {
                 name = "Capsakid",
@@ -159,7 +149,7 @@ return {
                   "{C:attention}Seed{} cards give {C:mult}+#1#{} Mult when",
                   "scored or held in hand",
                   "{C:inactive,s:0.8}(Evolves with a {C:attention,s:0.8}Fire Stone{C:inactive,s:0.8})"
-                } 
+                }
             },
             j_Gem_scovillain = {
                 name = "Scovillain",
@@ -170,7 +160,7 @@ return {
                   "{br:3}ERROR - CONTACT STEAK",
                   "Held {C:attention}Seed{} or {C:attention}Flower{} cards give {X:mult,C:white}X#1#{}",
                   "Mult if poker hand contains {C:attention}4+{} suits"
-                } 
+                }
             },
             j_Gem_mega_scovillain = {
                 name = "Mega Scovillain",
@@ -178,7 +168,7 @@ return {
                   "Held {C:attention}Seed{} or {C:attention}Flower{} cards",
                   "give {X:mult,C:white}X#1#{} Mult if poker",
                   "hand contains {C:attention}4+{} suits",
-                } 
+                }
             },
             j_Gem_hisuian_growlithe = {
                 name = "Hisuian Growlithe",
@@ -186,7 +176,7 @@ return {
                     "{C:mult}+#1#{} Mult if played hand contains",
                     "a {C:attention}Flush{} or a {C:attention}Stone Card{}",
                     "{C:inactive,s:0.8}(Evolves with a {C:attention,s:0.8}Fire Stone{C:inactive,s:0.8})"
-                } 
+                }
             },
             j_Gem_hisuian_arcanine = {
                 name = "Hisuian Arcanine",
@@ -196,7 +186,7 @@ return {
                     "{C:mult}+#1#{} Mult if played hand contains a {C:attention}Flush{}",
                     "{X:mult,C:white} X#2# {} Mult if played {C:attention}Flush{}",
                     "contains a {C:attention}Stone Card{}"
-                } 
+                }
             },
             j_Gem_cryogonal = {
                 name = "Cryogonal",
@@ -232,7 +222,7 @@ return {
                     "Using a consumable adds {C:money}+$#1#{} of",
                     "sell value to {C:attention}held{} consumables",
                     "{C:inactive,s:0.8}(Evolves after using {C:attention,s:0.8}#2#{C:inactive,s:0.8} consumables)",
-                } 
+                }
             },
             j_Gem_shiinotic = {
                 name = 'Shiinotic',
@@ -244,7 +234,7 @@ return {
                     "Adds the sell value of all",
                     "owned {C:attention}consumables{} to Mult",
                     "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)",
-                } 
+                }
             },
             j_Gem_sizzlipede = {
                 name = "Sizzlipede",
@@ -280,16 +270,17 @@ return {
             j_Gem_alcremie_berry = {
                 name = "Alcremie (Berry)",
                 text = {
-                    "Upgrade level of played {C:attention}poker hand{}",
+                    "Upgrade level of",
+                    "played {C:attention}poker hand{}",
                     "{C:inactive}(Reverts after {C:attention}#1#{C:inactive} round)",
                 }
             },
             j_Gem_alcremie_love = {
                 name = "Alcremie (Love)",
                 text = {
-                    "When {C:blue}Hand{} is played,",
-                    "create an {C:pink}Energy{} card of",
-                    "the same {C:pink}Type{} of leftmost Joker",
+                    "When a {C:blue}Hand{} is played,",
+                    "create an {C:pink}Energy{} card of the",
+                    "same {C:pink}Type{} of leftmost Joker",
                     "{C:inactive}(Reverts after {C:attention}#1#{C:inactive} round)",
                 }
             },
@@ -305,8 +296,9 @@ return {
                 text = {
                     "Each card has a {C:green,E:1,S:1.1}#1# in #2#{}",
                     "chance to give {C:money}$#3#{} when scored",
-                    "Chance increases by {C:green,E:1,S:1.1}1{} when {C:blue}Hand{} is played",
-                    "{C:inactive}(Reverts after {C:attention}#5#{C:inactive} round)",
+                    "Odds increase by {C:green,E:1,S:1.1}1{}",
+                    "when {C:blue}Hand{} is played",
+                    "{C:inactive}(Reverts after {C:attention}#4#{C:inactive} round)",
                 }
             },
             j_Gem_alcremie_flower = {
@@ -557,9 +549,9 @@ return {
                     "{X:mult,C:white}X#1#{} Mult",
                     "{br:4}ERROR - CONTACT STEAK",
                     "{C:attention}Volatile Left{}",
-                    "{C:attention}Listed{} {C:green,E:1,S:1.1}Probabilities{} are always {C:attention}0{}", 
+                    "{C:attention}Listed{} {C:green,E:1,S:1.1}Probabilities{} are always {C:attention}0{}",
                     "{C:attention}Volatile Right{}",
-                    "{C:attention}Double Listed{} {C:green,E:1,S:1.1}Probabilities{}", 
+                    "{C:attention}Double Listed{} {C:green,E:1,S:1.1}Probabilities{}",
                 }
             },
             j_Gem_noibat = {

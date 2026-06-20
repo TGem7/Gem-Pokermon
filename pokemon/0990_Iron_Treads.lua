@@ -1,11 +1,4 @@
-function table.contains(table, element)
-  for _, value in pairs(table) do
-    if value == element then
-      return true
-    end
-  end
-  return false
-end
+
 
 -- Iron Treads 990
 local iron_treads={
@@ -14,7 +7,7 @@ local iron_treads={
   soul_pos = {x = 29, y = 65}, 
   config = {extra = {Xmult = 1, Xmult_mod = 0.25}},
   loc_vars = function(self, info_queue, center)
-    type_tooltip(self, info_queue, center)
+    pokermon.type_tooltip(self, info_queue, center)
     return {vars = {center.ability.extra.Xmult, center.ability.extra.Xmult_mod,}}
   end,
   rarity = "Gem_future_paradox", 
@@ -57,8 +50,7 @@ local iron_treads={
 }
 
 return {
-  name = "Gem's Iron Treads",
-  enabled = Gem_config.Iron_Treads or false,
+  config_key = "Iron_Treads",
   list = { iron_treads }
 }
 

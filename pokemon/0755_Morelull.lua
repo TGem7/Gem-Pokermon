@@ -1,18 +1,11 @@
-function table.contains(table, element)
-  for _, value in pairs(table) do
-    if value == element then
-      return true
-    end
-  end
-  return false
-end
+
 --  Morelull 755
 local morelull = {
   name = "morelull",
   pos = PokemonSprites["morelull"].base.pos,
   config = {extra = {money_mod = 1, consumables_used = 0}, evo_rqmt = 15},
   loc_vars = function(self, info_queue, center)
-    type_tooltip(self, info_queue, center)
+    pokermon.type_tooltip(self, info_queue, center)
     local consumables_left = math.max(0, self.config.evo_rqmt - center.ability.extra.consumables_used)
     return {vars = {center.ability.extra.money_mod, consumables_left}}
   end,
@@ -36,7 +29,7 @@ local morelull = {
         card_eval_status_text(v, 'extra', nil, nil, nil, {message = localize('k_val_up')})
       end
     end
-    return scaling_evo(self, card, context, "j_Gem_shiinotic", card.ability.extra.consumables_used, self.config.evo_rqmt)
+    return pokermon.scaling_evo(self, card, context, "j_Gem_shiinotic", card.ability.extra.consumables_used, self.config.evo_rqmt)
   end,
 }
 
@@ -46,7 +39,7 @@ local shiinotic = {
   pos = PokemonSprites["shiinotic"].base.pos,
   config = {extra = {money_mod = 1, mult = 0, card_limit = 1}},
   loc_vars = function(self, info_queue, center)
-    type_tooltip(self, info_queue, center)
+    pokermon.type_tooltip(self, info_queue, center)
     local total = 0
     if G.consumeables and G.consumeables.cards then
       for k, v in ipairs(G.consumeables.cards) do
@@ -106,8 +99,7 @@ local shiinotic = {
 
 
 return {
-  name = "Gem's Morelull",
-  enabled = Gem_config.Morelull or false,
+  config_key = "Morelull",
   list = {morelull, shiinotic}
 }
 

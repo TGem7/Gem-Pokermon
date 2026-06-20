@@ -1,18 +1,11 @@
-function table.contains(table, element)
-  for _, value in pairs(table) do
-    if value == element then
-      return true
-    end
-  end
-  return false
-end
+
 --  Cryogonal 615
 local cryogonal = {
   name = "cryogonal",
   pos = PokemonSprites["cryogonal"].base.pos,
   config = {extra = {}},
   loc_vars = function(self, info_queue, center)
-    type_tooltip(self, info_queue, center)
+    pokermon.type_tooltip(self, info_queue, center)
     if pokermon_config.detailed_tooltips then
       info_queue[#info_queue+1] = G.P_CENTERS.m_glass
     end
@@ -54,8 +47,7 @@ local cryogonal = {
 }
 
 return {
-  name = "Gem's Cryogonal",
-  enabled = Gem_config.Cryogonal or false,
+  config_key = "Cryogonal",
   list = {cryogonal}
 }
 

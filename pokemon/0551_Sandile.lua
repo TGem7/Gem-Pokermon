@@ -1,11 +1,4 @@
-function table.contains(table, element)
-  for _, value in pairs(table) do
-    if value == element then
-      return true
-    end
-  end
-  return false
-end
+
 
 -- Sandile and Krookodile proc on both small and big blinds, figure out how to seperate the two
 
@@ -16,7 +9,7 @@ local sandile={
   pos = PokemonSprites["sandile"].base.pos,
   config = { extra = { money = 1, money_mod = 1}, evo_rqmt = 3 },
   loc_vars = function(self, info_queue, center)
-    type_tooltip(self, info_queue, center)
+    pokermon.type_tooltip(self, info_queue, center)
     return { vars = { center.ability.extra.money, center.ability.extra.money_mod } }
   end,
   rarity = 2,
@@ -35,14 +28,14 @@ local sandile={
             return {
                 message = localize('k_upgrade_ex'),
                 colour = G.C.MONEY,
-                scaling_evo(self, card, context, "j_Gem_krokorok", card.ability.extra.money, self.config.evo_rqmt)
+                pokermon.scaling_evo(self, card, context, "j_Gem_krokorok", card.ability.extra.money, self.config.evo_rqmt)
             }
         end
-        return scaling_evo(self, card, context, "j_Gem_krokorok", card.ability.extra.money, self.config.evo_rqmt)
+        return pokermon.scaling_evo(self, card, context, "j_Gem_krokorok", card.ability.extra.money, self.config.evo_rqmt)
     end,
     -- End of round money
     calc_dollar_bonus = function(self, card)
-        return ease_poke_dollars(card, "sandile", card.ability.extra.money, true)
+        return pokermon.ease_poke_dollars(card, "sandile", card.ability.extra.money, true)
     end
 }
 
@@ -53,7 +46,7 @@ local krokorok={
   pos = PokemonSprites["krokorok"].base.pos,
   config = { extra = { money = 3, Xmult = 1, Xmult_mod = .25}, evo_rqmt = 1.5 },
   loc_vars = function(self, info_queue, center)
-    type_tooltip(self, info_queue, center)
+    pokermon.type_tooltip(self, info_queue, center)
     return { vars = { center.ability.extra.money, center.ability.extra.Xmult, center.ability.extra.Xmult_mod } }
   end,
   rarity = "poke_safari",
@@ -78,14 +71,14 @@ local krokorok={
             return {
                 message = localize('k_upgrade_ex'),
                 colour = G.C.MONEY,
-                scaling_evo(self, card, context, "j_Gem_krookodile", card.ability.extra.Xmult, self.config.evo_rqmt)
+                pokermon.scaling_evo(self, card, context, "j_Gem_krookodile", card.ability.extra.Xmult, self.config.evo_rqmt)
             }
         end
-        return scaling_evo(self, card, context, "j_Gem_krookodile", card.ability.extra.Xmult, self.config.evo_rqmt)
+        return pokermon.scaling_evo(self, card, context, "j_Gem_krookodile", card.ability.extra.Xmult, self.config.evo_rqmt)
     end,
     -- End of round money
     calc_dollar_bonus = function(self, card)
-        return ease_poke_dollars(card, "krokorok", card.ability.extra.money, true)
+        return pokermon.ease_poke_dollars(card, "krokorok", card.ability.extra.money, true)
     end
 }
 
@@ -96,7 +89,7 @@ local krookodile={
   pos = PokemonSprites["krookodile"].base.pos,
   config = { extra = { money = 3, money_mod = 1, Xmult = 1.5, Xmult_mod = .25} },
   loc_vars = function(self, info_queue, card)
-    type_tooltip(self, info_queue, card)
+    pokermon.type_tooltip(self, info_queue, card)
     return { vars = { card.ability.extra.money, card.ability.extra.money_mod, card.ability.extra.Xmult, card.ability.extra.Xmult_mod } }
   end,
   rarity = "poke_safari",
@@ -127,13 +120,12 @@ local krookodile={
     end,
     -- End of round money
     calc_dollar_bonus = function(self, card)
-        return ease_poke_dollars(card, "krookodile", card.ability.extra.money, true)
+        return pokermon.ease_poke_dollars(card, "krookodile", card.ability.extra.money, true)
     end
 }
 
 return {
-  name = "Gem's Sandile",
-  enabled = Gem_config.Sandile or false,
+  config_key = "Sandile",
   list = { sandile, krokorok, krookodile}
 }
 

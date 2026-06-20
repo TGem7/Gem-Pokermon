@@ -1,11 +1,4 @@
-function table.contains(table, element)
-  for _, value in pairs(table) do
-    if value == element then
-      return true
-    end
-  end
-  return false
-end
+
 
 -- Mega Absol 359
 local mega_absol={
@@ -15,7 +8,7 @@ local mega_absol={
   soul_pos = {x = 9, y = 5},
   config = {extra = {Xmult = 3, volatile = "left", volatile2 = "right"}},
   loc_vars = function(self, info_queue, center)
-    type_tooltip(self, info_queue, center)
+    pokermon.type_tooltip(self, info_queue, center)
     return {vars = {center.ability.extra.Xmult}}
   end,
   rarity = "poke_mega",
@@ -50,9 +43,14 @@ local mega_absol={
   end
 }
 
+local init = function()
+  SMODS.Joker:take_ownership('poke_absol', { megas = { 'mega_absol' } }, true)
+  pokermon.add_to_family("absol", "mega_absol")
+end
+
 return {
-  name = "Gem's Mega Absol",
-  enabled = true,
+  config_key = "Absol",
+  init = init,
   list = { mega_absol }
 }
 

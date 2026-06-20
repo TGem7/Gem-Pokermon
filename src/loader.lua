@@ -5,8 +5,8 @@ local function load_file(file, load_item)
   if file.list then
     for _, item in ipairs(file.list) do
       if file.config_key then
-        item.nacho_config_key = file.config_key
-        if not nacho_config[item.nacho_config_key] then
+        item.Gem_config_key = file.config_key
+        if not Gem_config[item.Gem_config_key] then
           item.no_collection = true
         end
       end
@@ -46,13 +46,23 @@ local function load_sleeves(file)
 end
 
 local function load_pokemon(item)
-  local custom_prefix = "nacho"
-  local custom_atlas = item.atlas and string.find(item.atlas, "nacho")
+  local custom_prefix = item.Gem_inject_prefix or "Gem"
+  local custom_atlas = item.atlas and string.find(item.atlas, "Gem")
   if not item.atlas then
-    poke_load_atlas(item)
-    poke_load_sprites(item)
+    pokermon.sprites.load_atlas(item)
+    pokermon.sprites.load_sprites(item)
   end
   pokermon.Pokemon(item, custom_prefix, custom_atlas)
+end
+
+local load_pokemon_ref = pokermon.load_pokemon
+function pokermon.load_pokemon(item)
+  if item.Gem_inject_prefix then
+    item.key = item.Gem_inject_prefix .. '_' .. item.name
+    item.prefix_config = item.prefix_config or {}
+    item.prefix_config.key = { mod = false }
+  end
+  return load_pokemon_ref(item)
 end
 
 local function load_pokemon_family(file)

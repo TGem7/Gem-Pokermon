@@ -1,11 +1,4 @@
-function table.contains(table, element)
-  for _, value in pairs(table) do
-    if value == element then
-      return true
-    end
-  end
-  return false
-end
+
 
 
 -- Sizzlipede 850
@@ -14,7 +7,7 @@ local sizzlipede = {
   pos = PokemonSprites["sizzlipede"].base.pos,
   config = { extra = { mult = 0, mult_mod = 1 }, evo_rqmt = 10 },
   loc_vars = function(self, info_queue, center)
-    type_tooltip(self, info_queue, center)
+    pokermon.type_tooltip(self, info_queue, center)
     return {vars = {center.ability.extra.mult, center.ability.extra.mult_mod}}
   end,
   rarity = 1,
@@ -45,7 +38,7 @@ local sizzlipede = {
         end
       end
     end
-    return scaling_evo(self, card, context, "j_Gem_centiskorch", card.ability.extra.mult, self.config.evo_rqmt)
+    return pokermon.scaling_evo(self, card, context, "j_Gem_centiskorch", card.ability.extra.mult, self.config.evo_rqmt)
   end,
 }
 
@@ -55,7 +48,7 @@ local centiskorch = {
   pos = PokemonSprites["centiskorch"].base.pos,
   config = { extra = { mult = 0, mult_mod = 2 } },
   loc_vars = function(self, info_queue, center)
-    type_tooltip(self, info_queue, center)
+    pokermon.type_tooltip(self, info_queue, center)
     return {vars = {center.ability.extra.mult, center.ability.extra.mult_mod}}
   end,
   rarity = 2,
@@ -90,8 +83,7 @@ local centiskorch = {
 }
 
 return {
-  name = "Gem's sizzlipede",
-  enabled = Gem_config.Sizzlipede or false,
+  config_key = "Sizzlipede",
   list = {sizzlipede, centiskorch}
 }
 

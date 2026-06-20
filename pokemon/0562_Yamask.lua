@@ -1,18 +1,11 @@
-function table.contains(table, element)
-  for _, value in pairs(table) do
-    if value == element then
-      return true
-    end
-  end
-  return false
-end
+
 --  Yamask 562
 local yamask = {
   name = "yamask",
   pos = PokemonSprites["yamask"].base.pos,
   config = {extra = {}},
   loc_vars = function(self, info_queue, center)
-    type_tooltip(self, info_queue, center)
+    pokermon.type_tooltip(self, info_queue, center)
     if pokermon_config.detailed_tooltips then
       info_queue[#info_queue+1] = G.P_CENTERS.m_gold
     end
@@ -67,7 +60,7 @@ local cofagrigus ={
   pos = PokemonSprites["cofagrigus"].base.pos,
   config = {extra = {discards = 3, discards_remaining = 3, seal = 'Purple'}},
   loc_vars = function(self, info_queue, center)
-    type_tooltip(self, info_queue, center)
+    pokermon.type_tooltip(self, info_queue, center)
     if pokermon_config.detailed_tooltips then
       info_queue[#info_queue+1] = G.P_CENTERS.m_gold
       info_queue[#info_queue+1] = {key = 'purple_seal', set = 'Other'}
@@ -101,7 +94,7 @@ local cofagrigus ={
                     if context.before and context.cardarea == G.jokers and not context.blueprint and context.scoring_hand then
                       local target = context.scoring_hand[1]
                       local args = {seal = card.ability.extra.seal}
-                      poke_convert_cards_to(target, args, true, true)
+                      pokermon.convert_cards(target, args, true, true)
                       bonus = false
                       card.ability.extra.discards_remaining = card.ability.extra.discards
                     end
@@ -126,7 +119,7 @@ local cofagrigus ={
       if context.before and context.cardarea == G.jokers and not context.blueprint and context.scoring_hand then
         local target = context.scoring_hand[1]
         local args = {seal = card.ability.extra.seal}
-        poke_convert_cards_to(target, args, true, true)
+        pokermon.convert_cards(target, args, true, true)
         bonus = false
         card.ability.extra.discards_remaining = card.ability.extra.discards
      end
@@ -135,8 +128,7 @@ local cofagrigus ={
 }
 
 return {
-  name = "Gem's Yamask",
-  enabled = Gem_config.Yamask or false,
+  config_key = "Yamask",
   list = {yamask, cofagrigus}
 }
 

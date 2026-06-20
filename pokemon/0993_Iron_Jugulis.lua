@@ -1,26 +1,19 @@
-function table.contains(table, element)
-  for _, value in pairs(table) do
-    if value == element then
-      return true
-    end
-  end
-  return false
-end
+
 
 -- Iron Jugulis 993
 local iron_jugulis={
-  name = "iron_jugulis", 
-  pos = {x = 4, y = 66}, 
-  soul_pos = {x = 5, y = 66}, 
+  name = "iron_jugulis",
+  pos = {x = 4, y = 66},
+  soul_pos = {x = 5, y = 66},
   config = {extra = {Xmult = 1, Xmult_mod = 0.5, destroyed_count = 5}},
   loc_vars = function(self, info_queue, center)
-    type_tooltip(self, info_queue, center)
+    pokermon.type_tooltip(self, info_queue, center)
     return {vars = {center.ability.extra.Xmult, center.ability.extra.Xmult_mod, center.ability.extra.destroyed_count}}
   end,
   designer = "Eternalnacho",
-  rarity = "Gem_future_paradox", 
-  cost = 15, 
-  stage = "Paradox", 
+  rarity = "Gem_future_paradox",
+  cost = 15,
+  stage = "Paradox",
   ptype = "Dark",
   atlas = "AtlasJokersBasicNatdex",
   gen = 9,
@@ -41,29 +34,12 @@ local iron_jugulis={
           Xmult_mod = card.ability.extra.Xmult
         }
       end
-      -- Destroy unscored cards in a 3oak
-      if context.after and context.scoring_name == "Three of a Kind" and not context.blueprint then
-        for k, v in pairs(context.full_hand) do
-          if not SMODS.in_scoring(v, context.scoring_hand) then
-            poke_remove_card(v, card)
-          end
+      if context.destroy_card and context.cardarea == 'unscored' and not context.blueprint then
+        -- Destroy unscored cards in a 3oak or in first hand of round
+        if context.scoring_name == "Three of a Kind" or G.GAME.current_round.hands_played == 0 then
+          card.ability.extra.destroyed_count = card.ability.extra.destroyed_count - 1
+          return { remove = true }
         end
-      end
-      -- Destroy unscored cards in first hand of round
-      if context.after and not context.blueprint then
-        if G.GAME.current_round.hands_played == 0 then
-          for k, v in pairs(context.full_hand) do
-            if not SMODS.in_scoring(v, context.scoring_hand) then
-              poke_remove_card(v, card)
-            end
-          end
-        end
-      end
-    end
-    -- Count destroyed cards
-    if context.remove_playing_cards and not context.blueprint then
-      for _, removed_card in ipairs(context.removed) do
-        card.ability.extra.destroyed_count = card.ability.extra.destroyed_count - 1
       end
     end
     -- Scale xmult when 5 cards are destroyed
@@ -80,8 +56,7 @@ local iron_jugulis={
 }
 
 return {
-  name = "Gem's Iron Jugulis",
-  enabled = Gem_config.Iron_Jugulis or false,
+  config_key = "Iron_Jugulis",
   list = { iron_jugulis }
 }
 

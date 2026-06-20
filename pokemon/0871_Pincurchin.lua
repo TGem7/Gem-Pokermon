@@ -1,11 +1,4 @@
-function table.contains(table, element)
-  for _, value in pairs(table) do
-    if value == element then
-      return true
-    end
-  end
-  return false
-end
+
 
 -- Pincurchin
 local pincurchin={
@@ -27,7 +20,7 @@ local pincurchin={
   eternal_compat = false,
   calculate = function(self, card, context)
     if context.selling_self and not context.blueprint then
-      for _ = 1,#find_pokemon_type("Lightning") do
+      for _ = 1,#pokermon.find_pokemon_type("Lightning") do
         G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
         G.E_MANAGER:add_event(Event({
             trigger = 'before',
@@ -48,8 +41,7 @@ local pincurchin={
 }
 
 return {
-  name = "Gem's Pincurchin",
-  enabled = Gem_config.Pincurchin or false,
+  config_key = "Pincurchin",
   list = { pincurchin }
 }
 
