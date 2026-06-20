@@ -2,7 +2,7 @@
 local starly={
   name = "starly",
   pos = PokemonSprites["starly"].base.pos,
-  config = {extra = {mult = 0,mult_mod = 1,rounds = 4,rank = "2", id = 2}},
+  config = {extra = {mult = 0,mult_mod = 1,rank = "2", id = 2}, evo_rqmt = 13},
   loc_vars = function(self, info_queue, center)
     pokermon.type_tooltip(self, info_queue, center)
     return {vars = {center.ability.extra.mult, center.ability.extra.mult_mod, center.ability.extra.rounds, localize(center.ability.extra.rank or "2", 'ranks')}}
@@ -36,7 +36,7 @@ local starly={
         end
       end
     end
-    return pokermon.level_evo(self, card, context, "j_Gem_staravia")
+    return pokermon.scaling_evo(self, card, context, "j_Gem_staravia", card.ability.extra.mult, self.config.evo_rqmt)
   end,
   set_ability = function(self, card, initial, delay_sprites)
     if initial and G.playing_cards then
@@ -49,12 +49,13 @@ local starly={
 local staravia={
   name = "staravia",
   pos = PokemonSprites["staravia"].base.pos,
-  config = {extra = {mult = 0,mult_mod = 2,rounds = 4,rank = "2", id = 2}},
+  config = {extra = {mult = 0,mult_mod = 1,rank = "2", id = 2, card_threshold = 13, cards_drawn = 0, upgrade = false}, evo_rqmt = 26},
   loc_vars = function(self, info_queue, center)
     pokermon.type_tooltip(self, info_queue, center)
-    return {vars = {center.ability.extra.mult, center.ability.extra.mult_mod, center.ability.extra.rounds, localize(center.ability.extra.rank or "2", 'ranks')}}
+    return {vars = {center.ability.extra.mult, center.ability.extra.mult_mod, center.ability.extra.rounds, localize(center.ability.extra.rank or "2", 'ranks'), center.ability.extra.card_threshold, math.max(0, center.ability.extra.card_threshold - center.ability.extra.cards_drawn), 
+                    center.ability.extra.upgrade and "("..localize('k_active_ex')..")" or ''}}
   end,
-  rarity = 2,
+  rarity = 'poke_safari',
   cost = 6,
   stage = "One",
   ptype = "Colorless",
@@ -64,6 +65,24 @@ local staravia={
   blueprint_compat = true,
   eternal_compat = true,
   calculate = function(self, card, context)
+      if context.before then
+     if card.ability.extra.cards_drawn >= 13 then
+      if not context.blueprint then
+        card.ability.extra.cards_drawn = 0
+        G.E_MANAGER:add_event(Event({
+          func = function()
+            card.ability.extra.upgrade = false
+            return true
+          end
+        }))
+      end
+      return {
+        card = card,
+        level_up = true,
+        message = localize('k_level_up_ex')
+      }
+    end
+    end
     if context.joker_main then
       return 
       {
@@ -74,7 +93,7 @@ local staravia={
       for i = 1, #SMODS.drawn_cards do
         if SMODS.drawn_cards[i]:get_id() == card.ability.extra.id then
           card.ability.extra.id, card.ability.extra.rank = pokermon.next_owned_rank(card.ability.extra.id, card.ability.extra.rank)
-
+          card.ability.extra.cards_drawn = card.ability.extra.cards_drawn + 1
           SMODS.scale_card(card, {
             ref_value = 'mult',
             scalar_value = 'mult_mod',
@@ -83,7 +102,7 @@ local staravia={
         end
       end
     end
-    return pokermon.level_evo(self, card, context, "j_Gem_staraptor")
+    return pokermon.scaling_evo(self, card, context, "j_Gem_staraptor", card.ability.extra.mult, self.config.evo_rqmt)
   end,
   set_ability = function(self, card, initial, delay_sprites)
     if initial and G.playing_cards then
@@ -96,7 +115,7 @@ local staravia={
 local staraptor={
   name = "staraptor",
   pos = PokemonSprites["staraptor"].base.pos,
-  config = {extra = {mult = 0,mult_mod = 3,rank = "2", id = 2, card_threshold = 10, cards_drawn = 0, upgrade = false}},
+  config = {extra = {mult = 0,mult_mod = 2,rank = "2", id = 2, card_threshold = 10, cards_drawn = 0, upgrade = false}},
   loc_vars = function(self, info_queue, center)
     pokermon.type_tooltip(self, info_queue, center)
     return {vars = {center.ability.extra.mult, center.ability.extra.mult_mod, center.ability.extra.rounds, localize(center.ability.extra.rank or "2", 'ranks'), center.ability.extra.card_threshold, math.max(0, center.ability.extra.card_threshold - center.ability.extra.cards_drawn), 
@@ -162,4 +181,5 @@ return {
   config_key = 'Starly',
   list = { starly, staravia, staraptor },
 }
+
 
