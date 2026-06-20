@@ -1,11 +1,4 @@
-function table.contains(table, element)
-  for _, value in pairs(table) do
-    if value == element then
-      return true
-    end
-  end
-  return false
-end
+
 
 -- Stufful 759
 local stufful={
@@ -13,7 +6,7 @@ local stufful={
   pos = PokemonSprites["stufful"].base.pos,
   config = { extra = { mult = 8, rounds = 4 } },
   loc_vars = function(self, info_queue, card)
-    type_tooltip(self, info_queue, card)
+    pokermon.type_tooltip(self, info_queue, card)
     return { vars = { card.ability.extra.mult, card.ability.extra.rounds } }
   end,
   rarity = 1,
@@ -32,7 +25,7 @@ local stufful={
                 mult = card.ability.extra.mult
             }
         end
-        return level_evo(self, card, context, "j_Gem_bewear")
+        return pokermon.level_evo(self, card, context, "j_Gem_bewear")
     end,
 }
 
@@ -42,7 +35,7 @@ local bewear={
   pos = PokemonSprites["bewear"].base.pos,
   config = { extra = { Xmult_multi = 1.4, rounds = 4 } },
   loc_vars = function(self, info_queue, card)
-    type_tooltip(self, info_queue, card)
+    pokermon.type_tooltip(self, info_queue, card)
     return { vars = { card.ability.extra.Xmult_multi } }
   end,
   rarity = 2,
@@ -78,8 +71,7 @@ local bewear={
 }
 
 return {
-  name = "Gem's Stufful",
-  enabled = Gem_config.Stufful or false,
+  config_key = "Stufful",
   list = { stufful, bewear }
 }
 

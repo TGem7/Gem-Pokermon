@@ -1,11 +1,4 @@
-function table.contains(table, element)
-  for _, value in pairs(table) do
-    if value == element then
-      return true
-    end
-  end
-  return false
-end
+
 
 -- Indeedee F
 local indeedee_f={
@@ -27,13 +20,13 @@ local indeedee_f={
   eternal_compat = false,
   calculate = function(self, card, context)
     if context.selling_self and not context.blueprint then
-      for _ = 1,#find_pokemon_type("Psychic") do
+      for _ = 1, #pokermon.find_pokemon_type("Psychic") do
         G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
         G.E_MANAGER:add_event(Event({
             trigger = 'before',
             delay = 0.0,
             func = (function()
-                  local card = create_card('Energy', G.consumeables, nil, nil, nil, nil, 'c_poke_psychic_energy')
+                  local card = create_card('poke_energy', G.consumeables, nil, nil, nil, nil, 'c_poke_psychic_energy')
                   local edition = {negative = true}
                   card:set_edition(edition, true)
                   card:add_to_deck()
@@ -48,8 +41,7 @@ local indeedee_f={
 }
 
 return {
-  name = "Gem's Indeedee_F",
-  enabled = Gem_config.Indeedee_F or false,
+  config_key = "Indeedee_F",
   list = { indeedee_f }
 }
 

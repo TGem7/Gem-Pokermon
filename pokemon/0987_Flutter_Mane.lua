@@ -1,11 +1,4 @@
-function table.contains(table, element)
-  for _, value in pairs(table) do
-    if value == element then
-      return true
-    end
-  end
-  return false
-end
+
 
 -- Flutter Mane 987
 local flutter_mane={
@@ -14,7 +7,7 @@ local flutter_mane={
   soul_pos = {x = 23, y = 65}, 
   config = {extra = {chip_mod = 10, chips = 0, cards_scored = 0, score_goal = 100}},
   loc_vars = function(self, info_queue, card)
-    type_tooltip(self, info_queue, card)
+    pokermon.type_tooltip(self, info_queue, card)
     if not card.edition or (card.edition and not card.edition.negative) then
       info_queue[#info_queue+1] = G.P_CENTERS.e_negative
     end
@@ -78,8 +71,7 @@ local flutter_mane={
 }
 
 return {
-  name = "Gem's Flutter Mane",
-  enabled = Gem_config.Flutter_Mane or false,
+  config_key = "Flutter_Mane",
   list = { flutter_mane }
 }
 

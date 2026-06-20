@@ -1,11 +1,4 @@
-function table.contains(table, element)
-  for _, value in pairs(table) do
-    if value == element then
-      return true
-    end
-  end
-  return false
-end
+
 
 -- Kubfu 891
 local kubfu={
@@ -14,7 +7,7 @@ local kubfu={
   soul_pos = {x = 11, y = 59}, 
   config = {extra = {mult = 0, mult_mod = 10, mult_original = 0, hands_needed = 8, hands_needed_original = 8, discards_needed = 8, discards_needed_original = 8}},
   loc_vars = function(self, info_queue, center)
-    type_tooltip(self, info_queue, center)
+    pokermon.type_tooltip(self, info_queue, center)
     return {vars = {center.ability.extra.mult, center.ability.extra.mult_mod, center.ability.extra.mult_original, center.ability.extra.hands_needed, center.ability.extra.hands_needed_original, center.ability.extra.discards_needed, center.ability.extra.discards_needed_original}}
   end,
   rarity = 4, 
@@ -115,7 +108,7 @@ local urshifu_single_strike={
   soul_pos = {x = 3, y = 10}, 
   config = {extra = {Xmult = 1, Xmult_mod = .2, Xmult_original = 1}},
   loc_vars = function(self, info_queue, center)
-    type_tooltip(self, info_queue, center)
+    pokermon.type_tooltip(self, info_queue, center)
     return {vars = {center.ability.extra.Xmult, center.ability.extra.Xmult_mod, center.ability.extra.Xmult_original}}
   end,
   rarity = 4, 
@@ -178,7 +171,7 @@ local urshifu_rapid_strike={
   soul_pos = {x = 5, y = 10}, 
   config = {extra = {chips = 0, chip_mod = 20, chips_original = 0}},
   loc_vars = function(self, info_queue, center)
-    type_tooltip(self, info_queue, center)
+    pokermon.type_tooltip(self, info_queue, center)
     return {vars = {center.ability.extra.chips, center.ability.extra.chip_mod, center.ability.extra.chips_original}}
   end,
   rarity = 4, 
@@ -228,8 +221,7 @@ local urshifu_rapid_strike={
 }
 
 return {
-  name = "Gem's Kubfu",
-  enabled = Gem_config.Kubfu or false,
+  config_key = "Kubfu",
   list = { kubfu, urshifu_single_strike, urshifu_rapid_strike }
 }
 

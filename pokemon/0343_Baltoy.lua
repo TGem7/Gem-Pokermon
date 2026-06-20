@@ -1,18 +1,11 @@
-function table.contains(table, element)
-  for _, value in pairs(table) do
-    if value == element then
-      return true
-    end
-  end
-  return false
-end
+
 --  Baltoy 343
 local baltoy = {
   name = "baltoy",
   pos = PokemonSprites["baltoy"].base.pos,
   config = {extra = {mult = 0, hazard_level = 1, mult_mod = 1}, evo_rqmt = 20},
   loc_vars = function(self, info_queue, center)
-    type_tooltip(self, info_queue, center)
+    pokermon.type_tooltip(self, info_queue, center)
     info_queue[#info_queue+1] = {set = 'Other', key = 'hazard_level', vars = poke_get_hazard_level_vars()}
     info_queue[#info_queue+1] = G.P_CENTERS.m_poke_hazard
     return {vars = {center.ability.extra.mult, center.ability.extra.mult_mod, center.ability.extra.hazard_level}}
@@ -44,7 +37,7 @@ local baltoy = {
         }
       end
     end
-    return scaling_evo(self, card, context, "j_Gem_claydol", card.ability.extra.mult, self.config.evo_rqmt)
+    return pokermon.scaling_evo(self, card, context, "j_Gem_claydol", card.ability.extra.mult, self.config.evo_rqmt)
   end,
   add_to_deck = function(self, card, from_debuff)
     poke_change_hazard_level(card.ability.extra.hazard_level)
@@ -60,7 +53,7 @@ local claydol = {
   pos = PokemonSprites["claydol"].base.pos,
   config = {extra = {mult = 0, hazard_level = 1, mult_mod = 1, discards_remaining = 3}},
   loc_vars = function(self, info_queue, center)
-    type_tooltip(self, info_queue, center)
+    pokermon.type_tooltip(self, info_queue, center)
     info_queue[#info_queue+1] = {set = 'Other', key = 'hazard_level', vars = poke_get_hazard_level_vars()}
     info_queue[#info_queue+1] = G.P_CENTERS.m_poke_hazard
     return {vars = {center.ability.extra.mult, center.ability.extra.mult_mod, center.ability.extra.hazard_level, center.ability.extra.discards_remaining}}
@@ -123,8 +116,8 @@ local claydol = {
 }
 
 return {
-  name = "Gem's Baltoy",
-  enabled = Gem_config.Baltoy or false,
+  can_load = false,
+  config_key = "Baltoy",
   list = {baltoy, claydol}
 }
 

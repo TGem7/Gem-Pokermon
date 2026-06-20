@@ -107,8 +107,8 @@ jd_def["j_Gem_sceptile"] = {
   },
   calc_function = function(card)
     local count = 0
-    local grass_count = find_other_poke_or_energy_type(card, "Grass", true)
-    if is_type(card, "Grass") then
+    local grass_count = pokermon.find_cards_by_ptype(card, "Grass", true)
+    if pokermon.is_type(card, "Grass") then
       grass_count = grass_count - 1
     end
     local text, _, scoring_hand = JokerDisplay.evaluate_hand()
@@ -203,8 +203,8 @@ jd_def["j_Gem_blaziken"] = {
     },
     text_config = { colour = G.C.WHITE },
     calc_function = function(card)
-        local mult = card.ability.extra.mult * card.ability.extra.cards_discarded * (find_other_poke_or_energy_type(card, "Fire", true) + find_other_poke_or_energy_type(card, "Fighting", true))
-        local Xmult = 1 + card.ability.extra.Xmult * card.ability.extra.cards_discarded * (find_other_poke_or_energy_type(card, "Fire", true) + find_other_poke_or_energy_type(card, "Fighting", true))
+        local mult = card.ability.extra.mult * card.ability.extra.cards_discarded * (pokermon.find_cards_by_ptype(card, "Fire", true) + pokermon.find_cards_by_ptype(card, "Fighting", true))
+        local Xmult = 1 + card.ability.extra.Xmult * card.ability.extra.cards_discarded * (pokermon.find_cards_by_ptype(card, "Fire", true) + pokermon.find_cards_by_ptype(card, "Fighting", true))
         card.joker_display_values.mult = mult
         card.joker_display_values.Xmult = Xmult
         card.joker_display_values.nature1 = localize(card.ability.extra.targets[1].value, 'ranks')
@@ -231,7 +231,7 @@ jd_def["j_Gem_mudkip"] = {
     calc_function = function(card)
         local count = 0
         local chips = card.ability.extra.chips
-        if find_other_poke_or_energy_type(card, "Water") > 0 or find_other_poke_or_energy_type(card, "Earth") > 0 then
+        if pokermon.find_cards_by_ptype(card, "Water") > 0 or pokermon.find_cards_by_ptype(card, "Earth") > 0 then
           chips = chips * 2
         end
         local text, _, scoring_hand = JokerDisplay.evaluate_hand()
@@ -269,7 +269,7 @@ jd_def["j_Gem_marshtomp"] = {
     calc_function = function(card)
         local count = 0
         local chips = card.ability.extra.chips
-        if find_other_poke_or_energy_type(card, "Water") > 0 or find_other_poke_or_energy_type(card, "Earth") > 0 then
+        if pokermon.find_cards_by_ptype(card, "Water") > 0 or pokermon.find_cards_by_ptype(card, "Earth") > 0 then
           chips = chips * 2
         end
         local text, _, scoring_hand = JokerDisplay.evaluate_hand()
@@ -307,8 +307,8 @@ jd_def["j_Gem_swampert"] = {
     calc_function = function(card)
         local count = 0
         local chips = card.ability.extra.chips
-        if find_other_poke_or_energy_type(card, "Water") or find_other_poke_or_energy_type(card, "Earth") then
-          chips = chips + card.ability.extra.chip_mod * (find_other_poke_or_energy_type(card, "Water") + find_other_poke_or_energy_type(card, "Earth"))
+        if pokermon.find_cards_by_ptype(card, "Water") or pokermon.find_cards_by_ptype(card, "Earth") then
+          chips = chips + card.ability.extra.chip_mod * (pokermon.find_cards_by_ptype(card, "Water") + pokermon.find_cards_by_ptype(card, "Earth"))
         end
         local text, _, scoring_hand = JokerDisplay.evaluate_hand()
         if text ~= 'Unknown' then

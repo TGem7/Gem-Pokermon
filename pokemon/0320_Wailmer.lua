@@ -1,11 +1,4 @@
-function table.contains(table, element)
-  for _, value in pairs(table) do
-    if value == element then
-      return true
-    end
-  end
-  return false
-end
+
 
 
 -- Wailmer 320
@@ -14,7 +7,7 @@ local wailmer = {
   pos = PokemonSprites["wailmer"].base.pos,
   config = { extra = { chips = 80, rounds = 4 } },
   loc_vars = function(self, info_queue, center)
-    type_tooltip(self, info_queue, center)
+    pokermon.type_tooltip(self, info_queue, center)
     return {vars = {center.ability.extra.chips, center.ability.extra.rounds}}
   end,
   rarity = 1,
@@ -33,11 +26,11 @@ local wailmer = {
           message = localize{type = 'variable', key = 'a_chips', vars = {card.ability.extra.chips}}, 
           colour = G.C.CHIPS,
           chips = card.ability.extra.chips,
-          level_evo(self, card, context, "j_Gem_wailord")
+          pokermon.level_evo(self, card, context, "j_Gem_wailord")
         }
       end
     end
-    return level_evo(self, card, context, "j_Gem_wailord")
+    return pokermon.level_evo(self, card, context, "j_Gem_wailord")
   end,
 }
 
@@ -47,7 +40,7 @@ local wailord = {
   pos = {x = 10, y = 21},
   config = { extra = { chips = 120, chip_mod = 10 } },
   loc_vars = function(self, info_queue, center)
-    type_tooltip(self, info_queue, center)
+    pokermon.type_tooltip(self, info_queue, center)
     return {vars = {center.ability.extra.chips, center.ability.extra.chip_mod}}
   end,
   rarity = 2,
@@ -80,8 +73,7 @@ local wailord = {
 }
 
 return {
-  name = "Gem's wailmer",
-  enabled = Gem_config.Wailmer or false,
+  config_key = "Wailmer",
   list = {wailmer, wailord}
 }
 

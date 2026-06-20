@@ -1,11 +1,4 @@
-function table.contains(table, element)
-  for _, value in pairs(table) do
-    if value == element then
-      return true
-    end
-  end
-  return false
-end
+
 
 -- Sandy Shocks 989
 local sandy_shocks={
@@ -14,7 +7,7 @@ local sandy_shocks={
   soul_pos = {x = 27, y = 65}, 
   config = {extra = {Xmult = 1.5, count = 10}},
   loc_vars = function(self, info_queue, center)
-    type_tooltip(self, info_queue, center)
+    pokermon.type_tooltip(self, info_queue, center)
     return {vars = {center.ability.extra.Xmult, center.ability.extra.count}}
   end,
   rarity = "Gem_paradox", 
@@ -50,7 +43,6 @@ local sandy_shocks={
 }
 
 return {
-  name = "Gem's Sandy Shocks",
-  enabled = Gem_config.Sandy_Shocks or false,
+  config_key = "Sandy_Shocks",
   list = { sandy_shocks }
 }

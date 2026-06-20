@@ -1,19 +1,10 @@
-function table.contains(table, element)
-  for _, value in pairs(table) do
-    if value == element then
-      return true
-    end
-  end
-  return false
-end
-
 -- Espurrr 677
 local espurr={
   name = "espurr",
   pos = PokemonSprites["espurr"].base.pos,
   config = {extra = {scry = 2, mult = 2, money_threshold = 25, rounds = 4}},
   loc_vars = function(self, info_queue, card)
-    type_tooltip(self, info_queue, card)
+    pokermon.type_tooltip(self, info_queue, card)
     info_queue[#info_queue + 1] = {set = 'Other', key = 'scry_cards'}
     return {vars = {card.ability.extra.scry, card.ability.extra.mult, card.ability.extra.rounds, card.ability.extra.money_threshold}}
   end,
@@ -35,16 +26,11 @@ local espurr={
         }
       end
     end
-    if context.end_of_round then
-      local dollars = G.GAME.dollars
-      if (SMODS.Mods["Talisman"] or {}).can_load then
-        dollars = to_number(dollars)
-      end
-      if dollars > card.ability.extra.money_threshold then
-      return level_evo(self, card, context, "j_Gem_meowstic_f")
-      end
+    if to_number(G.GAME.dollars) > card.ability.extra.money_threshold then
+      return pokermon.level_evo(self, card, context, "j_Gem_meowstic_f")
+    else
+      return pokermon.level_evo(self, card, context, "j_Gem_meowstic")
     end
-    return level_evo(self, card, context, "j_Gem_meowstic")
   end,
   add_to_deck = function(self, card, from_debuff)
     G.GAME.scry_amount = (G.GAME.scry_amount or 0) + card.ability.extra.scry
@@ -60,7 +46,7 @@ local meowstic={
   pos = {x = 2, y = 8},
   config = {extra = { scry = 4, mult = 3, money_mod = 1, earned = 0}},
   loc_vars = function(self, info_queue, card)
-    type_tooltip(self, info_queue, card)
+    pokermon.type_tooltip(self, info_queue, card)
     info_queue[#info_queue + 1] = {set = 'Other', key = 'scry_cards'}
 		return {vars = {card.ability.extra.scry, card.ability.extra.mult, card.ability.extra.money_mod, card.ability.extra.earned}}
   end,
@@ -97,7 +83,7 @@ local meowstic={
           end
           
           earned = earned + card.ability.extra.money_mod
-          earned = ease_poke_dollars(card, "hands", earned)
+          earned = pokermon.ease_poke_dollars(card, "hands", earned)
           return {
               message = localize('$')..earned,
               colour = G.C.MONEY,
@@ -122,7 +108,7 @@ local meowstic_f={
   pos = {x = 4, y = 8},
   config = {extra = {scry = 4, Xmult_multi = 1.25}},
   loc_vars = function(self, info_queue, card)
-    type_tooltip(self, info_queue, card)
+    pokermon.type_tooltip(self, info_queue, card)
     info_queue[#info_queue + 1] = {set = 'Other', key = 'scry_cards'}
 		return {vars = {card.ability.extra.scry, card.ability.extra.Xmult_multi}}
   end,
@@ -159,7 +145,7 @@ local mega_meowstic={
   pos = {x = 2, y = 8},
   config = {extra = { scry = 6, Xmult_multi = 1.3, money_mod = 1, earned = 0}},
   loc_vars = function(self, info_queue, card)
-    type_tooltip(self, info_queue, card)
+    pokermon.type_tooltip(self, info_queue, card)
     info_queue[#info_queue + 1] = {set = 'Other', key = 'scry_cards'}
 		return {vars = {card.ability.extra.scry, card.ability.extra.Xmult_multi, card.ability.extra.money_mod, card.ability.extra.earned}}
   end,
@@ -194,7 +180,7 @@ local mega_meowstic={
           end
           
           earned = earned + card.ability.extra.money_mod
-          earned = ease_poke_dollars(card, "hands", earned)
+          earned = pokermon.ease_poke_dollars(card, "hands", earned)
           return {
               message = localize('$')..earned,
               colour = G.C.MONEY,
@@ -218,7 +204,7 @@ local mega_meowstic_f={
   pos = {x = 2, y = 8},
   config = {extra = { scry = 6, Xmult_multi = 1.3, money_mod = 1, earned = 0}},
   loc_vars = function(self, info_queue, card)
-    type_tooltip(self, info_queue, card)
+    pokermon.type_tooltip(self, info_queue, card)
     info_queue[#info_queue + 1] = {set = 'Other', key = 'scry_cards'}
 		return {vars = {card.ability.extra.scry, card.ability.extra.Xmult_multi, card.ability.extra.money_mod, card.ability.extra.earned}}
   end,
@@ -254,7 +240,7 @@ local mega_meowstic_f={
           end
           
           earned = earned + card.ability.extra.money_mod
-          earned = ease_poke_dollars(card, "hands", earned)
+          earned = pokermon.ease_poke_dollars(card, "hands", earned)
           return {
               message = localize('$')..earned,
               colour = G.C.MONEY,
@@ -274,8 +260,7 @@ local mega_meowstic_f={
 
 
 return {
-  name = "Gem's Espurr",
-  enabled = Gem_config.Espurr or false,
+  config_key = "Espurr",
   list = {espurr, meowstic, meowstic_f, mega_meowstic, mega_meowstic_f}
 }
 

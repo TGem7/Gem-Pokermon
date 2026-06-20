@@ -1,18 +1,11 @@
-function table.contains(table, element)
-  for _, value in pairs(table) do
-    if value == element then
-      return true
-    end
-  end
-  return false
-end
+
 --  Minccino 572
 local minccino = {
   name = "minccino",
   pos = PokemonSprites["minccino"].base.pos,
   config = {extra = {mult = 0, mult_mod = 2}},
   loc_vars = function(self, info_queue, center)
-    type_tooltip(self, info_queue, center)
+    pokermon.type_tooltip(self, info_queue, center)
     if pokermon_config.detailed_tooltips then
       info_queue[#info_queue+1] = G.P_CENTERS.c_poke_shinystone
     end
@@ -62,7 +55,7 @@ local minccino = {
         }
       end
     end
-    return item_evo(self, card, context, "j_Gem_cinccino")
+    return pokermon.item_evo(self, card, context, "j_Gem_cinccino")
   end
 }
 
@@ -72,7 +65,7 @@ local cinccino = {
   pos = PokemonSprites["cinccino"].base.pos,
   config = {extra = {mult = 0, mult_mod = 3}},
   loc_vars = function(self, info_queue, center)
-    type_tooltip(self, info_queue, center)
+    pokermon.type_tooltip(self, info_queue, center)
     return {vars = {center.ability.extra.mult, center.ability.extra.mult_mod}}
   end,
   rarity = 'poke_safari',
@@ -120,13 +113,12 @@ local cinccino = {
         }
       end
     end
-    return item_evo(self, card, context, "j_Gem_cinccino")
+    return pokermon.item_evo(self, card, context, "j_Gem_cinccino")
   end
 }
 
 return {
-  name = "Gem's Minccino",
-  enabled = Gem_config.Minccino or false,
+  config_key = "Minccino",
   list = {minccino, cinccino}
 }
 

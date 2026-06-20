@@ -1,11 +1,4 @@
-function table.contains(table, element)
-  for _, value in pairs(table) do
-    if value == element then
-      return true
-    end
-  end
-  return false
-end
+
 
 -- Iron Bundle 991
 local iron_bundle={
@@ -14,7 +7,7 @@ local iron_bundle={
   soul_pos = {x = 1, y = 66}, 
   config = {extra = {money = 8, Xmult = 0.05, total_sell_value = 0}},
   loc_vars = function(self, info_queue, center)
-    type_tooltip(self, info_queue, center)
+    pokermon.type_tooltip(self, info_queue, center)
     info_queue[#info_queue+1] = {set = 'Other', key = 'deli_gift'}
     if pokermon_config.detailed_tooltips then
       if not center.edition or (center.edition and not center.edition.polychrome) then
@@ -36,7 +29,7 @@ local iron_bundle={
   if context.before then
     local gift = pseudorandom(pseudoseed('delibird'))
     if gift > .65 then
-      local earned = ease_poke_dollars(card, "iron_bundle", card.ability.extra.money, true)
+      local earned = pokermon.ease_poke_dollars(card, "iron_bundle", card.ability.extra.money, true)
       return {
           dollars = earned
       }
@@ -95,8 +88,7 @@ local iron_bundle={
 }
 
 return {
-  name = "Gem's Iron Bundle",
-  enabled = Gem_config.Iron_Bundle or false,
+  config_key = "Iron_Bundle",
   list = { iron_bundle }
 }
 

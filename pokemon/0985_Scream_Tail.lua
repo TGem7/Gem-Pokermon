@@ -1,11 +1,4 @@
-function table.contains(table, element)
-  for _, value in pairs(table) do
-    if value == element then
-      return true
-    end
-  end
-  return false
-end
+
 
 -- Scream Tail 985
 local scream_tail={
@@ -14,7 +7,7 @@ local scream_tail={
   soul_pos = {x = 19, y = 65}, 
   config = {extra = {chips = 10, mult = 2, suit = "Spades"}},
   loc_vars = function(self, info_queue, center)
-    type_tooltip(self, info_queue, center)
+    pokermon.type_tooltip(self, info_queue, center)
     return {vars = {center.ability.extra.chips, center.ability.extra.mult, localize(center.ability.extra.suit, 'suits_singular')}}
   end,
   rarity = "Gem_paradox", 
@@ -33,7 +26,6 @@ local scream_tail={
 }
 
 return {
-  name = "Gem's Scream Tail",
-  enabled = Gem_config.Scream_Tail or false,
+  config_key = "Scream_Tail",
   list = { scream_tail }
 }

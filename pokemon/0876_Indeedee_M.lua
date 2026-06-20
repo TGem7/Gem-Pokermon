@@ -1,11 +1,4 @@
-function table.contains(table, element)
-  for _, value in pairs(table) do
-    if value == element then
-      return true
-    end
-  end
-  return false
-end
+
 
 -- Indeedee M
 local indeedee_m={
@@ -14,9 +7,9 @@ local indeedee_m={
   pos = {x = 12, y = 8}, 
   config = {extra = {Xmult = 1, Xmult_mod = 1}},
   loc_vars = function(self, info_queue, center)
-    type_tooltip(self, info_queue, center)
+    pokermon.type_tooltip(self, info_queue, center)
     local card = center
-    local Xmult = 1 + (card.ability.extra.Xmult_mod * (#find_pokemon_type("Psychic") + (#SMODS.find_card('c_poke_psychic_energy'))))
+    local Xmult = 1 + (card.ability.extra.Xmult_mod * (#pokermon.find_pokemon_type("Psychic") + (#SMODS.find_card('c_poke_psychic_energy'))))
     return {vars = {center.ability.extra.Xmult, center.ability.extra.Xmult_mod, Xmult}}
   end,
   rarity = 3,
@@ -31,7 +24,7 @@ local indeedee_m={
   calculate = function(self, card, context)
     if context.cardarea == G.jokers and context.scoring_hand then
       if context.joker_main then
-        local Xmult = 1 + (card.ability.extra.Xmult_mod * (#find_pokemon_type("Psychic") + (#SMODS.find_card('c_poke_psychic_energy'))))
+        local Xmult = 1 + (card.ability.extra.Xmult_mod * (#pokermon.find_pokemon_type("Psychic") + (#SMODS.find_card('c_poke_psychic_energy'))))
         return {
           message = localize('poke_expanding_force_ex'), 
           colour = G.C.MULT,
@@ -43,8 +36,7 @@ local indeedee_m={
 }
 
 return {
-  name = "Gem's Indeedee_M",
-  enabled = Gem_config.Indeedee_M or false,
+  config_key = "Indeedee_M",
   list = { indeedee_m }
 }
 

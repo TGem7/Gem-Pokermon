@@ -5,7 +5,7 @@ local hisuian_qwilfish={
   pos = {x = 2, y = 5},
   config = {extra = {chips = 0, chip_mod = 10}, evo_rqmt = 120},
   loc_vars = function(self, info_queue, card)
-    type_tooltip(self, info_queue, card)
+    pokermon.type_tooltip(self, info_queue, card)
     info_queue[#info_queue+1] = G.P_CENTERS.m_stall_toxic
     return {vars = {card.ability.extra.chips, card.ability.extra.chip_mod}}
   end,
@@ -49,14 +49,14 @@ local hisuian_qwilfish={
           pseudoshuffle(cards_held, pseudoseed('blacksludge'))
           local limit = math.min(#cards_held, 1)
           for i = 1, limit do
-            poke_convert_cards_to(cards_held[i], {mod_conv = 'm_stall_toxic'}, true, true)
+            pokermon.convert_cards(cards_held[i], {mod_conv = 'm_stall_toxic'}, true, true)
             cards_held[i]:juice_up()
             toxic_scaling()
             SMODS.calculate_effect({x_mult = G.GAME.current_round.toxic.toxicXMult}, cards_held[i])
             cards_held[i]:juice_up()
           end
       end
-    return scaling_evo(self, card, context, "j_Gem_overqwil", card.ability.extra.chips, self.config.evo_rqmt)
+    return pokermon.scaling_evo(self, card, context, "j_Gem_overqwil", card.ability.extra.chips, self.config.evo_rqmt)
   end,
 }
 
@@ -66,7 +66,7 @@ local overqwil={
   pos = PokemonSprites["overqwil"].base.pos,
   config = {extra = {chips = 120, chip_mod = 10}},
   loc_vars = function(self, info_queue, card)
-    type_tooltip(self, info_queue, card)
+    pokermon.type_tooltip(self, info_queue, card)
     info_queue[#info_queue+1] = G.P_CENTERS.m_stall_toxic
     return {vars = {card.ability.extra.chips, card.ability.extra.chip_mod}}
   end,
@@ -124,7 +124,7 @@ local overqwil={
           pseudoshuffle(cards_held, pseudoseed('blacksludge'))
           local limit = math.min(#cards_held, 2)
           for i = 1, limit do
-            poke_convert_cards_to(cards_held[i], {mod_conv = 'm_stall_toxic'}, true, true)
+            pokermon.convert_cards(cards_held[i], {mod_conv = 'm_stall_toxic'}, true, true)
             cards_held[i]:juice_up()
             toxic_scaling()
             SMODS.calculate_effect({x_mult = G.GAME.current_round.toxic.toxicXMult}, cards_held[i])
@@ -135,8 +135,8 @@ local overqwil={
 }
 
 return {
-  name = "Gem's Hisuian Qwilfish",
-  enabled = (SMODS.Mods["ToxicStall"] or {}).can_load or false,
+  config_key = "H_Qwilfish",
+  can_load = (SMODS.Mods["ToxicStall"] or {}).can_load or false,
   list = {hisuian_qwilfish, overqwil}
 }
 

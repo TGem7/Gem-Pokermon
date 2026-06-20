@@ -1,18 +1,11 @@
-function table.contains(table, element)
-  for _, value in pairs(table) do
-    if value == element then
-      return true
-    end
-  end
-  return false
-end
+
 --  Noibat 714
 local noibat = {
   name = "noibat",
   pos = PokemonSprites["noibat"].base.pos,
   config = { extra = { Xmult_mod = 0.5, Xmult = 1 }, evo_rqmt = 3 },
   loc_vars = function(self, info_queue, card)
-      type_tooltip(self, info_queue, card)
+      pokermon.type_tooltip(self, info_queue, card)
       return { vars = { card.ability.extra.Xmult_mod, card.ability.extra.Xmult } }
   end,
   rarity = 3,
@@ -52,10 +45,10 @@ local noibat = {
       if context.joker_main then
           return {
               xmult = card.ability.extra.Xmult,
-              scaling_evo(self, card, context, "j_Gem_noivern", card.ability.extra.Xmult, self.config.evo_rqmt)
+              pokermon.scaling_evo(self, card, context, "j_Gem_noivern", card.ability.extra.Xmult, self.config.evo_rqmt)
           }
       end
-      return scaling_evo(self, card, context, "j_Gem_noivern", card.ability.extra.Xmult, self.config.evo_rqmt)
+      return pokermon.scaling_evo(self, card, context, "j_Gem_noivern", card.ability.extra.Xmult, self.config.evo_rqmt)
   end,
 }
 
@@ -65,7 +58,7 @@ local noivern = {
   pos = PokemonSprites["noivern"].base.pos,
   config = { extra = { Xmult_mod = 0.5, Xmult = 3 } },
   loc_vars = function(self, info_queue, card)
-      type_tooltip(self, info_queue, card)
+      pokermon.type_tooltip(self, info_queue, card)
       return { vars = { card.ability.extra.Xmult_mod, card.ability.extra.Xmult } }
   end,
   rarity = 'poke_safari',
@@ -132,8 +125,7 @@ local noivern = {
 }
 
 return {
-  name = "Gem's Noibat",
-  enabled = Gem_config.Noibat or false,
+  config_key = "Noibat",
   list = {noibat, noivern}
 }
 

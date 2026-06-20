@@ -1,11 +1,4 @@
-function table.contains(table, element)
-  for _, value in pairs(table) do
-    if value == element then
-      return true
-    end
-  end
-  return false
-end
+
 
 -- Iron Hands 992
 local iron_hands={
@@ -14,7 +7,7 @@ local iron_hands={
   soul_pos = {x = 3, y = 66}, 
   config = {extra = {money_mod = 1, earned = 0, h_size = 2, orig_h_size = 2, money_threshold = 100}},
   loc_vars = function(self, info_queue, center)
-    type_tooltip(self, info_queue, center)
+    pokermon.type_tooltip(self, info_queue, center)
     return {vars = {center.ability.extra.money_mod, center.ability.extra.earned, center.ability.extra.h_size, center.ability.extra.money_threshold}}
   end,
   rarity = "Gem_future_paradox", 
@@ -52,7 +45,7 @@ local iron_hands={
           end
           
           earned = earned + card.ability.extra.money_mod
-          earned = ease_poke_dollars(card, "hands", earned)
+          earned = pokermon.ease_poke_dollars(card, "hands", earned)
           return {
               message = localize('$')..earned,
               colour = G.C.MONEY,
@@ -76,8 +69,7 @@ local iron_hands={
 }
 
 return {
-  name = "Gem's Iron Hands",
-  enabled = Gem_config.Iron_Hands or false,
+  config_key = "Iron_Hands",
   list = { iron_hands }
 }
 

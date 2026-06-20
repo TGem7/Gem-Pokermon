@@ -1,11 +1,4 @@
-function table.contains(table, element)
-  for _, value in pairs(table) do
-    if value == element then
-      return true
-    end
-  end
-  return false
-end
+
 
 -- Miraidon 1008
 local miraidon={
@@ -14,7 +7,7 @@ local miraidon={
   soul_pos = {x = 5, y = 67}, 
   config = {extra = {key = nil}},
   loc_vars = function(self, info_queue, card)
-    type_tooltip(self, info_queue, card)
+    pokermon.type_tooltip(self, info_queue, card)
     return {vars = {}}
   end,
   rarity = 4, 
@@ -30,8 +23,8 @@ local miraidon={
             trigger = "after",
             time = 0.2,
             func = function()
-                energy_increase(card, get_type(card), (energy_max + (G.GAME.energy_plus or 0) +
-                    (type(card.ability.extra) == "table" and card.ability.extra.e_limit_up or 0)) - get_total_energy(card), true)
+                pokermon.energy.increase(card, pokermon.get_type(card), (energy_max + (G.GAME.energy_plus or 0) +
+                    (type(card.ability.extra) == "table" and card.ability.extra.e_limit_up or 0)) - pokermon.energy.get_total_energy(card), true)
                 card:juice_up(1, 0.5)
                 return true
             end
@@ -46,8 +39,8 @@ calculate = function(self, card, context)
             play_sound('timpani')
             -- if edition is nil, it'll try again for an edition
             local _card = SMODS.create_card({set = "Joker", rarity = "Gem_future_paradox", area = G.jokers, key = card.ability.extra.key})
-            energy_increase(_card, get_type(_card), energy_max + (G.GAME.energy_plus or 0) +
-                    (type(card.ability.extra) == "table" and card.ability.extra.e_limit_up or 0) - get_total_energy(_card), true)
+            pokermon.energy.increase(_card, pokermon.get_type(_card), energy_max + (G.GAME.energy_plus or 0) +
+                    (type(card.ability.extra) == "table" and card.ability.extra.e_limit_up or 0) - pokermon.energy.get_total_energy(_card), true)
             _card:add_to_deck()
             local loc = 1
             for i,jkr in ipairs(G.jokers.cards) do
@@ -66,8 +59,7 @@ end,
 }
 
 return {
-  name = "Gem's Miraidon",
-  enabled = Gem_config.Miraidon or false,
+  config_key = "Miraidon",
   list = { miraidon }
 }
 

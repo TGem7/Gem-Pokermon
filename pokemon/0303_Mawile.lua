@@ -1,28 +1,20 @@
-function table.contains(table, element)
-  for _, value in pairs(table) do
-    if value == element then
-      return true
-    end
-  end
-  return false
-end
+
 
 -- Mawile 303
 local mawile={
-  name = "mawile", 
-  
+  name = "mawile",
   pos = PokemonSprites["mawile"].base.pos,
   config = { extra = { copy = 1 } },
   loc_vars = function(self, info_queue, card)
-    type_tooltip(self, info_queue, card)
+    pokermon.type_tooltip(self, info_queue, card)
     if pokermon_config.detailed_tooltips then
       info_queue[#info_queue+1] = G.P_CENTERS.m_steel
     end
       return { vars = { card.ability.extra.copy } }
   end,
-  rarity = 3, 
-  cost = 8, 
-  stage = "Basic", 
+  rarity = 3,
+  cost = 8,
+  stage = "Basic",
   ptype = "Metal",
   atlas = "AtlasJokersBasicNatdex",
   gen = 3,
@@ -32,7 +24,7 @@ local mawile={
             G.playing_card = (G.playing_card and G.playing_card + 1) or 1
               local copy = copy_card(context.full_hand[1], nil, nil, G.playing_card)
               copy:set_ability(G.P_CENTERS.m_steel, nil, true)
-              poke_add_card(copy, card)
+              pokermon.add_card(copy, card)
             return {
                 message = localize('k_copied_ex'),
                 colour = G.C.CHIPS,
@@ -62,12 +54,12 @@ local mawile={
 -- Mega Mawile 303
 local mega_mawile = {
   name = "mega_mawile",
-  
+
   pos = { x = 10, y = 4 },
   soul_pos =  {x = 11, y = 4 },
   config = {extra = {}},
   loc_vars = function(self, info_queue, center)
-    type_tooltip(self, info_queue, center)
+    pokermon.type_tooltip(self, info_queue, center)
     if pokermon_config.detailed_tooltips then
       info_queue[#info_queue+1] = G.P_CENTERS.m_steel
     end
@@ -85,8 +77,7 @@ local mega_mawile = {
 }
 
 return {
-  name = "Gem's Mawile",
-  enabled = Gem_config.Mawile or false,
+  config_key = "Mawile",
   list = { mawile, mega_mawile }
 }
 

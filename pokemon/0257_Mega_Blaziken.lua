@@ -1,11 +1,4 @@
-function table.contains(table, element)
-  for _, value in pairs(table) do
-    if value == element then
-      return true
-    end
-  end
-  return false
-end
+
 
 -- Mega Blaziken 257
 local mega_blaziken={
@@ -15,12 +8,12 @@ local mega_blaziken={
   soul_pos = {x = 3, y = 4},
   config = {extra = {Xmult_multi = 1, Xmult_multi_mod = 0.1, targets = {{value = "Ace", id = "14"}, {value = "King", id = "13"}, {value = "Queen", id = "12"}}}},
   loc_vars = function(self, info_queue, center)
-    type_tooltip(self, info_queue, center)
+    pokermon.type_tooltip(self, info_queue, center)
     info_queue[#info_queue+1] = {set = 'Other', key = 'nature', vars = {"rank"}}
     local card = center
-    local xmult_multi = center.ability.extra.Xmult_multi + (center.ability.extra.Xmult_multi_mod * (#find_pokemon_type("Fire")+#find_pokemon_type("Fighting")))
+    local xmult_multi = center.ability.extra.Xmult_multi + (center.ability.extra.Xmult_multi_mod * (#pokermon.find_pokemon_type("Fire")+#pokermon.find_pokemon_type("Fighting")))
     local card_vars = {center.ability.extra.Xmult_multi, center.ability.extra.Xmult_multi_mod, xmult_multi}
-    add_target_cards_to_vars(card_vars, center.ability.extra.targets)
+    pokermon.add_target_cards_to_vars(card_vars, center.ability.extra.targets)
     return {vars = card_vars}
   end,
   rarity = "poke_mega",
@@ -36,7 +29,7 @@ local mega_blaziken={
     if context.individual and not context.end_of_round and context.cardarea == G.play and not context.other_card.debuff then
       for i=1, #card.ability.extra.targets do
         if context.other_card:get_id() == card.ability.extra.targets[i].id then
-            local xmult_multi = card.ability.extra.Xmult_multi + (card.ability.extra.Xmult_multi_mod * (#find_pokemon_type("Fire")+#find_pokemon_type("Fighting")))
+            local xmult_multi = card.ability.extra.Xmult_multi + (card.ability.extra.Xmult_multi_mod * (#pokermon.find_pokemon_type("Fire")+#pokermon.find_pokemon_type("Fighting")))
             return {
               Xmult = xmult_multi,
               card = card
@@ -51,13 +44,18 @@ local mega_blaziken={
     end
   end,
   set_nature = function(self,card)
-    card.ability.extra.targets = get_poke_target_card_ranks("mega_blaziken", 3, card.ability.extra.targets)
+    card.ability.extra.targets = pokermon.get_target_card_ranks("mega_blaziken", 3, card.ability.extra.targets)
   end,
 }
 
+local init = function()
+  SMODS.Joker:take_ownership('poke_blaziken', { megas = { 'mega_blaziken' } }, true)
+  pokermon.add_to_family("blaziken", "mega_blaziken")
+end
+
 return {
-  name = "Gem's Mega Blaziken",
-  enabled = true,
+  config_key = "Torchic",
+  init = init,
   list = { mega_blaziken }
 }
 
