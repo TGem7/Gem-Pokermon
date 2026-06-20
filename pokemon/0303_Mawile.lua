@@ -20,7 +20,7 @@ local mawile={
   gen = 3,
   blueprint_compat = true,
   calculate = function(self, card, context)
-        if context.before and #context.full_hand == 1 then
+        if context.before and #context.full_hand == 1 and G.GAME.current_round.hands_played == 0 then
             G.playing_card = (G.playing_card and G.playing_card + 1) or 1
               local copy = copy_card(context.full_hand[1], nil, nil, G.playing_card)
               copy:set_ability(G.P_CENTERS.m_steel, nil, true)
@@ -38,7 +38,7 @@ local mawile={
                 end
             }
         end
-        if context.final_scoring_step and #context.full_hand == 1 and not context.blueprint then
+        if context.final_scoring_step and #context.full_hand == 1 and G.GAME.current_round.hands_played == 0 and not context.blueprint then
              context.full_hand[1].mawile_remove = card
              card:juice_up()
         end
