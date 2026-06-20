@@ -770,6 +770,7 @@ return {
               text = {
                 "When you draw a {C:attention}#4#{} during",
                 "the {C:attention}Blind{}, gain {C:mult}+#2#{} Mult",
+                "Required {C:attention}rank{} rises with each trigger",
                 "{C:inactive,s:0.8}(If rank is highest, it becomes lowest)",
                 "{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)",
                 "{C:inactive,s:0.8}(Evolves after {C:attention,s:0.8}#3#{C:inactive,s:0.8} rounds)",
@@ -780,6 +781,7 @@ return {
               text = {
                 "When you draw a {C:attention}#4#{} during",
                 "the {C:attention}Blind{}, gain {C:mult}+#2#{} Mult",
+                "Required {C:attention}rank{} rises with each trigger",
                 "{C:inactive,s:0.8}(If rank is highest, it becomes lowest)",
                 "{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)",
                 "{C:inactive,s:0.8}(Evolves after {C:attention,s:0.8}#3#{C:inactive,s:0.8} rounds)",
@@ -790,6 +792,7 @@ return {
               text = {
                 "When you draw a {C:attention}#4#{} during",
                 "the {C:attention}Blind{}, gain {C:mult}+#2#{} Mult",
+                "Required {C:attention}rank{} rises with each trigger",
                 "{C:inactive,s:0.8}(If rank is highest, it becomes lowest)",
                 "{br:4}ERROR - CONTACT STEAK",
                 "After triggering {C:attention}#5#{} {C:inactive}[#6#]{} times,",
