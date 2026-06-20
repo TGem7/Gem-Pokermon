@@ -765,6 +765,38 @@ return {
                     "{C:money}$#3#{} at end of round",
                 }
             },
+            j_Gem_starly = {
+              name = "Starly",
+              text = {
+                "When you draw a {C:attention}#4#{} during",
+                "the {C:attention}Blind{}, gain {C:mult}+#2#{} Mult",
+                "{C:inactive,s:0.8}(If rank is highest, it becomes lowest)",
+                "{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)",
+                "{C:inactive,s:0.8}(Evolves after {C:attention,s:0.8}#3#{C:inactive,s:0.8} rounds)",
+              }
+            }, 
+            j_Gem_staravia = {
+              name = "Staravia",
+              text = {
+                "When you draw a {C:attention}#4#{} during",
+                "the {C:attention}Blind{}, gain {C:mult}+#2#{} Mult",
+                "{C:inactive,s:0.8}(If rank is highest, it becomes lowest)",
+                "{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)",
+                "{C:inactive,s:0.8}(Evolves after {C:attention,s:0.8}#3#{C:inactive,s:0.8} rounds)",
+              }
+            }, 
+            j_Gem_staraptor = {
+              name = "Staraptor",
+              text = {
+                "When you draw a {C:attention}#4#{} during",
+                "the {C:attention}Blind{}, gain {C:mult}+#2#{} Mult",
+                "{C:inactive,s:0.8}(If rank is highest, it becomes lowest)",
+                "{br:4}ERROR - CONTACT STEAK",
+                "After triggering {C:attention}#5#{} {C:inactive}[#6#]{} times,",
+                "upgrade level of next played {C:attention}poker hand{}{C:inactive}#7#{}",
+                "{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)",
+              }
+            }, 
         },
     },
   misc = {
