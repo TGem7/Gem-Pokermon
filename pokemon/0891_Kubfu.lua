@@ -118,7 +118,6 @@ local urshifu_single_strike={
   atlas = "AtlasJokersBasicGen08",
   gen = 8,
   custom_pool_func = true,
-  aux_poke = true,
   in_pool = function(self)
     return false
   end,
