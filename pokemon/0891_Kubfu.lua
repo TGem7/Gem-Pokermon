@@ -114,7 +114,6 @@ local urshifu_single_strike={
   rarity = 4, 
   cost = 20, 
   stage = "Legendary",
-  aux_poke = true,
   ptype = "Dark",
   atlas = "AtlasJokersBasicGen08",
   gen = 8,
@@ -181,7 +180,6 @@ local urshifu_rapid_strike={
   atlas = "AtlasJokersBasicGen08",
   gen = 8,
   custom_pool_func = true,
-  aux_poke = true,
   in_pool = function(self)
     return false
   end,
