@@ -17,6 +17,7 @@ local fastball = {
   end,
   pos = { x = 0, y = 0 },
   atlas = "Gem_fast",
+  artist = "Emma",
   cost = 3,
   pokeball = true,
   unlocked = true,
