@@ -803,6 +803,16 @@ return {
               }
             }, 
         },
+ Other = {
+            fast = {
+                name = "Fast Ball",
+                text = {
+                        "{C:blue}Basic Pokemon{} after {C:attention}1{} skip",
+                        "{C:green}Stage One Pokemon{} after {C:attention}2{} skips",
+                        "{C:red}Stage Two Pokemon{} after {C:attention}4{} skips",
+                },
+            },
+        },
     },
   misc = {
       dictionary = {
