@@ -13,6 +13,7 @@ return {
   Absol = true,
 	Starly = true,
 	Yamask = true,
+	Blitzle = true,
 	Sandile = true,
 	Minccino = true,
 	Cryogonal = true,
