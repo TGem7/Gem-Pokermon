@@ -802,6 +802,27 @@ return {
                 "{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)",
               }
             }, 
+            j_Gem_blitzle = {
+                name = "Blitzle",
+                text = {
+                    "{C:mult}+#2#{} Mult for each {C:attention}Blind{}",
+                    "{C:attention}skipped{} this run",
+                    "{C:inactive}(Evolves at {C:mult}+#1#{C:inactive} / +12 Mult)",
+
+              }
+            },
+            j_Gem_zebstrika = {
+                name = "Zebstrika",
+                text = {
+                    "Every 2{C:inactive}(#3#){} blinds skipped,",
+                    "Create a {C:attention}Speed Tag{}",
+                    "{br:4}ERROR - CONTACT STEAK",
+                    "{C:mult}+#2#{} Mult for each {C:attention}Blind{}",
+                    "{C:attention}skipped{} this run",
+                    "{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)",
+
+              }
+            },
         },
  Other = {
             fast = {
