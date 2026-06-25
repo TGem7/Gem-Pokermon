@@ -1,5 +1,3 @@
-
-
 -- Mawile 303
 local mawile={
   name = "mawile",
@@ -12,8 +10,8 @@ local mawile={
     end
       return { vars = { card.ability.extra.copy } }
   end,
-  rarity = 3,
-  cost = 8,
+  rarity = 2,
+  cost = 6,
   stage = "Basic",
   ptype = "Metal",
   atlas = "AtlasJokersBasicNatdex",
