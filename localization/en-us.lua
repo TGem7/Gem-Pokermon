@@ -49,6 +49,15 @@ return {
                     "Evolves Kubfu!",
                 },
             },
+            c_Gem_fastball = {
+                name = "Fast Ball",
+                text = {
+                    "Creates a {C:attention}Joker{} Card!",
+                    "The {C:attention}Joker's stage{} depends",
+                    "on {C:attention}skips{} used this run",
+                    "{C:inactive} Skips used: {C:attention}#1#{}",
+                },
+            },
         },
         Joker = {
             j_Gem_mawile = {
