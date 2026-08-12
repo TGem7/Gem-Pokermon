@@ -9,7 +9,8 @@ priority = 0
 target = 'functions/common_events.lua'
 pattern = '''ret.playing_card.x_mult = h_x_mult'''
 position = "at"
-payload = '''  
-ret.playing_card.x_mult = (next(SMODS.find_card('j_Gem_mega_mawile')) and SMODS.has_enhancement(card, 'm_steel')) and h_x_mult ^(2 ^ (#SMODS.find_card("j_Gem_mega_mawile"))) or h_x_mult
+payload = '''
+local to_big = to_big or function(x) return x end
+ret.playing_card.x_mult = (next(SMODS.find_card('j_Gem_mega_mawile')) and SMODS.has_enhancement(card, 'm_steel')) and to_big(h_x_mult) ^(to_big(2) ^ (#SMODS.find_card("j_Gem_mega_mawile"))) or h_x_mult
 '''
 match_indent = true
