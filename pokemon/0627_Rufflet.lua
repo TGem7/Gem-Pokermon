@@ -2,7 +2,7 @@
 local rufflet={
   name = "rufflet",
   pos = PokemonSprites["rufflet"].base.pos,
-  config = {extra = {mult = 2, rounds = 4, suit = "Spades", drawn = 0}, evo_rqmt = 20},
+  config = {extra = {mult = 2, rounds = 4, suit = "Spades", drawn = 0}, evo_rqmt = 25},
   loc_vars = function(self, info_queue, center)
     pokermon.type_tooltip(self, info_queue, center)
     return {vars = {center.ability.extra.mult, center.ability.extra.rounds, localize(center.ability.extra.suit, 'suits_singular'),
