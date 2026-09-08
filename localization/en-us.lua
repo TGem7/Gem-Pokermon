@@ -818,8 +818,34 @@ return {
                     "{C:mult}+#2#{} Mult for each {C:attention}Blind{}",
                     "{C:attention}skipped{} this run",
                     "{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)",
-
               }
+            },
+            j_Gem_rufflet = {
+              name = "Rufflet",
+              text = {
+                 "Each {C:attention}Spade{} card",
+                 "held in hand",
+                 "gives {C:mult}+#1#{} Mult",
+                 "{C:inactive,s:0.8}(Evolves after {C:attention,s:0.8}#2#{C:inactive,s:0.8} rounds)",
+                 "{C:inactive,s:0.8}(Evolves after drawing{C:inactive,s:0.8})",
+                 "{C:attention,s:0.8}#4# Spade{C:inactive,s:0.8} cards",
+              }
+            },
+            j_Gem_braviary = {
+              name = "Braviary",
+              text = {
+                 "Each {C:attention}Spade{} card",
+                 "held in hand",
+                 "gives {X:mult,C:white} X#1# {} Mult",
+              }
+            },
+            j_Gem_hisuian_braviary = {
+                name = 'Hisuian Braviary',
+                text = {
+                    "{C:purple}+#1# Foresight",
+                    "Each {C:attention}Foreseen{} {C:attention}Spade{}",
+                    "card gives {X:mult,C:white} X#2# {} Mult",
+                }
             },
         },
  Other = {
