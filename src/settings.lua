@@ -1,14 +1,7 @@
-local Tile = assert(SMODS.load_file("src/settings/tile.lua"))()
+local AgarTile = assert(SMODS.load_file("src/settings/tile.lua"))()
+local map = AG.list_utils.map
 
-local list_map = function(list, func)
-  new_list = {}
-  for _, v in pairs(list) do
-    new_list[#new_list + 1] = func(v)
-  end
-  return new_list
-end
-
-local pages = assert(SMODS.load_file("src/settings/contents.lua"))()
+local content = assert(SMODS.load_file("src/settings/contents.lua"))()
 
 local function create_tile_spacer()
   return { n = G.UIT.B, config = { w = 0.1, h = 3.5 } }
@@ -17,20 +10,20 @@ end
 local function create_tile_grid(args)
   local page_options = {}
 
-  for i, _ in ipairs(pages) do
-    page_options[#page_options + 1] = localize('k_page') .. " " .. i .. "/" .. #pages
+  for i, _ in ipairs(content.pages) do
+    page_options[#page_options+1] = localize('k_page') .. " " .. i .. "/" .. #content.pages
   end
 
-  local current_page = pages[args.page_num]
+  local current_page = content.pages[args.page_num]
 
   local first_row = { n = G.UIT.R, config = { align = "cm" }, nodes = { create_tile_spacer() } }
   local second_row = { n = G.UIT.R, config = { align = "cm" }, nodes = { create_tile_spacer() } }
 
-  local tiles = current_page.tiles and list_map(current_page.tiles, function(tile)
-    return Tile {
+  local tiles = map(current_page.tiles, function(tile)
+    return AgarTile {
       label = tile.label(),
       display_cards = tile.list,
-      ref_table = Gem_config,
+      ref_table = agarmons_config,
       ref_value = tile.config_key,
     }
   end)
