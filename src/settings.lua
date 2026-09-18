@@ -1,5 +1,5 @@
-local AgarTile = assert(SMODS.load_file("src/settings/tile.lua"))()
-local map = AG.list_utils.map
+local GemTile = assert(SMODS.load_file("src/settings/tile.lua"))()
+local map = GEM.list_utils.map
 
 local content = assert(SMODS.load_file("src/settings/contents.lua"))()
 
@@ -20,10 +20,10 @@ local function create_tile_grid(args)
   local second_row = { n = G.UIT.R, config = { align = "cm" }, nodes = { create_tile_spacer() } }
 
   local tiles = map(current_page.tiles, function(tile)
-    return AgarTile {
+    return GemTile {
       label = tile.label(),
       display_cards = tile.list,
-      ref_table = agarmons_config,
+      ref_table = Gem_config,
       ref_value = tile.config_key,
     }
   end)
