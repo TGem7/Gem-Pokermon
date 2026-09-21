@@ -847,6 +847,36 @@ return {
                     "card gives {X:mult,C:white} X#2# {} Mult",
                 }
             },
+            j_Gem_alolan_geodude = {
+                name = "Geodude",
+                text = {
+                    "{C:attention}-#2#{} hand size",
+                    "Earn {C:money}$#1#{} for each",
+                    "card held in hand after",
+                    "first hand of round",     
+                    "{C:inactive,s:0.8}(Evolves after {C:attention,s:0.8}#3#{C:inactive,s:0.8} rounds)",
+                } 
+            },
+            j_Gem_alolan_graveler = {
+                name = "Graveler",
+                text = {
+                    "{C:attention}-#2#{} hand size",
+                    "Earn {C:money}$#1#{} for each ",
+                    "card held in hand",    
+                    "{C:inactive,s:0.8}(Evolves with a {C:attention,s:0.8}Thunder Stone{C:inactive,s:0.8})"
+                } 
+            },
+            j_Gem_alolan_golem = {
+                name = "Golem",
+                text = {
+                    "{C:attention}-#2#{} hand size",
+                    "Earn {C:money}$#1#{} for each ",
+                    "card held in hand",
+                    "{br:4}ERROR - CONTACT STEAK",
+                    "{C:attention}Unenhanced Cards{}",
+                    "are {C:attention}Gold Cards{}",
+                } 
+            },
         },
  Other = {
             fast = {
