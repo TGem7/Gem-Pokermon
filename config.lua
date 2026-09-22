@@ -1,6 +1,7 @@
 return {
 	H_Growlithe = true,
 	A_Geodude = true,
+	G_Ponyta = true,
 	A_Grimer = true,
 	Cubone = true,
 	H_Qwilfish = (SMODS.Mods["ToxicStall"] or {}).can_load and true or false,
