@@ -582,25 +582,6 @@ return {
                    "{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive})",
                 }
             },
-            j_Gem_greavard = {
-                name = "Greavard",
-                text = {
-                    "{X:mult,C:white}X#1#{} Mult for each {C:attention}rank{}",
-                    "missing from your {C:attention}deck{}",
-                    "{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive})",
-                    "{C:inactive}(Evolves after {C:attention}#3#{C:inactive} rounds)",
-                }
-            },
-            j_Gem_houndstone = {
-                name = "Houndstone",
-                text = {
-                    "{X:mult,C:white}X#1#{} Mult for each {C:attention}rank{}",
-                    "missing from your {C:attention}deck{}",
-                    "{br:4}ERROR - CONTACT STEAK",
-                    "Doubled with no ranks in deck",
-                    "{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive})",
-                }
-            },
             j_Gem_minccino = {
                 name = "Minccino",
                 text = {
@@ -877,6 +858,34 @@ return {
                     "are {C:attention}Gold Cards{}",
                 } 
             },
+			j_Gem_basculin = {
+				name = 'Basculin',
+				text = {
+                    "Gain {C:mult}+#2#{} Mult when",
+                    "you {C:attention}deplete{} a {C:attention}rank{}",
+                    "Resets at end of round",
+                    "{C:inactive}(Evolves at {C:mult}+#1#{C:inactive} / +40 Mult)",
+                    "{C:inactive}(Evolves after {C:attention}#3#{C:inactive} rounds)",
+				}
+			},
+			j_Gem_basculegion = {
+				name = 'Basculegion',
+				text = {
+                    "Gain {X:mult,C:white} X#2# {} Mult when",
+                    "you {C:attention}deplete{} a {C:attention}rank{}",
+                    "Resets at end of round",
+                    "{C:inactive}(Currently {X:mult,C:white}X#1#{C:inactive})",
+				}
+			},
+			j_Gem_basculegion_f = {
+				name = 'Basculegion',
+				text = {
+                    "Gain {C:mult}+#2#{} Mult and {C:money}$#3#{}",
+                    "when you {C:attention}deplete{} a {C:attention}rank{}",
+                    "Resets at end of round",
+				    "{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)",
+				}
+			},
         },
  Other = {
             fast = {
