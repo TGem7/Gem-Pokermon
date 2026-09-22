@@ -886,6 +886,26 @@ return {
 				    "{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)",
 				}
 			},
+            j_Gem_galarian_ponyta = {
+                name = "Galarian Ponyta",
+                text = {
+                    "Create an {C:poke_pink}Energy{} card if",
+                    "played hand contains a {C:attention}Straight{}",
+                    "{C:inactive,s:0.8}(Evolves after playing {C:attention,s:0.8}#1# Straights{C:inactive,s:0.8})"
+                }
+            },
+            j_Gem_galarian_rapidash = {
+                name = "Galarian Rapidash",
+                text = {
+                    "{C:poke_pink}+#3#{} Energy Limit",
+                    "Increase {C:poke_pink}Energy{} Limit by {C:poke_pink}+1{}",
+                    "when {C:attention}#1#{} Straights are played.",
+                    "Requirement goes up by {C:attention}1{} each time",
+                    "{br:4}ERROR - CONTACT STEAK",
+                    "Create an {C:poke_pink}Energy{} card if",
+                    "played hand contains a {C:attention}Straight{}",
+                }
+            },
         },
  Other = {
             fast = {
