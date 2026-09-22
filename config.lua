@@ -15,6 +15,7 @@ return {
 	Starly = true,
 	Yamask = true,
 	Blitzle = true,
+	Basculin = true,
 	Sandile = true,
 	Minccino = true,
 	Cryogonal = true,
