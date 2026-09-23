@@ -22,7 +22,7 @@ local iron_jugulis={
   -- Detect first hand of round
     if context.first_hand_drawn and not context.blueprint then
       local eval = function() return G.GAME.current_round.hands_played == 0 and not G.RESET_JIGGLES end
-      juice_card_until(card, eval, true)
+      pokermon.juice_card_until(card, eval, true)
     end
 
   -- Return the xmult
