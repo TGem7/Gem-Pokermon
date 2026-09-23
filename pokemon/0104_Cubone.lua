@@ -75,7 +75,7 @@ init = function()
           or pokermon.scaling_evo(self, card, context, "j_poke_marowak", card.ability.extra.consumables_used, self.config.evo_rqmt)
     end,
     add_to_deck = function(self, card, from_debuff)
-      pokermon.create_held_item("c_poke_thickclub")
+      pokermon.create_consumeable("c_poke_thickclub")
       if Gem_config.Cubone and not from_debuff then
         -- Since the evolution code checks `ability.extra.item_req` and not `config.center.item_req` we have to do extra work.
         card.ability.extra.item_req = copy_table(card.config.center.item_req)
@@ -89,4 +89,5 @@ return {
   config_key = "Cubone",
   init = init,
   list = { alolan_marowak }
+}
 }
