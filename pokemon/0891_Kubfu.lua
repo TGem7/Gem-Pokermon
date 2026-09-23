@@ -99,6 +99,7 @@ local kubfu={
       end
     end
   end,
+  attributes = {"reset"},
 }
 
 --Urshifu Single Strike 892
@@ -160,6 +161,7 @@ local urshifu_single_strike={
       card_eval_status_text(card, 'extra', nil, nil, nil, {message = localize('k_reset'), colour = G.C.RED})
     end
   end,
+  attributes = {"reset"},
 }
 
 --Urshifu Rapid Strike 892
@@ -215,6 +217,7 @@ local urshifu_rapid_strike={
        card_eval_status_text(card, 'extra', nil, nil, nil, {message = localize('k_reset'), colour = G.C.RED})
      end
   end,
+  attributes = {"reset"},
 }
 
 return {
