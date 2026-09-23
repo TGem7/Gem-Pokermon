@@ -91,4 +91,4 @@ return {
   init = init,
   list = { alolan_marowak }
 }
-}
+
