@@ -89,7 +89,7 @@ local scovillain = {
       end
         if context.individual and not context.end_of_round and context.cardarea == G.hand then
           local suit_number = next(SMODS.find_card('j_poke_roserade')) and 3 or 4
-          if poke_suit_check(context.scoring_hand, suit_number) then
+          if pokermon.suit_check(context.scoring_hand, suit_number) then
       if SMODS.has_enhancement(context.other_card, 'm_poke_seed') then 
           return {
             message = localize('poke_spicy_ex'),
@@ -154,7 +154,6 @@ return {
   config_key = "Capsakid",
   list = { capsakid, scovillain, mega_scovillain }
 }
-
 
 
 
