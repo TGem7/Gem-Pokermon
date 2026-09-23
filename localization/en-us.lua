@@ -906,6 +906,22 @@ return {
                     "played hand contains a {C:attention}Straight{}",
                 }
             },
+            j_Gem_vullaby = {
+                name = "Vullaby",
+                text = {
+                    "Earn {C:money}$#1#{} when a rank is depleted",
+                    "Earn {C:money}$#2#{} when a card is destroyed",
+                    "{C:inactive,s:0.8}(Evolves after {C:attention,s:0.8}#3#{C:inactive,s:0.8} rounds)",
+                }
+            },
+            j_Gem_mandibuzz = {
+                name = "Mandibuzz",
+                text = {
+                    "{C:red}+#3#{} discard",
+                    "Earn {C:money}$#1#{} when a rank is depleted",
+                    "Earn {C:money}$#2#{} when a card is destroyed",
+                }
+            },
         },
  Other = {
             fast = {
