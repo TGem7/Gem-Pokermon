@@ -50,7 +50,7 @@ local yamask = {
           }
      end
     end
-    return deck_enhance_evo(self, card, context, "j_Gem_cofagrigus", "Gold", .20)
+    return pokermon.deck_enhance_evo(self, card, context, "j_Gem_cofagrigus", "Gold", .20)
   end,
 }
 
@@ -78,11 +78,14 @@ local cofagrigus ={
   eternal_compat = true,
   calculate = function(self, card, context)
     if context.discard and SMODS.has_enhancement(context.other_card, 'm_gold') and not context.blueprint then
-        if card.ability.extra.discards_remaining <= 1 then
-            bonus = true
-        else
+        if card.ability.extra.discards_remaining > 1 then
             card.ability.extra.discards_remaining = card.ability.extra.discards_remaining - 1
             return nil, true 
+        elseif card.ability.extra.discards_remaining == 1 then
+            card.ability.extra.discards_remaining = card.ability.extra.discards_remaining - 1
+            bonus = true
+        else
+            bonus = true
         end
     end
     if context.before and not context.blueprint then
@@ -131,4 +134,3 @@ return {
   config_key = "Yamask",
   list = {yamask, cofagrigus}
 }
-
