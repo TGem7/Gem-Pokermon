@@ -21,6 +21,7 @@ return {
 	Minccino = true,
 	Cryogonal = true,
 	Rufflet = true,
+	Vullaby = true,
 	Espurr = true,
 	Noibat = true,
 	Morelull = true,
