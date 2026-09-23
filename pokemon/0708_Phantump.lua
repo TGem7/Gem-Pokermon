@@ -74,7 +74,7 @@ local trevenant={
             card.ability.extra.fours_remaining = card.ability.extra.fours_remaining - 1
             if card.ability.extra.fours_remaining <= 0 then
               card.ability.extra.fours_remaining = 10
-              apply_type_sticker(G.jokers.cards[1], "Grass")
+              pokermon.apply_type_sticker(G.jokers.cards[1], "Grass")
               card:juice_up()
               card_eval_status_text(G.jokers.cards[1], 'extra', nil, nil, nil, {message = localize("Gem_forest_curse"), colour = G.C.SECONDARY_SET.Spectral})
             end
