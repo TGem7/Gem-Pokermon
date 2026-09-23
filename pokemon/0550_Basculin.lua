@@ -54,7 +54,8 @@ local basculin={
     else
         return pokermon.level_evo(self, card, context, "j_Gem_basculegion_f")
     end
-    end
+    end,
+  attributes = {"reset"},
 }
 
 -- Basculegion 550
@@ -104,7 +105,8 @@ local basculegion={
         colour = G.C.CHIPS
       }
     end
-    end
+    end,
+  attributes = {"reset"},
 }
 
 -- Basculegion-F 550
@@ -163,7 +165,8 @@ local basculegion_f={
         colour = G.C.CHIPS
       }
     end
-    end
+    end,
+  attributes = {"reset"},
 }
 
 return {
