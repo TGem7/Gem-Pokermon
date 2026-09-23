@@ -31,11 +31,11 @@ local sandy_shocks={
         if card.ability.extra.count <= 0 then
           if G.hand.cards and #G.hand.cards > 0 then
             card.ability.extra.count = 10
-            juice_flip_hand(card)
+            pokermon.juice_flip_hand(card)
             for i = 1, #G.hand.cards do
               G.hand.cards[i]:set_ability(G.P_CENTERS.m_gold, nil, true)
             end
-            juice_flip_hand(card, true)
+            pokermon.juice_flip_hand(card, true)
           end
         end
       end
