@@ -47,6 +47,7 @@ local alolan_marowak={
         end
      end
   end,
+  attributes = {"reset"},
 }
 
 init = function()
