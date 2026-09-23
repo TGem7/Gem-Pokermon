@@ -32,11 +32,11 @@ local great_tusk={
       if context.joker_main and card.ability.extra.Xmult > 1 then
         if #context.scoring_hand >= 5 and not context.blueprint then
           if G.hand.cards and #G.hand.cards > 0 then
-            juice_flip_hand(card)
+            pokermon.juice_flip_hand(card)
             for i = 1, #G.hand.cards do
               G.hand.cards[i]:set_ability(G.P_CENTERS.m_stone, nil, true)
             end
-            juice_flip_hand(card, true)
+            pokermon.juice_flip_hand(card, true)
           end
         end
         return {
