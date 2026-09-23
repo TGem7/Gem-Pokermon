@@ -81,8 +81,7 @@ return {
                     "{C:attention}Nature: {C:inactive}({C:attention}#4#, #5#, #6#{C:inactive}){}",
                     "Played {C:attention}Nature{} cards earn {C:money}$#1#{}",
                     "when scored plus {C:money}$#1#{} for each other",
-                    "{X:poke_grass,C:white}Grass{} or {X:poke_dragon,C:white}Dragon{} card you have",
-                    "{C:inactive,s:0.8}(includes Jokers and Energy cards){}",
+                    "{X:poke_grass,C:white}Grass{} or {X:poke_dragon,C:white}Dragon{} Joker you have",
                     "{C:inactive}(Currently {C:money}$#3#{C:inactive} total){}"
                 }
             },
@@ -91,7 +90,7 @@ return {
                 text = {
                     "{C:attention}Nature: {C:inactive}({C:attention}#4#, #5#, #6#{C:inactive}){}",
                     "Played {C:attention}Nature{} cards give {X:mult,C:white}X#2#{} Mult for",
-                    "each {X:poke_fire,C:white}Fire{} or {X:poke_earth,C:white}Fighting{} joker you have",
+                    "each {X:poke_fire,C:white}Fire{} or {X:poke_earth,C:white}Fighting{} Joker you have",
                     "{C:inactive}(Currently {X:mult,C:white}X#3#{C:inactive} Mult){}",
                 }
             },
@@ -103,7 +102,7 @@ return {
                     "a {C:green}#4# in #5#{} chance to create a tarot card.",
                     "{br:3}ERROR - CONTACT STEAK",
                     "Increases by {C:chips}+#2#{} and {C:green}1{} for",
-                    "each other {X:poke_water,C:white}Water{} or {X:poke_earth,C:white}Earth{} card",
+                    "each other {X:poke_water,C:white}Water{} or {X:poke_earth,C:white}Earth{} Joker",
                     "{C:inactive}(Currently {C:chips}+#6#{C:inactive} Chips)",
                 }
             },
