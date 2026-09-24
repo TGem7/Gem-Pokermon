@@ -16,7 +16,7 @@ local scrollofdarkness = {
     return find_target("j_Gem_kubfu") ~= nil
   end,
   use = function(self, card)
-    set_spoon_item(card)
+    pokermon.set_spoon_item(card)
     pokermon.evolve(find_target("j_Gem_kubfu"), "j_Gem_urshifu_single_strike")
   end,
   in_pool = function(self)
@@ -38,7 +38,7 @@ local scrollofwaters = {
     return find_target("j_Gem_kubfu") ~= nil
   end,
   use = function(self, card)
-    set_spoon_item(card)
+    pokermon.set_spoon_item(card)
     pokermon.evolve(find_target("j_Gem_kubfu"), "j_Gem_urshifu_rapid_strike")
   end,
   in_pool = function(self)
@@ -53,3 +53,4 @@ return {
   name = "Gem's Scrolls",
   list = list
 }
+
