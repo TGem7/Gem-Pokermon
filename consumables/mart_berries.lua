@@ -17,7 +17,7 @@ local berrysweet = {
     return find_target("j_Gem_alcremie") ~= nil
   end,
   use = function(self, card)
-    set_spoon_item(card)
+    pokermon.set_spoon_item(card)
     pokermon.evolve(find_target("j_Gem_alcremie"), "j_Gem_alcremie_berry")
   end,
   in_pool = function(self)
@@ -40,7 +40,7 @@ local lovesweet = {
     return find_target("j_Gem_alcremie") ~= nil
   end,
   use = function(self, card)
-    set_spoon_item(card)
+    pokermon.set_spoon_item(card)
     pokermon.evolve(find_target("j_Gem_alcremie"), "j_Gem_alcremie_love")
   end,
   in_pool = function(self)
@@ -63,7 +63,7 @@ local starsweet = {
     return find_target("j_Gem_alcremie") ~= nil
   end,
   use = function(self, card)
-    set_spoon_item(card)
+    pokermon.set_spoon_item(card)
     pokermon.evolve(find_target("j_Gem_alcremie"), "j_Gem_alcremie_star")
   end,
   in_pool = function(self)
@@ -86,7 +86,7 @@ local cloversweet = {
     return find_target("j_Gem_alcremie") ~= nil
   end,
   use = function(self, card)
-    set_spoon_item(card)
+    pokermon.set_spoon_item(card)
     pokermon.evolve(find_target("j_Gem_alcremie"), "j_Gem_alcremie_clover")
   end,
   in_pool = function(self)
@@ -109,7 +109,7 @@ local flowersweet = {
     return find_target("j_Gem_alcremie") ~= nil
   end,
   use = function(self, card)
-    set_spoon_item(card)
+    pokermon.set_spoon_item(card)
     pokermon.evolve(find_target("j_Gem_alcremie"), "j_Gem_alcremie_flower")
   end,
   in_pool = function(self)
@@ -132,7 +132,7 @@ local ribbonsweet = {
     return find_target("j_Gem_alcremie") ~= nil
   end,
   use = function(self, card)
-    set_spoon_item(card)
+    pokermon.set_spoon_item(card)
     pokermon.evolve(find_target("j_Gem_alcremie"), "j_Gem_alcremie_ribbon")
   end,
   in_pool = function(self)
