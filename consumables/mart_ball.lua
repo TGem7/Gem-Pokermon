@@ -41,16 +41,16 @@ local fastball = {
     end
   end,
   use = function(self, card, area, copier)
-    set_spoon_item(card)
+    pokermon.set_spoon_item(card)
     G.E_MANAGER:add_event(Event({trigger = 'after', delay = 0.4, func = function()
       play_sound('timpani')
       local _card = nil
       if G.GAME.skips < self.config.extra.uncommon then
-        _card = create_random_poke_joker("fastball", "Basic", nil, nil, nil)
+        _card = pokermon.create_random_poke_joker("fastball", "Basic", nil, nil, nil)
       elseif self.config.extra.uncommon <= G.GAME.skips and G.GAME.skips < self.config.extra.rare then
-        _card = create_random_poke_joker("fastball", "One", nil, nil, nil)
+        _card = pokermon.create_random_poke_joker("fastball", "One", nil, nil, nil)
       elseif self.config.extra.rare <= G.GAME.skips then
-        _card = create_random_poke_joker("fastball ", "Two", nil, nil, nil)
+        _card = pokermon.create_random_poke_joker("fastball ", "Two", nil, nil, nil)
       end
       _card:add_to_deck()
       G.jokers:emplace(_card)
