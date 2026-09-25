@@ -32,7 +32,7 @@ local mega_absol={
     end
     if context.mod_probability and not context.blueprint and volatile_active(self, card, card.ability.extra.volatile2) then
         return {
-            numerator = context.numerator * 2,
+            numerator = context.numerator * 3,
         }
     end
     if context.fix_probability and not context.blueprint and volatile_active(self, card, card.ability.extra.volatile) then
