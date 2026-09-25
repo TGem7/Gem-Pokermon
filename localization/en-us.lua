@@ -163,8 +163,8 @@ return {
             j_Gem_scovillain = {
                 name = "Scovillain",
                 text = {
-                  "If first played poker hand",
-                  "contains only {C:attention}Mult{} cards, turn",
+                  "If first played poker hand contains",
+                  "only {C:attention}Mult{} cards, each turns",
                   "a random held card to {C:attention}Flower{}",
                   "{br:3}ERROR - CONTACT STEAK",
                   "Held {C:attention}Seed{} or {C:attention}Flower{} cards give {X:mult,C:white}X#1#{}",
@@ -560,7 +560,7 @@ return {
                     "{C:attention}Volatile Left{}",
                     "{C:attention}Listed{} {C:green,E:1,S:1.1}Probabilities{} are always {C:attention}0{}",
                     "{C:attention}Volatile Right{}",
-                    "{C:attention}Double Listed{} {C:green,E:1,S:1.1}Probabilities{}",
+                    "{C:attention}Triple Listed{} {C:green,E:1,S:1.1}Probabilities{}",
                 }
             },
             j_Gem_noibat = {
@@ -638,11 +638,8 @@ return {
             j_Gem_ribombee = {
                 name = "Ribombee",
                 text = {
-                    "{C:attention}Seed{} cards give",
-                    "{C:money}$#1#{} when scored",
-                    "{br:4}ERROR - CONTACT STEAK",
-                    "{C:attention}Flower{} cards in {C:attention}Poker{}",
-                    "{C:attention}Hand{} revert to {C:attention}Seed{} cards",
+                    "{C:attention}Seed{} and {C:attention}Flower{} cards",
+                    "give {C:money}$#1#{} when scored",
                 }
             },
             j_Gem_baltoy = {
@@ -678,6 +675,7 @@ return {
             j_Gem_trevenant = {
                 name = "Trevenant",
                 text = {
+                    "{C:attention}+#2#{} growth level",
                     "Scoring {C:attention}Unenhanced 4s{} are",
                     "turned into {C:attention}Seed{} cards",
                     "{br:4}ERROR - CONTACT STEAK",
@@ -901,7 +899,7 @@ return {
                     "when {C:attention}#1#{} Straights are played.",
                     "Requirement goes up by {C:attention}1{} each time",
                     "{br:4}ERROR - CONTACT STEAK",
-                    "Create an {C:poke_pink}Energy{} card if",
+                    "Create an {C:poke_pink}Energy{} card that if",
                     "played hand contains a {C:attention}Straight{}",
                 }
             },
