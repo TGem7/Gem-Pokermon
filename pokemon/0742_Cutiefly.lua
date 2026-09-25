@@ -37,7 +37,7 @@ local cutiefly={
 local ribombee={
   name = "ribombee", 
   pos = PokemonSprites["ribombee"].base.pos,
-  config = {extra = {money_mod = 4, money_earned = 0, retriggers = 1}},
+  config = {extra = {money_mod = 4, money_earned = 0}},
   loc_vars = function(self, info_queue, center)
     pokermon.type_tooltip(self, info_queue, center)
     return {vars = {center.ability.extra.money_mod}}
@@ -61,19 +61,16 @@ local ribombee={
               card = card
             }
         end
-    if context.before then
-      for _, scored_card in ipairs(context.scoring_hand) do
-        if SMODS.has_enhancement(scored_card,"m_poke_flower") then
-          scored_card:set_ability("m_poke_seed",nil,true)
-          G.E_MANAGER:add_event(Event({
-            func = function()
-              scored_card:juice_up()
-              return true
-            end
-          }))
+        if context.individual and context.cardarea == G.play and
+            SMODS.has_enhancement(context.other_card, 'm_poke_flower') then
+            G.GAME.dollar_buffer = (G.GAME.dollar_buffer or 0) + card.ability.extra.money_mod
+            local earned = pokermon.ease_poke_dollars(card, "cutiefly", math.min(14, card.ability.extra.money_mod), true) 
+            card.ability.extra.money_earned = card.ability.extra.money_earned + earned
+            return {
+              dollars = earned,
+              card = card
+            }
         end
-      end
-    end
   end
 }
 
@@ -82,4 +79,5 @@ return {
   config_key = "Cutiefly",
   list = { cutiefly, ribombee }
 }
+
 
