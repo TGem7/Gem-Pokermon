@@ -31,10 +31,10 @@ local phantump={
 local trevenant={
   name = "trevenant", 
   pos = PokemonSprites["trevenant"].base.pos,
-  config = {extra = {fours_remaining = 10}},
+  config = {extra = {fours_remaining = 10, growth = 1}},
   loc_vars = function(self, info_queue, center)
     pokermon.type_tooltip(self, info_queue, center)
-    return {vars = {center.ability.extra.fours_remaining}}
+    return {vars = {center.ability.extra.fours_remaining, center.ability.extra.growth}}
   end,
   rarity = 'poke_safari', 
   cost = 8, 
@@ -80,7 +80,13 @@ local trevenant={
             end
         end
     end
-  end
+  end,
+  add_to_deck = function(self, card, from_debuff)
+    pokermon.change_growth_level(card.ability.extra.growth)
+  end,
+  remove_from_deck = function(self, card, from_debuff)
+    pokermon.change_growth_level(-card.ability.extra.growth)
+  end,
 }
 
 
