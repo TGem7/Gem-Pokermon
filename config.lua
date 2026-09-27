@@ -15,6 +15,7 @@ return {
 	Trapinch = true,
   Absol = true,
 	Starly = true,
+	Manaphy = true,
 	Yamask = true,
 	Blitzle = true,
 	Basculin = true,
