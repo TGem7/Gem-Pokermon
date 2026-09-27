@@ -23,7 +23,7 @@ local miraidon={
             trigger = "after",
             time = 0.2,
             func = function()
-                pokermon.energy.increase(card, pokermon.get_type(card), (energy_max + (G.GAME.energy_plus or 0) +
+                pokermon.energy.increase(card, pokermon.get_type(card), (pokermon.energy_max + (G.GAME.energy_plus or 0) +
                     (type(card.ability.extra) == "table" and card.ability.extra.e_limit_up or 0)) - pokermon.energy.get_total_energy(card), true)
                 card:juice_up(1, 0.5)
                 return true
@@ -39,7 +39,7 @@ calculate = function(self, card, context)
             play_sound('timpani')
             -- if edition is nil, it'll try again for an edition
             local _card = SMODS.create_card({set = "Joker", rarity = "Gem_future_paradox", area = G.jokers, key = card.ability.extra.key})
-            pokermon.energy.increase(_card, pokermon.get_type(_card), energy_max + (G.GAME.energy_plus or 0) +
+            pokermon.energy.increase(_card, pokermon.get_type(_card), pokermon.energy_max + (G.GAME.energy_plus or 0) +
                     (type(card.ability.extra) == "table" and card.ability.extra.e_limit_up or 0) - pokermon.energy.get_total_energy(_card), true)
             _card:add_to_deck()
             local loc = 1
