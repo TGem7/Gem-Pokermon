@@ -12,6 +12,7 @@ return {
 	Electrike = true,
 	Baltoy = true,
 	Wailmer = true,
+	Trapinch = true,
   Absol = true,
 	Starly = true,
 	Yamask = true,
