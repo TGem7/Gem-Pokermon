@@ -899,7 +899,7 @@ return {
                     "when {C:attention}#1#{} Straights are played.",
                     "Requirement goes up by {C:attention}1{} each time",
                     "{br:4}ERROR - CONTACT STEAK",
-                    "Create an {C:poke_pink}Energy{} card that if",
+                    "Create an {C:poke_pink}Energy{} card if",
                     "played hand contains a {C:attention}Straight{}",
                 }
             },
@@ -917,6 +917,38 @@ return {
                     "{C:red}+#3#{} discard",
                     "Earn {C:money}$#1#{} when a rank is depleted",
                     "Earn {C:money}$#2#{} when a card is destroyed",
+                }
+            },
+            j_Gem_trapinch = {
+                name = "Trapinch",
+                text = {
+                    "{C:mult}+#1#{} Mult, {C:mult}-#2#{} Mult each round",
+                    "When scored, played {C:attention}Diamond{} cards",
+                    "permanently lose {C:chips}-#3#{} Chip",
+                    "{C:inactive,s:0.8}(Evolves after {C:attention,s:0.8}#5#{C:inactive,s:0.8} rounds)",
+                }
+            },
+            j_Gem_vibrava = {
+                name = "Vibrava",
+                text = {
+                    "{C:mult}+#1#{} Mult",
+                    "When scored, played {C:attention}Diamond{} cards",
+                    "permanently lose {C:chips}-#2#{} Chip",
+                    "{br:4}ERROR - CONTACT STEAK",
+                    "When a card with {C:chips}1{} Chip or less",
+                    "scores, gain {C:chips}+#5#{} Chips",
+                    "{C:inactive}(Evolves at {C:chips}+#4#{C:inactive} / +50 Chips)",
+                }
+            },
+            j_Gem_flygon = {
+                name = "Flygon",
+                text = {
+                    "When scored, played {C:attention}Diamond{} cards",
+                    "permanently lose {C:chips}-#1#{} Chip",
+                    "{br:4}ERROR - CONTACT STEAK",
+                    "When a card with {C:chips}1{} Chip or less",
+                    "scores, gain {C:chips}+#4#{} Chips and {X:mult,C:white}X#6#{} Mult",
+                    "{C:inactive}(Currently {C:chips}+#3#{C:inactive} Chips, {X:mult,C:white}X#5#{C:inactive})",
                 }
             },
         },
