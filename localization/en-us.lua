@@ -948,7 +948,7 @@ return {
                     "{br:4}ERROR - CONTACT STEAK",
                     "When a card with {C:chips}1{} Chip or less",
                     "scores, gain {C:chips}+#4#{} Chips and {X:mult,C:white}X#6#{} Mult",
-                    "{C:inactive}(Currently {C:chips}+#3#{C:inactive} Chips, {X:mult,C:white}X#5#{C:inactive})",
+                    "{C:inactive}(Currently {C:chips}+#3#{C:inactive} Chips, {X:mult,C:white}X#5#{C:inactive} Mult)",
                 }
             },
         },
