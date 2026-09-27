@@ -948,7 +948,30 @@ return {
                     "{br:4}ERROR - CONTACT STEAK",
                     "When a card with {C:chips}1{} Chip or less",
                     "scores, gain {C:chips}+#4#{} Chips and {X:mult,C:white}X#6#{} Mult",
-                    "{C:inactive}(Currently {C:chips}+#3#{C:inactive} Chips, {X:mult,C:white}X#5#{C:inactive} Mult)",
+                    "{C:inactive}(Currently {C:chips}+#3#{C:inactive} Chips, {X:mult,C:white}X#5#{C:inactive})",
+                }
+            },
+            j_Gem_manaphy = {
+                name = "Manaphy",
+                text = {
+                    "After 20 {C:inactive}[#4#]{C:inactive} {C:attention}Heart{} cards are scored,",
+                    "gain {X:mult,C:white}X#5#{} Mult for each {X:poke_water,C:white}Water{} Joker",
+                    "you have and create a {C:dark_edition}Negative{} {C:attention}Manaphy Egg{}",
+                    "{C:inactive}(Currently {X:mult,C:white}X#1#{C:inactive} Mult)",
+                }
+            },
+            j_Gem_manaphy_egg = {
+                name = "Manaphy Egg",
+                text = {
+                  "Transforms into a {C:attention}Phione{}",
+                  "after {C:attention}#1#{} rounds",
+                }
+            },
+            j_Gem_phione = {
+                name = "Phione",
+                text = {
+                    "Increase Manaphy's {X:mult,C:white}XMult{}",
+                    "scaling by {X:mult,C:white}X#1#{} Mult",
                 }
             },
         },
@@ -982,6 +1005,7 @@ return {
             poke_expanding_force_ex = "Expanding Force!",
             poke_head_smash_ex = "Head Smash!",
             poke_huge_power_ex = "Huge Power!",
+            poke_take_heart_ex = "Take Heart!",
             -- Config Descriptions
             hisuian_growlithe_line = "Hisuian Growlithe Line?",
             cubone_line = "Cubone Line?",
