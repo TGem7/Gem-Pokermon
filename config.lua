@@ -21,6 +21,7 @@ return {
 	Basculin = true,
 	Sandile = true,
 	Minccino = true,
+	Ducklett = true,
 	Cryogonal = true,
 	Rufflet = true,
 	Vullaby = true,
