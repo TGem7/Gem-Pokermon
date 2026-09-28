@@ -974,6 +974,23 @@ return {
                     "scaling by {X:mult,C:white}X#1#{} Mult",
                 }
             },
+            j_Gem_ducklett = {
+                name = "Ducklett",
+                text = {
+                    "The rightmost scoring card in",
+                    "played {C:attention}poker hand{} permanently",
+                    "gains {C:chips}+#1#{} Chips",
+                    "{C:inactive,s:0.8}(Evolves after {C:attention,s:0.8}#2#{C:inactive,s:0.8} rounds)",
+                }
+            },
+            j_Gem_swanna = {
+                name = "Swanna",
+                text = {
+                    "The rightmost scoring card in",
+                    "played {C:attention}poker hand{} permanently",
+                    "gains {C:chips}+#1#{} Chips and {C:attention}Retriggers{}",
+                }
+            },
         },
  Other = {
             fast = {
