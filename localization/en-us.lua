@@ -991,6 +991,26 @@ return {
                     "gains {C:chips}+#1#{} Chips and {C:attention}Retriggers{}",
                 }
             },
+            j_Gem_patrat = {
+                name = "Patrat",
+                text = {
+                    "{C:purple}+#1# Foresight",
+                    "{C:attention}Foreseen{} {C:attention}#4#s{} give {C:money}$#2#{}",
+                    "{C:inactive,s:0.8}(Rank changes every round)",
+                    "{C:inactive,s:0.8}(Evolves after earning {C:attention,s:0.8}$#3#{})",
+                }
+            },
+            j_Gem_watchog = {
+                name = "Watchog",
+                text = {
+                    "{C:purple}+#1# Foresight",
+                    "{C:attention}Foreseen{} {C:attention}#3#s{} give {C:money}$#2#{}",
+                    "{br:4}ERROR - CONTACT STEAK",
+                    "If this triggered during",
+                    "your hand, increase by {C:money}$#4#",
+                    "{C:inactive,s:0.8}(Money resets and rank changes every round)",
+                }
+            },
         },
  Other = {
             fast = {
