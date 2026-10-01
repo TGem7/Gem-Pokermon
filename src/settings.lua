@@ -1,5 +1,5 @@
 local map_list = GEM.utils.map_list
-local DipTile = assert(SMODS.load_file("src/settings/tile.lua"))()
+local Tile = assert(SMODS.load_file("src/settings/tile.lua"))()
 local content = assert(SMODS.load_file("src/settings/contents.lua"))()
 
 local function create_tile_spacer()
@@ -19,10 +19,10 @@ local function create_tile_grid(args)
   local second_row = { n = G.UIT.R, config = { align = "cm" }, nodes = { create_tile_spacer() } }
 
   local tiles = current_page.tiles and map_list(current_page.tiles, function(tile)
-    return DipTile {
+    return Tile {
       label = tile.label(),
       display_cards = tile.list,
-      ref_table = GEM.config,
+      ref_table = Gem_config,
       ref_value = tile.config_key,
       mod_req = tile.mod_req,
     }
@@ -61,7 +61,7 @@ local function create_tile_grid(args)
               create_option_cycle({
                 options = page_options,
                 current_option = args.page_num,
-                opt_callback = "nacho_update_config_page",
+                opt_callback = "gem_update_config_page",
                 scale = 0.8,
                 colour = G.C.RED,
                 cycle_shoulders = false,
@@ -75,10 +75,10 @@ local function create_tile_grid(args)
   }
 end
 
-function G.FUNCS.nacho_update_config_page(e)
+function G.FUNCS.gem_update_config_page(e)
   if not e or not e.cycle_config then return end
   
-  local grid_wrap = G.OVERLAY_MENU:get_UIE_by_ID("nacho_grid_wrap")
+  local grid_wrap = G.OVERLAY_MENU:get_UIE_by_ID("Gem_grid_wrap")
   if grid_wrap then
     grid_wrap.config.object:remove()
     grid_wrap.config.object = UIBox {
