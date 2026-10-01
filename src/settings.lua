@@ -114,34 +114,34 @@ function SMODS.current_mod.extra_tabs()
         }
       end
     },
-		-- insert more tables with the same structure here
-    {
-      label = 'Extra',
-      tab_definition_function = function ()
-        return {
-          n = G.UIT.ROOT,
-          config = {
-            r = 0.1,
-            minw = 7,
-            minh = 3,
-            align = "cm",
-            colour = G.C.BLACK,
-            emboss = 0.05,
-          },
-          nodes = {
-            {
-              n = G.UIT.C,
-              config = {
-                  align = "cm",
-                  padding = 0.1,
-                  r = 0.1,
-                  colour = G.C.GREY,
-                  emboss = 0.05,
-              }
-            }
-          }
-        }
-      end
-    },
+		-- -- insert more tables with the same structure here
+    -- {
+    --   label = 'Extra',
+    --   tab_definition_function = function ()
+    --     return {
+    --       n = G.UIT.ROOT,
+    --       config = {
+    --         r = 0.1,
+    --         minw = 7,
+    --         minh = 3,
+    --         align = "cm",
+    --         colour = G.C.BLACK,
+    --         emboss = 0.05,
+    --       },
+    --       nodes = {
+    --         {
+    --           n = G.UIT.C,
+    --           config = {
+    --               align = "cm",
+    --               padding = 0.1,
+    --               r = 0.1,
+    --               colour = G.C.GREY,
+    --               emboss = 0.05,
+    --           }
+    --         }
+    --       }
+    --     }
+    --   end
+    -- },
 	}
 end
