@@ -41,4 +41,4 @@ end
 local main_list = GEM.config_list
 populate_pages(main_list, 'Gem_pokemon', "Pokemon")
 
-return pages
+return {pages = pages}
