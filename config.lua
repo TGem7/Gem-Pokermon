@@ -17,6 +17,7 @@ return {
 	Starly = true,
 	Manaphy = true,
 	Yamask = true,
+	Patrat = true,
 	Blitzle = true,
 	Basculin = true,
 	Sandile = true,
