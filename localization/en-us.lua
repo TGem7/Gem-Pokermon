@@ -1011,6 +1011,29 @@ return {
                     "{C:inactive,s:0.8}(Money resets and rank changes every round)",
                 }
             },
+            j_Gem_fomantis = {
+                name = "Fomantis",
+                text = {
+                    "Each {C:attention}Heart{} card held",
+                    "in hand gives {C:mult}+#3#{} Mult",
+                    "{br:4}ERROR - CONTACT STEAK",
+                    "When {C:attention}Blind{} is selected,",
+                    "{C:attention}Destroy{} {X:poke_grass,C:white}Grass{} Joker to the right",
+                    "and increase Mult by {C:mult}+#1#{}",
+                    "{C:inactive,s:0.8}(Evolves after destroying {C:attention,s:0.8}#4#{}{C:inactive,s:0.8} Grass Jokers)",
+                }
+            },
+            j_Gem_lurantis = {
+                name = "Lurantis",
+                text = {
+                    "Each {C:attention}Heart{} card held",
+                    "in hand gives {X:mult,C:white}X#3#{}",
+                    "{br:4}ERROR - CONTACT STEAK",
+                    "When {C:attention}Blind{} is selected,",
+                    "{C:attention}Destroy{} {X:poke_grass,C:white}Grass{} Joker to the right",
+                    "and increase {X:mult,C:white}XMult{} by {X:mult,C:white}X#1#{}",
+                }
+            },
         },
  Other = {
             fast = {
