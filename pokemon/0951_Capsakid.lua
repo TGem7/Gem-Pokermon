@@ -112,7 +112,8 @@ local scovillain = {
 -- Mega Scovillain
 local mega_scovillain = {
   name = "mega_scovillain",
-  pos = PokemonSprites["scovillain"].base.pos,
+  pos = {x = 8, y = 6},
+  soul_pos = {x = 9, y = 6},
   config = {extra = {Xmult_multi = 3}},
   loc_vars = function(self, info_queue, center)
     pokermon.type_tooltip(self, info_queue, center)
@@ -125,7 +126,7 @@ local mega_scovillain = {
   cost = 12, 
   stage = "Mega", 
   ptype = "Fire",
-  atlas = "AtlasJokersBasicNatdex",
+  atlas = "AtlasJokersBasicGen09",
   gen = 9,
   blueprint_compat = true,
   calculate = function(self, card, context)
@@ -154,6 +155,7 @@ return {
   config_key = "Capsakid",
   list = { capsakid, scovillain, mega_scovillain }
 }
+
 
 
 
