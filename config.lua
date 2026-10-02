@@ -28,6 +28,7 @@ return {
 	Vullaby = true,
 	Espurr = true,
 	Noibat = true,
+	Fomantis = true,
 	Morelull = true,
 	Phantump = true,
 	Cutiefly = true,
