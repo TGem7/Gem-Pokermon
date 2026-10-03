@@ -33,6 +33,7 @@ return {
 	Phantump = true,
 	Cutiefly = true,
 	Stufful = true,
+	Komala = true,
 	Zeraora = true,
 	Sizzlipede = true,
 	Alcremie = true,
