@@ -1027,11 +1027,20 @@ return {
                 name = "Lurantis",
                 text = {
                     "Each {C:attention}Heart{} card held",
-                    "in hand gives {X:mult,C:white}X#3#{}",
+                    "in hand gives {X:mult,C:white}X#3#{} Mult",
                     "{br:4}ERROR - CONTACT STEAK",
                     "When {C:attention}Blind{} is selected,",
                     "{C:attention}Destroy{} {X:poke_grass,C:white}Grass{} Joker to the right",
                     "and increase {X:mult,C:white}XMult{} by {X:mult,C:white}X#1#{}",
+                }
+            },
+            j_Gem_komala = {
+                name = "Komala",
+                text = {
+                    "{C:purple}+#1# Foresight{}",
+                    "{C:attention}Nature: {C:inactive}({C:attention}#2#, #3#, #4#{C:inactive}){}",
+                    "Retrigger all {C:attention}Foreseen{}",
+                    "and held {C:attention}Nature{} cards",
                 }
             },
         },
