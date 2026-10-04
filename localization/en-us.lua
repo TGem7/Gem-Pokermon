@@ -338,13 +338,13 @@ return {
             j_Gem_manectric = {
                 name = "Manectric",
                 text = {
-                  "{C:attention}Nature: {C:inactive}({C:attention}#3#, #4#, #5#{C:inactive}){}",
+                  "{C:attention}Nature: {C:inactive}({C:attention}#4#, #5#, #6#{C:inactive}){}",
                   "All played {C:attention}Nature{} cards become",
                   "{C:attention}Gold{} cards when scored",
                   "{br:4}ERROR - CONTACT STEAK",
-                  "If scoring {C:attention}Nature{} card is already {C:attention}Gold{},",
-                  "give {C:money}$#1#{} plus {C:money}$#2#{} for each other {X:poke_lightning, C:black}Lightning{}",
-                  "joker you have when scored",
+                  "If already {C:attention}Gold{}, earn {C:money}$#3#{}",
+                  "instead, plus {C:money}$#2#{} extra",
+                  "per other {X:poke_lightning, C:black}Lightning{} Joker",
                 }
             },
             j_Gem_mega_manectric = {
