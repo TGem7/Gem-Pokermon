@@ -55,7 +55,8 @@ local manectric = {
     if pokermon_config.detailed_tooltips then
       info_queue[#info_queue+1] = G.P_CENTERS.m_gold
     end
-    local card_vars = {center.ability.extra.money_mod, center.ability.extra.money_increase}
+    local Money = center.ability.extra.money_mod + (center.ability.extra.money_increase * (#pokermon.find_pokemon_type("Lightning", center)))
+    local card_vars = {center.ability.extra.money_mod, center.ability.extra.money_increase, Money}
     pokermon.add_target_cards_to_vars(card_vars, center.ability.extra.targets)
     return {vars = card_vars}
   end,
