@@ -12,8 +12,8 @@ local cryogonal = {
     return {vars = {}}
   end,
   designer = "CBMX",
-  rarity = 2,
-  cost = 6,
+  rarity = 3,
+  cost = 8,
   stage = "Basic",
   ptype = "Water",
   atlas = "AtlasJokersBasicNatdex",
