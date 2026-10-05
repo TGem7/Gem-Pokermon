@@ -1,7 +1,7 @@
 -- Starly 396
 local starly={
   name = "starly",
-  pos = PokemonSprites["starly"].base.pos,
+  pos = {x = 10, y = 26},
   config = {extra = {mult = 0,mult_mod = 1,rank = "2", id = 2}, evo_rqmt = 13},
   loc_vars = function(self, info_queue, center)
     pokermon.type_tooltip(self, info_queue, center)
@@ -11,8 +11,9 @@ local starly={
   cost = 4,
   stage = "Basic",
   ptype = "Colorless",
-  atlas = "AtlasJokersBasicNatdex",
+  atlas = "AtlasJokersSeriesANatdex",
   gen = 4,
+  custom_art = true,
   perishable_compat = false,
   blueprint_compat = true,
   eternal_compat = true,
