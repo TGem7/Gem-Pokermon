@@ -790,7 +790,7 @@ return {
             j_Gem_zebstrika = {
                 name = "Zebstrika",
                 text = {
-                    "Every 2{C:inactive}(#3#){} blinds skipped,",
+                    "Every {C:attention}2{}{C:inactive} (#3#){} blinds skipped,",
                     "Create a {C:attention}Speed Tag{}",
                     "{br:4}ERROR - CONTACT STEAK",
                     "{C:mult}+#2#{} Mult for each {C:attention}Blind{}",
