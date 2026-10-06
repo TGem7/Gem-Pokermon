@@ -1113,6 +1113,7 @@ return {
             poke_head_smash_ex = "Head Smash!",
             poke_huge_power_ex = "Huge Power!",
             poke_take_heart_ex = "Take Heart!",
+            poke_salt_cure_ex = "Salt Cure!",
             -- Config Descriptions
             hisuian_growlithe_line = "Hisuian Growlithe Line?",
             cubone_line = "Cubone Line?",
