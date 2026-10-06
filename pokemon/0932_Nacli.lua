@@ -159,7 +159,7 @@ local garganacl = {
             return true
           end
         }))
-        card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = "localize('poke_salt_cure_ex)", colour = G.C.CHIPS})
+        card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = localize('poke_salt_cure_ex'), colour = G.C.CHIPS})
       end
     end
   end,
