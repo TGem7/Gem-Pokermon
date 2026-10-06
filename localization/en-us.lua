@@ -1043,6 +1043,44 @@ return {
                     "and held {C:attention}Nature{} cards",
                 }
             },
+            j_Gem_nacli = {
+              name = "Nacli",
+              text = {
+                "{C:attention}Enhance{} a random {C:attention}unenhanced{}",
+                "card in your opening hand",
+                "{C:inactive,s:0.8}(Evolves after {C:attention,s:0.8}#1#{C:inactive,s:0.8} rounds)",
+              }
+            },
+            j_Gem_naclstack = {
+              name = "Naclstack",
+              text = {
+                "After each played hand, {C:attention}enhance{} a",
+                "random {C:attention}unenhanced{} card held in hand",
+                "{C:inactive,s:0.8}(Evolves after {C:attention,s:0.8}#1#{C:inactive,s:0.8} rounds)",
+              }
+            },
+             j_Gem_garganacl = {
+              name = "Garganacl",
+              text = {
+                "After each played hand, {C:attention}enhance{} a",
+                "random {C:attention}unenhanced{} card held in hand",
+                "{br:4}ERROR - CONTACT STEAK",
+                "{X:mult,C:white}X#1#{} Mult minus {X:mult,C:white}X#2#{} for",
+                "each {C:attention}unenhanced{} card in your deck",
+                "{C:inactive,s:0.8}({C:attention,s:0.8}#5#{C:inactive,s:0.8} unenhanced cards remaining)",
+                "{C:inactive} (Currently {X:mult,C:white} X#4# {C:inactive} Mult)",
+              }
+            },
+            j_Gem_chatot = {
+              name = "Chatot",
+              text = {
+                    "{X:mult,C:white}X#2#{} Mult per {C:attention}consecutive{}",
+                    "hand played that is",
+                    "the last played hand",
+                    "{C:inactive}(Last hand: {C:attention}#3#{C:inactive})",
+                    "{C:inactive}(Currently {X:mult,C:white}X#1#{C:inactive} Mult)",
+              }
+            },
         },
  Other = {
             fast = {
@@ -1075,6 +1113,7 @@ return {
             poke_head_smash_ex = "Head Smash!",
             poke_huge_power_ex = "Huge Power!",
             poke_take_heart_ex = "Take Heart!",
+            poke_salt_cure_ex = "Salt Cure!",
             -- Config Descriptions
             hisuian_growlithe_line = "Hisuian Growlithe Line?",
             cubone_line = "Cubone Line?",
