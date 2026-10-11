@@ -47,6 +47,7 @@ local cryogonal = {
 }
 
 return {
+    can_load = false,
   config_key = "Cryogonal",
   list = {cryogonal}
 }
