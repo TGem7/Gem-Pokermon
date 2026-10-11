@@ -145,6 +145,7 @@ local mega_manectric = {
 }
 
 return {
+  can_load = false,
   config_key = "Electrike",
   list = { electrike, manectric, mega_manectric }
 }
