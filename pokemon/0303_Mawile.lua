@@ -75,6 +75,7 @@ local mega_mawile = {
 }
 
 return {
+  can_load = false,
   config_key = "Mawile",
   list = { mawile, mega_mawile }
 }
