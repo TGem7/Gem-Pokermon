@@ -1081,6 +1081,14 @@ return {
                     "{C:inactive}(Currently {X:mult,C:white}X#1#{C:inactive} Mult)",
               }
             },
+            j_Gem_hex_maniac = {
+              name = "Hex Maniac",
+              text = {
+                    "After {C:attention}#1#{} rounds, sell this card to",
+                    "add {C:dark_edition}Polychrome{} to a random joker",
+                    "{C:inactive}(Currently {C:attention}#2#{C:inactive}/#1#){}"
+              }
+            },
         },
  Other = {
             fast = {
@@ -1114,6 +1122,7 @@ return {
             poke_huge_power_ex = "Huge Power!",
             poke_take_heart_ex = "Take Heart!",
             poke_salt_cure_ex = "Salt Cure!",
+            poke_hex_ex = "Hex!",
             -- Config Descriptions
             hisuian_growlithe_line = "Hisuian Growlithe Line?",
             cubone_line = "Cubone Line?",
