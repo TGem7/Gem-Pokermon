@@ -14,8 +14,8 @@ SMODS.Atlas({
   py = 95
 })
 SMODS.Atlas({
-  key = "Gem_placeholder_joker",
-  path = "Gem_placeholder_joker.png",
+  key = "placeholder_joker",
+  path = "placeholder_joker.png",
   px = 71,
   py = 95
 })
