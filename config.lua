@@ -54,7 +54,8 @@ return {
 	Iron_Jugulis = true,
 	Koraidon = true,
 	Miraidon = true,
-
+	Hex_Maniac = true,
+	
 }
 
 
