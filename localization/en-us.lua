@@ -68,7 +68,7 @@ return {
                     "a {C:attention}Steel{} copy",
                 }
             },
-            j_Gem_mega_mawile = {
+            j_poke_mega_mawile = {
                 name = "Mega Mawile",
                 text = {
                     "{C:attention}Steel{} cards give their",
