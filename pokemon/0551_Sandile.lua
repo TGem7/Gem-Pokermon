@@ -1,7 +1,3 @@
-
-
--- Sandile and Krookodile proc on both small and big blinds, figure out how to seperate the two
-
 -- Sandile 551
 local sandile={
   name = "sandile",
@@ -67,12 +63,11 @@ local krokorok={
         end
     -- Scale Xmult
         if context.end_of_round and context.game_over == false and context.main_eval and G.GAME.blind.name == 'Big Blind' then
-            card.ability.extra.Xmult = card.ability.extra.Xmult + card.ability.extra.Xmult_mod
-            return {
-                message = localize('k_upgrade_ex'),
-                colour = G.C.MONEY,
-                pokermon.scaling_evo(self, card, context, "j_Gem_krookodile", card.ability.extra.Xmult, self.config.evo_rqmt)
-            }
+           SMODS.scale_card(card, {
+            ref_value = 'Xmult',
+            scalar_value = 'Xmult_mod',
+            message_colour = G.C.MULT
+          })
         end
         return pokermon.scaling_evo(self, card, context, "j_Gem_krookodile", card.ability.extra.Xmult, self.config.evo_rqmt)
     end,
@@ -110,12 +105,12 @@ local krookodile={
         end
     -- Scale Xmult and Money
         if context.end_of_round and context.game_over == false and context.main_eval and G.GAME.blind.boss then
-            card.ability.extra.Xmult = card.ability.extra.Xmult + card.ability.extra.Xmult_mod
             card.ability.extra.money = card.ability.extra.money + card.ability.extra.money_mod
-            return {
-                message = localize('k_upgrade_ex'),
-                colour = G.C.MONEY
-            }
+           SMODS.scale_card(card, {
+            ref_value = 'Xmult',
+            scalar_value = 'Xmult_mod',
+            message_colour = G.C.MULT
+          })
         end
     end,
     -- End of round money
@@ -128,4 +123,3 @@ return {
   config_key = "Sandile",
   list = { sandile, krokorok, krookodile}
 }
-
