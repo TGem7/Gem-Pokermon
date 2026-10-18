@@ -1084,8 +1084,9 @@ return {
             j_Gem_hex_maniac = {
               name = "Hex Maniac",
               text = {
-                    "After {C:attention}#1#{} rounds, sell this card to",
-                    "add {C:dark_edition}Polychrome{} to a random joker",
+                    "After {C:attention}#1#{} rounds, sell this",
+                    "card to add {C:dark_edition}Polychrome{}",
+                    "to a random joker",
                     "{C:inactive}(Currently {C:attention}#2#{C:inactive}/#1#){}"
               }
             },
