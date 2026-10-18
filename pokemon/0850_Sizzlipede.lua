@@ -1,6 +1,3 @@
-
-
-
 -- Sizzlipede 850
 local sizzlipede = {
   name = "sizzlipede",
@@ -22,11 +19,11 @@ local sizzlipede = {
   calculate = function(self, card, context)
     if context.cardarea == G.jokers and context.scoring_hand then
       if context.before and not context.blueprint and #context.scoring_hand == 5 then
-        card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_mod
-        return {
-          message = localize('k_upgrade_ex'),
-          colour = G.C.MULT
-        }
+          SMODS.scale_card(card, {
+            ref_value = 'mult',
+            scalar_value = 'mult_mod',
+            message_colour = G.C.MULT
+          })
       end
       if context.joker_main then
         if card.ability.extra.mult > 0 then
@@ -63,11 +60,11 @@ local centiskorch = {
   calculate = function(self, card, context)
     if context.cardarea == G.jokers and context.scoring_hand then
       if context.before and not context.blueprint and #context.scoring_hand == 5 then
-        card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_mod
-        return {
-          message = localize('k_upgrade_ex'),
-          colour = G.C.MULT
-        }
+          SMODS.scale_card(card, {
+            ref_value = 'mult',
+            scalar_value = 'mult_mod',
+            message_colour = G.C.MULT
+          })
       end
       if context.joker_main then
         if card.ability.extra.mult > 0 then
@@ -86,10 +83,3 @@ return {
   config_key = "Sizzlipede",
   list = {sizzlipede, centiskorch}
 }
-
-
-
-
-
-
-
