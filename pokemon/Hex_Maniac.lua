@@ -15,7 +15,8 @@ local hex_maniac={
   cost = 6,
   stage = "Other",
   designer = "vagabond_aeon",
-  atlas = "placeholder_joker",
+  artist = "Sonfive",
+  atlas = "Gem_hex_maniac",
   eternal_compat = false,
   blueprint_compat = false,
   calculate = function(self, card, context)
@@ -27,7 +28,6 @@ local hex_maniac={
 				end
 			end
 			if #eligiblejokers > 0 then
-				--you just lost the game
 				local eligible_card =
 					pseudorandom_element(eligiblejokers, pseudoseed("hex_maniac"))
 				local edition = { polychrome = true }
@@ -59,7 +59,3 @@ return {
   config_key = "Hex_Maniac",
   list = { hex_maniac }
 }
-
-
-
-
