@@ -1,4 +1,3 @@
-
 --  Noibat 714
 local noibat = {
   name = "noibat",
@@ -20,7 +19,11 @@ local noibat = {
   calculate = function(self, card, context)
       if context.setting_blind and not card.getting_sliced and not context.blueprint then
           -- See note about SMODS Scaling Manipulation on the wiki
-          card.ability.extra.Xmult = card.ability.extra.Xmult + card.ability.extra.Xmult_mod
+           SMODS.scale_card(card, {
+            ref_value = 'Xmult',
+            scalar_value = 'Xmult_mod',
+            message_colour = G.C.MULT
+          })
           local destructable_jokers = {}
           for i = 1, #G.jokers.cards do
               if G.jokers.cards[i] ~= card and not SMODS.is_eternal(G.jokers.cards[i], card) and not G.jokers.cards[i].getting_sliced then
@@ -88,7 +91,11 @@ local noivern = {
           G.GAME.joker_buffer = G.GAME.joker_buffer - 1
           G.E_MANAGER:add_event(Event({func = function()
               G.GAME.joker_buffer = 0
-              card.ability.extra.Xmult = card.ability.extra.Xmult + card.ability.extra.Xmult_mod
+                         SMODS.scale_card(card, {
+            ref_value = 'Xmult',
+            scalar_value = 'Xmult_mod',
+            message_colour = G.C.MULT
+          })
               card:juice_up(0.8, 0.8)
               sliced_card:start_dissolve({HEX("57ecab")}, nil, 1.6)
               play_sound('slice1', 0.96+math.random()*0.08)
@@ -102,7 +109,11 @@ local noivern = {
           G.GAME.joker_buffer = G.GAME.joker_buffer - 1
           G.E_MANAGER:add_event(Event({func = function()
               G.GAME.joker_buffer = 0
-              card.ability.extra.Xmult = card.ability.extra.Xmult + card.ability.extra.Xmult_mod
+                         SMODS.scale_card(card, {
+            ref_value = 'Xmult',
+            scalar_value = 'Xmult_mod',
+            message_colour = G.C.MULT
+          })
               card:juice_up(0.8, 0.8)
               sliced_cards:start_dissolve({HEX("57ecab")}, nil, 1.6)
               play_sound('slice1', 0.96+math.random()*0.08)
