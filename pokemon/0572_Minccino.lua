@@ -39,12 +39,15 @@ local minccino = {
         end
         
         if enhanced > 0 and not context.blueprint then
-          card.ability.extra.mult = card.ability.extra.mult + (card.ability.extra.mult_mod * enhanced)
-          return {
-            message = localize('poke_tidy_up_ex'), 
-            colour = G.C.MULT
-          }
-        end
+          SMODS.scale_card(card, {
+          ref_value = 'mult',
+          scalar_value = 'mult_mod',
+          operation = function(ref_table, ref_value, initial, change)
+            ref_table[ref_value] = initial + change * enhanced
+          end,
+          message_colour = G.C.MULT,
+          message = localize('poke_tidy_up_ex')
+        })
       end
       if context.joker_main and card.ability.extra.mult > 0 then
         return {
@@ -54,6 +57,7 @@ local minccino = {
         }
       end
     end
+  end
     return pokermon.item_evo(self, card, context, "j_Gem_cinccino")
   end
 }
@@ -97,12 +101,15 @@ local cinccino = {
         end
         
         if enhanced > 0 and not context.blueprint then
-          card.ability.extra.mult = card.ability.extra.mult + (card.ability.extra.mult_mod * enhanced)
-          return {
-            message = localize('poke_tidy_up_ex'), 
-            colour = G.C.MULT
-          }
-        end
+          SMODS.scale_card(card, {
+          ref_value = 'mult',
+          scalar_value = 'mult_mod',
+          operation = function(ref_table, ref_value, initial, change)
+            ref_table[ref_value] = initial + change * enhanced
+          end,
+          message_colour = G.C.MULT,
+          message = localize('poke_tidy_up_ex')
+        })
       end
       if context.joker_main and card.ability.extra.mult > 0 then
         return {
@@ -112,6 +119,7 @@ local cinccino = {
         }
       end
     end
+  end
     return pokermon.item_evo(self, card, context, "j_Gem_cinccino")
   end
 }
@@ -120,5 +128,3 @@ return {
   config_key = "Minccino",
   list = {minccino, cinccino}
 }
-
-
