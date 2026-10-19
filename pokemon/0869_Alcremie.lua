@@ -131,6 +131,10 @@ local alcremie_template = {
   aux_poke = true,
   no_collection = true,
   blueprint_compat = true,
+    custom_pool_func = true,
+  in_pool = function(self)
+    return false
+  end,
 }
 
 local alcremie_berry = {
