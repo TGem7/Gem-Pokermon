@@ -9,7 +9,7 @@ local galarian_ponyta={
   end,
   rarity = 2,
   cost = 5,
-  stage = "One",
+  stage = "Basic",
   ptype = "Psychic",
   atlas = "AtlasJokersBasicGen01",
   gen = 1,
